@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CACHO | MVP rediseño</title>
+  <meta name="description" content="MVP visual para la nueva estructura de CACHO Barcelona.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=footer-social">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" data-i18n-aria="navAria" aria-label="Navegación principal">
+      <a class="brand" href="#home" aria-label="CACHO home">
+        <img src="images/logo-cacho.png" width="160" height="48" alt="CACHO — casero y sin miedo">
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        data-i18n-aria="navToggleLabel"
+        aria-label="Abrir menú"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-links">
+          <a href="#menu-hub" data-i18n="navMenu">Carta</a>
+          <a href="#catering" data-i18n="navBusiness">Servicios</a>
+          <a href="#location" data-i18n="navLocation">Ubicación</a>
+          <a href="#contacto" data-i18n="navContact">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-cta" href="#reservas" data-i18n="navBook">Reservar</a>
+          <div class="language-switcher" data-i18n-aria="langSwitcherAria" aria-label="Selector de idioma">
+            <button type="button" data-lang="es" aria-pressed="true">ES</button>
+            <button type="button" data-lang="ca">CA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section id="reservas" class="hero" data-i18n-aria="heroAria" aria-label="CACHO home">
+      <div class="hero-slider" aria-hidden="true">
+        <img src="https://wearecacho.com/wp-content/uploads/2025/11/DSC4692-OP.jpg" alt="">
+        <img src="https://wearecacho.com/wp-content/uploads/2025/11/DSC0272-1-OP.jpg" alt="">
+        <img src="https://wearecacho.com/wp-content/uploads/2024/07/DSC8412-OP.jpg" alt="">
+        <img src="https://wearecacho.com/wp-content/uploads/2025/11/DSC3931-OP.jpg" alt="">
+      </div>
+      <div class="hero-copy">
+        <div class="hero-promo">
+          <div class="hero-cartel">
+            <h1 class="hero-cartel__title">
+              <span data-i18n="heroCartelLine1">Reserva tu mesa con tan</span>
+              <span data-i18n="heroCartelLine2">solo un click</span>
+            </h1>
+          </div>
+          <a class="btn primary hero-promo__btn" href="#reservas" data-i18n="bookTable">Reservar mesa</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="que-es-cacho" class="split about">
+      <img src="https://wearecacho.com/wp-content/uploads/2024/07/cacho-1-OP-1.jpg" data-i18n-alt="altAbout" alt="Equipo y ambiente de CACHO">
+      <div class="about-content">
+        <h2 data-i18n="aboutTitle">Qué es Cacho</h2>
+        <p data-i18n="aboutText1">Somos CACHO y llegamos a Poblenou con ganas de generar un espacio diferente donde los vecinos del barrio puedan encontrar comida casera y de calidad, cervezas tiradas y un ambiente genial en la terraza más grande del @22.</p>
+        <p data-i18n="aboutText2">Pásate a conocernos que no mordemos (casi nunca) y tenemos CACHO para cuando quieras: Comidas, after work y brunch los fines de semana. Ya hemos dicho que no tenemos miedo 😉</p>
+      </div>
+    </section>
+
+    <section class="parallax-band parallax-band--burger" aria-label="CACHO burgers">
+      <div
+        class="parallax-band__bg"
+        role="img"
+        data-i18n-aria="altBurger"
+        aria-label="Hamburguesa CACHO"
+      ></div>
+    </section>
+
+    <section class="product-shot" data-i18n-aria="productsAria" aria-label="Qué vendemos">
+      <div class="shot-copy">
+        <h2 data-i18n="productsTitle">Platos, burgers, carnes y afterwork.</h2>
+        <p data-i18n="productsText">Hacemos una COMIDA CASERA Y SIN MIEDO, sin pretensiones, pero consciente de lo que nos rodea, hecha en casa todos los días con productos frescos y sin procesar. Nuestra oferta pasa desde platos saludables para el día a día como carnes al más puro estilo Argentino, sandwiches, burgers, ensaladas. Postres con la receta original de la abuela, zumos naturales y cocteles con las mejores combinaciones.
+
+          Tenemos un CACHO diferente para cada momento y lo dividimos en tres grupos, cacho plato, Dinner y Brunch.</p>
+      </div>
+      <div class="shot-grid">
+        <img src="https://wearecacho.com/wp-content/uploads/2024/02/HAMBURGUESA-1024x932.png" data-i18n-alt="altBurger" alt="Hamburguesa CACHO">
+        <img src="https://wearecacho.com/wp-content/uploads/2024/05/DSC8077-1.jpg" data-i18n-alt="altDish" alt="Plato CACHO">
+        <img src="https://wearecacho.com/wp-content/uploads/2025/11/MAZO-POR-CACHO-BEER-07-OP.jpg" data-i18n-alt="altBeer" alt="Cerveza CACHO">
+      </div>
+    </section>
+
+    <section id="catering" class="band">
+      <h2 class="menu-section__title" data-i18n="tapeServices">Servicios.</h2>
+      <div class="cards three">
+        <article class="card-catering">
+          <h3 data-i18n="cateringCard1Title">Cacho Catering</h3>
+          <p data-i18n="cateringCard1Text1">Si tienes un evento, nosotros nos encargamos del sabor. Con nuestro Cacho Catering, te lo ponemos fácil: calidad, buen producto y el toque de Cacho que tu evento merece.</p>
+          <p data-i18n="cateringCard1Text2">Para empresas, celebraciones y cualquier ocasión especial. Escríbenos y lo hacemos posible. 💬 HELLO@WEARECACHO.COM</p>
+        </article>
+        <article class="card-plato">
+          <h3 data-i18n="cateringCard2Title">Cacho Plato</h3>
+          <p data-i18n="cateringCard2Text1">Entra, coge tu plato y elige entre nuestras diferentes opciones ya cocinadas previamente. Carnes y guarniciones de veggies con los mejores productos de temporada. Una opción sana que te robará poco tiempo en tu ajetreado día a día, además de económico.</p>
+          <p data-i18n="cateringCard2Text2">Las diferentes opciones irán cambiando cada dos semanas, tenemos la fórmula perfecta de Lunes a Viernes de 12:30h a 16h.</p>
+        </article>
+        <article class="card-afterwork">
+          <h3 data-i18n="cateringCard3Title">After Work & Dinner</h3>
+          <p data-i18n="cateringCard3Text1">No es lo mismo terminar el día e ir a casa que ir al afterwork de cacho y te vamos a explicar por qué: Llegas a esa esquina de Poblenou y suena buena música, pides la primera cerveza y la acompañas de nuestras patatas con salsa chiplote porque te lo mereces.</p>
+          <p data-i18n="cateringCard3Text2">Tus amigos van llegando y cuando pasa nuestra camarera cae la segunda ronda, ya sabes que vas terminando cenando ahí.</p>
+          <p data-i18n="cateringCard3Text3">Gran variedad de opciones, Smash Burger, carnes Argentinas, milanesas, sandwiches, nachos, opciones veganas, entre otras.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="parallax-band parallax-band--platos" aria-label="Platos CACHO">
+      <div
+        class="parallax-band__bg"
+        role="img"
+        data-i18n-aria="altDish"
+        aria-label="Plato CACHO"
+      ></div>
+    </section>
+
+    <section id="menu-hub" class="menu-section">
+      <h2 class="menu-section__title" data-i18n="tapeMenu">Carta.</h2>
+      <div class="menu-cards">
+        <a href="comidas.html" class="js-menu-page menu-card-link menu-card menu-card--comida" data-i18n="menuFood">Comidas</a>
+        <a href="bebidas.html" class="js-menu-page menu-card-link menu-card menu-card--bebidas" data-i18n="menuDrinks">Bebidas</a>
+        <a href="menu-grupos.html" class="js-menu-page menu-card-link menu-card menu-card--grupos" data-i18n="menuGroups">Menú grupos</a>
+      </div>
+    </section>
+
+
+    <section id="cacho-burgers" class="burgers">
+      <div class="burgers-copy">
+        <h2 class="menu-section__title" data-i18n="burgersTitle">Cacho Burgers</h2>
+        <div class="burgers-body">
+          <p class="burgers-lead" data-i18n="burgersLead">¿Aún no habéis venido a probar nuestras burgers sin postureo?</p>
+          <p class="burgers-meet" data-i18n="burgersMeet">Nos vemos en Pujades, 195 · Poblenou</p>
+        </div>
+      </div>
+      <img src="images/cacho-burger.png" data-i18n-alt="altBurgersBrand" alt="Cacho Burgers">
+    </section>
+
+    <section id="location" class="location-section">
+      <h2 data-i18n="locationTitle">Ubicación y horarios</h2>
+      <div class="location-layout">
+        <div class="map-wrap" id="location-map">
+          <div class="map-placeholder" data-map-placeholder>
+            <p data-i18n="mapConsentText">El mapa integrado usa cookies de Google. Puedes activarlo aquí o abrir la ubicación en Google Maps.</p>
+            <button type="button" class="btn secondary map-placeholder__btn" data-map-enable data-i18n="mapConsentBtn">Activar mapa</button>
+            <a class="map-placeholder__link" href="https://www.google.com/maps/search/?api=1&query=Carrer+de+Llull+27+Barcelona" target="_blank" rel="noopener noreferrer" data-i18n="mapOpenExternal">Abrir en Google Maps</a>
+          </div>
+          <iframe
+            data-map-iframe
+            data-i18n-title="mapTitle"
+            title="Mapa de CACHO Poblenou"
+            loading="lazy"
+            hidden
+            data-src="https://www.google.com/maps?q=Carrer%20de%20Llull%2027%20Barcelona&output=embed"
+          ></iframe>
+        </div>
+        <div class="location-sidebar">
+          <aside class="booking-panel">
+            <strong data-i18n="bookingArea">PobleNou</strong>
+            <span>Carrer de Llull, 27</span>
+            <span data-i18n="hoursMonWed">Lun-mié: 12:30h - 23h</span>
+            <span data-i18n="hoursThuFri">Jue-vie: 12:30h - 24h</span>
+            <span data-i18n="hoursWeekend">Fin de semana: 12h - 23:30h</span>
+          </aside>
+          <a class="btn location-book-btn" href="https://wearecacho.com/reservas" data-i18n="bookNow">Reservar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact-section" data-i18n-aria="tapeContact" aria-label="Contacto">
+      <h2 class="menu-section__title" data-i18n="tapeContactTitle">Contacto.</h2>
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        data-formspree-id="YOUR_FORM_ID"
+        novalidate
+      >
+        <p class="contact-form__status" role="status" aria-live="polite" hidden></p>
+        <label class="contact-form__honeypot" aria-hidden="true">
+          <span>No completar</span>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+        <label>
+          <span data-i18n="formName">Nombre</span>
+          <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="formNamePh" placeholder="Tu nombre">
+        </label>
+        <label>
+          <span data-i18n="formEmail">Email</span>
+          <input type="email" name="email" autocomplete="email" required data-i18n-placeholder="formEmailPh" placeholder="tu@email.com">
+        </label>
+        <label>
+          <span data-i18n="formMessage">Mensaje</span>
+          <textarea name="message" required data-i18n-placeholder="formMessagePh" placeholder="Cuéntanos qué necesitas"></textarea>
+        </label>
+        <button type="submit" data-i18n="formSubmit">Enviar consulta</button>
+      </form>
+    </section>
+
+  </main>
+
+  <aside
+    id="cookie-banner"
+    class="cookie-banner"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-banner-title"
+    hidden
+  >
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__view" data-cookie-view="main">
+        <h2 id="cookie-banner-title" class="cookie-banner__title" data-i18n="cookieBannerTitle">Cookies y privacidad</h2>
+        <p class="cookie-banner__text" data-i18n="cookieBannerText">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps. Puedes aceptar todas, usar solo las necesarias o configurarlas.</p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="accept-all" data-i18n="cookieAcceptAll">Aceptar todas</button>
+          <button type="button" class="btn secondary" data-cookie-action="reject" data-i18n="cookieReject">Solo necesarias</button>
+          <button type="button" class="btn secondary" data-cookie-action="open-prefs" data-i18n="cookieCustomize">Configurar</button>
+        </div>
+        <a class="cookie-banner__link" href="./politica-cookies.html" data-i18n="cookieMore">Política de cookies</a>
+      </div>
+
+      <div class="cookie-banner__view" data-cookie-view="prefs" hidden>
+        <h2 class="cookie-banner__title" data-i18n="cookiePrefsTitle">Preferencias de cookies</h2>
+        <ul class="cookie-prefs">
+          <li class="cookie-prefs__item cookie-prefs__item--locked">
+            <label>
+              <input type="checkbox" checked disabled>
+              <span>
+                <strong data-i18n="cookiePrefEssential">Necesarias</strong>
+                <small data-i18n="cookiePrefEssentialDesc">Idioma y funcionamiento básico del sitio.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="analytics">
+              <span>
+                <strong data-i18n="cookiePrefAnalytics">Analítica (Google Analytics)</strong>
+                <small data-i18n="cookiePrefAnalyticsDesc">Nos ayuda a entender cómo se usa la web.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="marketing">
+              <span>
+                <strong data-i18n="cookiePrefMarketing">Marketing (Meta Pixel)</strong>
+                <small data-i18n="cookiePrefMarketingDesc">Mide campañas y conversiones en redes sociales.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="maps">
+              <span>
+                <strong data-i18n="cookiePrefMaps">Mapa (Google Maps)</strong>
+                <small data-i18n="cookiePrefMapsDesc">Muestra el mapa de ubicación embebido.</small>
+              </span>
+            </label>
+          </li>
+        </ul>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="save-prefs" data-i18n="cookieSave">Guardar preferencias</button>
+          <button type="button" class="btn secondary" data-cookie-action="back" data-i18n="cookieBack">Volver</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="mobile-bottom-bar" data-i18n-aria="mobileBarAria" aria-label="Acciones rápidas">
+    <button type="button" class="cookie-settings-fab" data-cookie-manage data-i18n="cookieSettingsFab">Ajustes cookies</button>
+    <a class="mobile-cta btn primary" href="#reservas" data-i18n="bookTable">Reservar mesa</a>
+    <a class="whatsapp" href="https://wa.me/" data-i18n-aria="whatsappAria" aria-label="Contactar por WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <strong>CACHO</strong>
+      <p>Carrer de Llull, 27 · Barcelona<br>hello@wearecacho.com · 931 398 813</p>
+    </div>
+    <div>
+      <strong data-i18n="footerNetworks">Redes</strong>
+      <ul class="footer-social">
+        <li>
+          <a class="footer-social__link" href="https://www.instagram.com/wearecacho/" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialInstagram" aria-label="Instagram">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.846-10.405a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.facebook.com/CACHO-110555300531308" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialFacebook" aria-label="Facebook">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.tripadvisor.es/Restaurant_Review-g187497-d20861655-Reviews-Cacho-Barcelona_Catalonia.html" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialTripadvisor" aria-label="Tripadvisor">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 2.174-4.35 11.934 11.934 0 0 1 1.86-.151c.664 0 1.313.05 1.943.151a5.958 5.958 0 0 0 2.178 4.353 5.977 5.977 0 0 0 4.036-10.432L24 6.648h-4.35a12.078 12.078 0 0 0-7.644-2.353zM6.003 16.14a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95zm11.994 0a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <strong data-i18n="footerSitemap">Mapa del sitio</strong>
+      <ul class="footer-sitemap">
+        <li><a href="#reservas" data-i18n="footerReservations">Reservas</a></li>
+        <li><a href="./comidas.html" data-i18n="menuFood">Comidas</a></li>
+        <li><a href="./bebidas.html" data-i18n="menuDrinks">Bebidas</a></li>
+        <li><a href="./menu-grupos.html" data-i18n="menuGroups">Menú grupos</a></li>
+        <li><a href="#catering" data-i18n="navBusiness">Servicios</a></li>
+        <li><a href="#location" data-i18n="navLocation">Ubicación</a></li>
+        <li><a href="#contacto" data-i18n="footerContact">Contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-legal-bar">
+    <p>
+      <span data-i18n="footerLegalCopyright">CACHO © 2020–2026 TODOS LOS DERECHOS RESERVADOS</span> |
+      <a href="./aviso-legal.html" data-i18n="footerLegalNotice">Aviso legal</a> |
+      <a href="./politica-cookies.html" data-i18n="footerLegalCookies">Políticas de cookies</a>
+    </p>
+  </div>
+
+  <script src="./menu-i18n.js?v=1"></script>
+  <script src="./script.js?v=mobile-bar-dock"></script>
+</body>
+</html>

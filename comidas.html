@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comidas | CACHO</title>
+  <meta name="description" content="Menú de comidas CACHO Barcelona — ensaladas, parrilla, milanesas, burgers, sándwiches y postres.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=mobile-bar">
+</head>
+<body class="menu-doc-page" data-menu-page="dinner">
+  <header class="site-header">
+    <nav class="nav-shell" data-i18n-aria="navAria" aria-label="Navegación principal">
+      <a class="brand" href="./index.html#home" aria-label="CACHO home">
+        <img src="images/logo-cacho.png" width="160" height="48" alt="CACHO — casero y sin miedo">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="navToggleLabel" aria-label="Abrir menú">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-links">
+          <a href="./index.html#menu-hub" data-i18n="navMenu">Carta</a>
+          <a href="./index.html#catering" data-i18n="navBusiness">Servicios</a>
+          <a href="./index.html#location" data-i18n="navLocation">Ubicación</a>
+          <a href="./index.html#contacto" data-i18n="navContact">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-cta" href="./index.html#reservas" data-i18n="navBook">Reservar</a>
+          <div class="language-switcher" data-i18n-aria="langSwitcherAria" aria-label="Selector de idioma">
+            <button type="button" data-lang="es" aria-pressed="true">ES</button>
+            <button type="button" data-lang="ca">CA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-page">
+    <header class="menu-page__head">
+      <p class="tape small" data-i18n="dinnerTape">Comidas</p>
+      <h1 data-i18n="mp_claim">Casero y sin miedo</h1>
+      <p class="menu-page__lead" data-i18n="dinnerLead">Menú dinner · Español · 2025</p>
+    </header>
+
+    <nav class="menu-page__nav" aria-label="Secciones de la carta">
+      <a href="#ensaladas" data-i18n="dinnerNavSalads">Ensaladas</a>
+      <a href="#compartir" data-i18n="dinnerNavShare">Para compartir</a>
+      <a href="#grill" data-i18n="dinnerNavGrill">Grill</a>
+      <a href="#milanesas" data-i18n="dinnerNavMilanese">Milanesas</a>
+      <a href="#burgers" data-i18n="dinnerNavBurgers">Burgers</a>
+      <a href="#sandwiches" data-i18n="dinnerNavSandwiches">Sándwiches</a>
+      <a href="#dulces" data-i18n="dinnerNavDesserts">Dulces</a>
+    </nav>
+
+    <section class="menu-block" id="ensaladas">
+      <h2 class="menu-block__title" data-menu-section="salads" data-menu-field="title">Salads</h2>
+      <p class="menu-block__note" data-menu-section="salads" data-menu-field="note">*Agrega pollo por solo 3€</p>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="pumpkin" data-menu-part="name">Pumpkin Salad</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">12</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="pumpkin" data-menu-part="desc">Calabaza asada, espinacas, rúcula, feta, nueces, vinagreta de agave, jengibre, cilantro y lima.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="mediterranean" data-menu-part="name">Mediterranean Bowl</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">13,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="mediterranean" data-menu-part="desc">Quinoa, garbanzos, aguacate, zanahorias asadas, rúcula y láminas de coco, aliñada con salsa de yogur.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="compartir">
+      <h2 class="menu-block__title" data-menu-section="share" data-menu-field="title">Para compartir</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="nachos" data-menu-part="name">Nachos</span></h3>
+            <span class="menu-item__price">13,7</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="nachos" data-menu-part="desc">Con crème fraîche, queso fundido, jalapeños, pico de gallo, salsa verde y frijoles.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="hummus" data-menu-part="name">Hummus</span></h3>
+            <span class="menu-item__price">9,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="hummus" data-menu-part="desc">De remolacha, con feta, olivas kalamatas, zanahorias asadas, semillas y focaccia tostada.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="provoleta" data-menu-part="name">Provoleta</span></h3>
+            <span class="menu-item__price">8,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="provoleta" data-menu-part="desc">Con chimichurri, tomate cherry confitados y focaccia tostada.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="carrots" data-menu-part="name">Zanahorias asadas</span></h3>
+            <span class="menu-item__price">6,7</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="carrots" data-menu-part="desc">Con mayo de cúrcuma y kikos.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="bravas" data-menu-part="name">Nuestras bravas</span></h3>
+            <span class="menu-item__price">6,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="bravas" data-menu-part="desc">Bravas horneadas, con salsa chipotle.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="olives" data-menu-part="name">Olivas Gordal</span></h3>
+            <span class="menu-item__price">3,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="olives" data-menu-part="desc">Olivas al chimichurri.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="chips" data-menu-part="name">Chips</span></h3>
+            <span class="menu-item__price">3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="chips" data-menu-part="desc">Con salsa Bloody Mary.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="empanadas" data-menu-part="name">Empanadas del Emi</span></h3>
+            <span class="menu-item__price">7,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="empanadas" data-menu-part="desc">Dos empanadas de carne Angus cortada a cuchillo, fritas, con salsa de tomate fresco picante.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="eggplant" data-menu-part="name">Berenjena rebozada</span></h3>
+            <span class="menu-item__price">10,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="eggplant" data-menu-part="desc">Con crema de burrata, salsa napolitana, pesto de pistachos y criolla con jalapeños.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="grill">
+      <h2 class="menu-block__title" data-menu-section="grill" data-menu-field="title">Grill</h2>
+      <p class="menu-block__note" data-menu-section="grill" data-menu-field="note">*Todas nuestras carnes vienen acompañadas con patatas asadas, tomates cherry confitados y chimichurri.</p>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="colita" data-menu-part="name">Colita de cuadril</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">23</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="colita" data-menu-part="desc">300 gr de culatín de ternera Black Angus de Nebraska. Corte típico argentino a la parrilla.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="entraña" data-menu-part="name">Entraña</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">18,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="entraña" data-menu-part="desc">Corte típico argentino a la parrilla.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="lomo" data-menu-part="name">Lomo bajo</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">25,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="lomo" data-menu-part="desc">420 gr de lomo bajo gallego.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="ribeye" data-menu-part="name">Rib eye</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">29</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="ribeye" data-menu-part="desc">350 gr de ojo de bife argentino.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="milanesas">
+      <h2 class="menu-block__title" data-menu-section="milanese" data-menu-field="title">Milanesas</h2>
+      <p class="menu-block__note" data-menu-section="milanese" data-menu-field="note">*Todas las milanesas son de ternera y vienen con patatas asadas, pico de gallo y crème fraîche.</p>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="napolitana" data-menu-part="name">La napolitana</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">17,5</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="napolitana" data-menu-part="desc">Con provolone, mozzarella, jamón dulce, tomate y orégano.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="especial" data-menu-part="name">La especial</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">16</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="especial" data-menu-part="desc">Con prosciutto, rúcula, parmesano y tomate seco.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="caballo" data-menu-part="name">A caballo</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">15,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="caballo" data-menu-part="desc">Con dos huevos fritos.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block menu-block--burgers" id="burgers">
+      <h2 class="menu-block__title" data-menu-section="burgers" data-menu-field="title">Burgers</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="provoloneBurger" data-menu-part="name">Provolone crujiente</span></h3>
+            <span class="menu-item__price">14,6</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="provoloneBurger" data-menu-part="desc">Doble smash con provolone crujiente a la plancha, cebolla caramelizada y nuestra Cacho salsa picante.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="picante" data-menu-part="name">La picante</span></h3>
+            <span class="menu-item__price">13,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="picante" data-menu-part="desc">Doble smash con cebolla y queso cheddar, salsa de jalapeño y huevo a la plancha.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="portobello" data-menu-part="name">Veggie portobello</span></h3>
+            <span class="menu-item__price">12,7</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="portobello" data-menu-part="desc">Portobello confitado, queso cheddar, aguacate, rúcula, cebolla encurtida y salsa de mango chili.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="clasica" data-menu-part="name">La clásica</span></h3>
+            <span class="menu-item__price">13,2</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="clasica" data-menu-part="desc">Doble smash con queso, tomate, lechuga, pepinillo, mostaza y mayonesa.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cheeseBacon" data-menu-part="name">Cheese &amp; bacon</span></h3>
+            <span class="menu-item__price">13,7</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cheeseBacon" data-menu-part="desc">Bacon y queso cheddar, y nuestra Cacho salsa picante.</span></p>
+        </li>
+      </ul>
+      <aside class="menu-extras">
+        <h3 class="menu-extras__title" data-menu-section="burgers" data-menu-field="extrasTitle">Tunea tu burger o sandwich</h3>
+        <p class="menu-extras__lead" data-menu-section="burgers" data-menu-field="extrasLead">Añade lo que más se te antoje… ¡Sin miedo!</p>
+        <ul class="menu-extras__grid">
+          <li><span>Huevo frito</span><span>2,5</span></li>
+          <li><span>Bacon</span><span>2</span></li>
+          <li><span>Aguacate</span><span>3</span></li>
+          <li><span>Pepinillos</span><span>1</span></li>
+          <li><span>Queso</span><span>1</span></li>
+          <li><span>Tomate</span><span>1</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="menu-block" id="sandwiches">
+      <h2 class="menu-block__title" data-menu-section="sandwiches" data-menu-field="title">Sándwiches</h2>
+      <p class="menu-block__note" data-menu-section="sandwiches" data-menu-field="note">*Todos nuestros sándwiches vienen con pan focaccia.</p>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="club" data-menu-part="name">Club sandwich</span></h3>
+            <span class="menu-item__price">12,5</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="club" data-menu-part="desc">Pollo marinado en achiote, huevo frito, queso cheddar blanco, tomate, lechuga, bacon y nuestra salsa picante.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="roastbeef" data-menu-part="name">Roast beef</span></h3>
+            <span class="menu-item__price">12,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="roastbeef" data-menu-part="desc">Roast beef de Angus, con mostaza, pepinillos y queso cheddar blanco.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="veggie" data-menu-part="name">Vegetariano sin miedo</span></h3>
+            <span class="menu-item__price">9,5</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="veggie" data-menu-part="desc">Sandwich de tomate, espinacas, aguacate, manzana, remolacha con hummus o con queso cheddar blanco.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="choripan" data-menu-part="name">Choripán de la Bombonera</span></h3>
+            <span class="menu-item__price">8,3</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="choripan" data-menu-part="desc">Chorizo criollo, lechuga, tomate y chimichurri.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="dulces">
+      <h2 class="menu-block__title" data-menu-section="desserts" data-menu-field="title">Dulces</h2>
+      <p class="menu-block__note" data-menu-section="desserts" data-menu-field="note">*Agrégale una bola de helado de vainilla por 2,5€</p>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cheesecake" data-menu-part="name">Tarta de queso</span></h3>
+            <span class="menu-item__price">6,9</span>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="tiramisu" data-menu-part="name">Tiramisú de pistacho</span></h3>
+            <span class="menu-item__price">4,9</span>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="tatin" data-menu-part="name">Tarta tatin</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">4,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="tatin" data-menu-part="desc">Chocolate con chips. Lima kéfir.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="brownie" data-menu-part="name">Brownie</span> <span class="menu-item__mark">*</span></h3>
+            <span class="menu-item__price">4,9</span>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="icecream" data-menu-part="name">Helados en tarrina</span></h3>
+            <span class="menu-item__price">4,5</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="menu-page__foot">
+      <p><span data-i18n="mp_follow">Síguenos en</span> <a href="https://www.instagram.com/wearecacho/" target="_blank" rel="noopener noreferrer">@wearecacho</a></p>
+      <div class="menu-page__links">
+        <a class="btn primary" href="https://wearecacho.com/reservas" data-i18n="mp_book">Reservar mesa</a>
+        <a class="btn secondary" href="./bebidas.html" data-i18n="mp_drinksMenu">Bebidas</a>
+        <a class="btn secondary" href="./menu-grupos.html" data-i18n="mp_groupsMenu">Menú grupos</a>
+      </div>
+    </footer>
+  </main>
+
+  <aside id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__view" data-cookie-view="main">
+        <h2 id="cookie-banner-title" class="cookie-banner__title" data-i18n="cookieBannerTitle">Cookies y privacidad</h2>
+        <p class="cookie-banner__text" data-i18n="cookieBannerText">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps. Puedes aceptar todas, usar solo las necesarias o configurarlas.</p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="accept-all" data-i18n="cookieAcceptAll">Aceptar todas</button>
+          <button type="button" class="btn secondary" data-cookie-action="reject" data-i18n="cookieReject">Solo necesarias</button>
+          <button type="button" class="btn secondary" data-cookie-action="open-prefs" data-i18n="cookieCustomize">Configurar</button>
+        </div>
+        <a class="cookie-banner__link" href="./politica-cookies.html" data-i18n="cookieMore">Política de cookies</a>
+      </div>
+      <div class="cookie-banner__view" data-cookie-view="prefs" hidden>
+        <h2 class="cookie-banner__title" data-i18n="cookiePrefsTitle">Preferencias de cookies</h2>
+        <ul class="cookie-prefs">
+          <li class="cookie-prefs__item cookie-prefs__item--locked">
+            <label>
+              <input type="checkbox" checked disabled>
+              <span>
+                <strong data-i18n="cookiePrefEssential">Necesarias</strong>
+                <small data-i18n="cookiePrefEssentialDesc">Idioma y funcionamiento básico del sitio.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="analytics">
+              <span>
+                <strong data-i18n="cookiePrefAnalytics">Analítica (Google Analytics)</strong>
+                <small data-i18n="cookiePrefAnalyticsDesc">Nos ayuda a entender cómo se usa la web.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="marketing">
+              <span>
+                <strong data-i18n="cookiePrefMarketing">Marketing (Meta Pixel)</strong>
+                <small data-i18n="cookiePrefMarketingDesc">Mide campañas y conversiones en redes sociales.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="maps">
+              <span>
+                <strong data-i18n="cookiePrefMaps">Mapa (Google Maps)</strong>
+                <small data-i18n="cookiePrefMapsDesc">Muestra el mapa de ubicación embebido.</small>
+              </span>
+            </label>
+          </li>
+        </ul>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="save-prefs" data-i18n="cookieSave">Guardar preferencias</button>
+          <button type="button" class="btn secondary" data-cookie-action="back" data-i18n="cookieBack">Volver</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="mobile-bottom-bar" data-i18n-aria="mobileBarAria" aria-label="Acciones rápidas">
+    <button type="button" class="cookie-settings-fab" data-cookie-manage data-i18n="cookieSettingsFab">Ajustes cookies</button>
+    <a class="mobile-cta btn primary" href="./index.html#reservas" data-i18n="bookTable">Reservar mesa</a>
+    <a class="whatsapp" href="https://wa.me/" data-i18n-aria="whatsappAria" aria-label="Contactar por WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <strong>CACHO</strong>
+      <p>Carrer de Llull, 27 · Barcelona<br>hello@wearecacho.com · 931 398 813</p>
+    </div>
+    <div>
+      <strong data-i18n="footerNetworks">Redes</strong>
+      <ul class="footer-social">
+        <li>
+          <a class="footer-social__link" href="https://www.instagram.com/wearecacho/" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialInstagram" aria-label="Instagram">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.846-10.405a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.facebook.com/CACHO-110555300531308" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialFacebook" aria-label="Facebook">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.tripadvisor.es/Restaurant_Review-g187497-d20861655-Reviews-Cacho-Barcelona_Catalonia.html" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialTripadvisor" aria-label="Tripadvisor">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 2.174-4.35 11.934 11.934 0 0 1 1.86-.151c.664 0 1.313.05 1.943.151a5.958 5.958 0 0 0 2.178 4.353 5.977 5.977 0 0 0 4.036-10.432L24 6.648h-4.35a12.078 12.078 0 0 0-7.644-2.353zM6.003 16.14a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95zm11.994 0a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <strong data-i18n="footerSitemap">Mapa del sitio</strong>
+      <ul class="footer-sitemap">
+        <li><a href="./index.html" data-i18n="footerHome">Inicio</a></li>
+        <li><a href="./index.html#reservas" data-i18n="footerReservations">Reservas</a></li>
+        <li><a href="./comidas.html" aria-current="page" data-i18n="menuFood">Comidas</a></li>
+        <li><a href="./bebidas.html" data-i18n="menuDrinks">Bebidas</a></li>
+        <li><a href="./menu-grupos.html" data-i18n="menuGroups">Menú grupos</a></li>
+        <li><a href="./index.html#catering" data-i18n="navBusiness">Servicios</a></li>
+        <li><a href="./index.html#location" data-i18n="navLocation">Ubicación</a></li>
+        <li><a href="./index.html#contacto" data-i18n="footerContact">Contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-legal-bar">
+    <p>
+      <span data-i18n="footerLegalCopyright">CACHO © 2020–2026 TODOS LOS DERECHOS RESERVADOS</span> |
+      <a href="./aviso-legal.html" data-i18n="footerLegalNotice">Aviso legal</a> |
+      <a href="./politica-cookies.html" data-i18n="footerLegalCookies">Políticas de cookies</a>
+    </p>
+  </div>
+
+  <script src="./menu-i18n.js?v=1"></script>
+  <script src="./script.js?v=mobile-bar-dock"></script>
+</body>
+</html>

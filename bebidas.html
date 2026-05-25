@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carta bebidas | CACHO</title>
+  <meta name="description" content="Carta de bebidas CACHO Barcelona — cócteles, cervezas, vinos, combinados, café y refrescos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=mobile-bar">
+</head>
+<body class="menu-doc-page" data-menu-page="drinks">
+  <header class="site-header">
+    <nav class="nav-shell" data-i18n-aria="navAria" aria-label="Navegación principal">
+      <a class="brand" href="./index.html#home" aria-label="CACHO home">
+        <img src="images/logo-cacho.png" width="160" height="48" alt="CACHO — casero y sin miedo">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="navToggleLabel" aria-label="Abrir menú">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-links">
+          <a href="./index.html#menu-hub" data-i18n="navMenu">Carta</a>
+          <a href="./index.html#catering" data-i18n="navBusiness">Servicios</a>
+          <a href="./index.html#location" data-i18n="navLocation">Ubicación</a>
+          <a href="./index.html#contacto" data-i18n="navContact">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-cta" href="./index.html#reservas" data-i18n="navBook">Reservar</a>
+          <div class="language-switcher" data-i18n-aria="langSwitcherAria" aria-label="Selector de idioma">
+            <button type="button" data-lang="es" aria-pressed="true">ES</button>
+            <button type="button" data-lang="ca">CA</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-page menu-page--wide">
+    <header class="menu-page__head">
+      <p class="tape small" data-i18n="drinksTape">Bebidas</p>
+      <h1 data-i18n="mp_claim">Casero y sin miedo</h1>
+      <p class="menu-page__lead" data-i18n="drinksLead">Carta de bebidas · Español · 2025</p>
+    </header>
+
+    <nav class="menu-page__nav" aria-label="Secciones de bebidas">
+      <a href="#cocktails" data-i18n="drinksNavCocktails">Cócteles</a>
+      <a href="#cervezas" data-i18n="drinksNavBeer">Cervezas</a>
+      <a href="#sin-alcohol" data-i18n="drinksNavZero">Sin alcohol</a>
+      <a href="#vinitos" data-i18n="drinksNavWine">Vinos</a>
+      <a href="#combinados" data-i18n="drinksNavSpirits">Combinados</a>
+      <a href="#cafe-refrescos" data-i18n="drinksNavCoffee">Café y refrescos</a>
+    </nav>
+
+    <section class="menu-block" id="cocktails">
+      <h2 class="menu-block__title" data-menu-section="cocktails" data-menu-field="title">Cocktails &amp; Co</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="tommy" data-menu-part="name">Tommy's Margarita</span></h3><span class="menu-item__price">9</span></div>
+          <p class="menu-item__desc"><span data-menu-item="tommy" data-menu-part="desc">Tequila, lima y sirope de agave.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="pornstar" data-menu-part="name">Porn Star Martini</span></h3><span class="menu-item__price">9</span></div>
+          <p class="menu-item__desc"><span data-menu-item="pornstar" data-menu-part="desc">Vodka infusionado con vainilla, fruta de la pasión, sirope de vainilla y shot de cava.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="darkstormy" data-menu-part="name">Dark and Stormy</span></h3><span class="menu-item__price">8,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="darkstormy" data-menu-part="desc">Ron añejo, ginger beer, lima y angostura.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="spritz" data-menu-part="name">Aperol Spritz / Campari Spritz</span></h3><span class="menu-item__price">7</span></div>
+          <p class="menu-item__desc"><span data-menu-item="spritz" data-menu-part="desc">Aperol o Campari, cava y soda.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="bloody" data-menu-part="name">Bloody Mary</span></h3><span class="menu-item__price">8,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="bloody" data-menu-part="desc">Vodka, salsa bloody, tomate y limón.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="mimosa" data-menu-part="name">Mimosa Pomegranate</span></h3><span class="menu-item__price">5,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="mimosa" data-menu-part="desc">Cava, zumo fresco de naranja y granada.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="mule" data-menu-part="name">Moscow Mule</span></h3><span class="menu-item__price">8,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="mule" data-menu-part="desc">Vodka, ginger beer, lima y pepino.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="mojito" data-menu-part="name">Mojito clásico</span></h3><span class="menu-item__price">8,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="mojito" data-menu-part="desc">Ron añejo, menta, lima, azúcar y soda.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="paloma" data-menu-part="name">Med Paloma</span></h3><span class="menu-item__price">9,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="paloma" data-menu-part="desc">Tequila infusionada con romero, Schweppes al pomelo rosa y lima.</span></p>
+        </li>
+      </ul>
+      <p class="menu-block__note" data-menu-section="cocktails" data-menu-field="note">Si te apetece otro clásico, pídenos tu preferido.</p>
+    </section>
+
+    <section class="menu-block" id="cervezas">
+      <h2 class="menu-block__title" data-menu-section="beer" data-menu-field="title">Cervezas &amp; Co</h2>
+      <p class="menu-block__sizes"><span data-i18n="size33">33cl</span><span data-i18n="size50">50cl</span></p>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="garageSantako" data-menu-part="name">Garage Santako</span></h3><span class="menu-item__price">5,9</span></div>
+          <p class="menu-item__desc"><span data-menu-item="garageSantako" data-menu-part="desc">West Coast IPA (sin gluten).</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="oghamCorn" data-menu-part="name">Ogham Corn Flower</span></h3><div class="menu-item__prices"><span>4,2</span><span>6,3</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="oghamCorn" data-menu-part="desc">Trigo.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="garageOcata" data-menu-part="name">Garage Ocata IPA</span></h3><span class="menu-item__price">5,9</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="garageRiba" data-menu-part="name">Garage Riba Pilsner</span></h3><span class="menu-item__price">4,9</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="oghamHazy" data-menu-part="name">Ogham Artesana Hazy IPA</span></h3><div class="menu-item__prices"><span>4,9</span><span>7,4</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="estrella" data-menu-part="name">Estrella Damm</span></h3><div class="menu-item__prices"><span>2,7</span><span>4</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="clara" data-menu-part="name">Clara</span></h3><div class="menu-item__prices"><span>2,8</span><span>4,1</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="turia" data-menu-part="name">Turia (Valencia)</span></h3><div class="menu-item__prices"><span>3,5</span><span>5,2</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="vollDamm" data-menu-part="name">Voll Damm Doble Malta</span></h3><div class="menu-item__prices"><span>3,8</span><span>5,7</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="complot" data-menu-part="name">IPA Complot</span></h3><div class="menu-item__prices"><span>4,7</span><span>6,9</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="galipette" data-menu-part="name">Galipette Sidra Brut</span></h3><span class="menu-item__price">4,9</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="michelada" data-menu-part="name">Michelada</span></h3><span class="menu-item__price">5,7</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="freeDamm" data-menu-part="name">Free Damm</span></h3><span class="menu-item__price">3,5</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="freeDammTost" data-menu-part="name">Free Damm Tostada</span></h3><span class="menu-item__price">3,5</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="daura" data-menu-part="name">Daura</span></h3><span class="menu-item__price">3,5</span></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="cachoBeer" data-menu-part="name">Cacho Beer APA artesana</span></h3><div class="menu-item__prices"><span>4,4</span><span>6,6</span></div></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="sin-alcohol">
+      <h2 class="menu-block__title" data-menu-section="zero" data-menu-field="title">Sin alcohol</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="virginMojito" data-menu-part="name">Virgin Mojito</span></h3><span class="menu-item__price">7,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="virginMojito" data-menu-part="desc">Manzana, menta, lima y soda.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="virginMary" data-menu-part="name">Virgin Mary</span></h3><span class="menu-item__price">7,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="virginMary" data-menu-part="desc">Bloody Mary mix, zumo de tomate.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="shirley" data-menu-part="name">Spicy Shirley</span></h3><span class="menu-item__price">6</span></div>
+          <p class="menu-item__desc"><span data-menu-item="shirley" data-menu-part="desc">Sirope de granada, limón y ginger beer.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="crodino" data-menu-part="name">Crodino Spritz</span></h3><span class="menu-item__price">5,5</span></div>
+          <p class="menu-item__desc"><span data-menu-item="crodino" data-menu-part="desc">Crodino con un splash de soda.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="vinitos">
+      <h2 class="menu-block__title" data-menu-section="wine" data-menu-field="title">Vinos</h2>
+      <p class="menu-block__sizes menu-block__sizes--wine"><span data-i18n="sizeGlass">Copa</span><span data-i18n="sizeBottle">Botella</span></p>
+
+      <h3 class="menu-subtitle" data-menu-sub="red">Tintos</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="itant" data-menu-part="name">Itant — Garnacha</span></h3><div class="menu-item__prices"><span>3,7</span><span>18</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="itant" data-menu-part="desc">DO Montsant.</span></p>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="redNat">Tintos naturales</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="comalats" data-menu-part="name">Comalats Alosa Negre</span></h3><div class="menu-item__prices"><span>5,6</span><span>27</span></div></div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="karma" data-menu-part="name">Karma de Drac Montsant Negre</span></h3><span class="menu-item__price">28</span></div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="trus" data-menu-part="name">Trus Crianza 2020</span></h3><span class="menu-item__price">32</span></div>
+          <p class="menu-item__desc"><span data-menu-item="trus" data-menu-part="desc">100% Tempranillo · Ribera del Duero.</span></p>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="whiteNat">Blancos naturales</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="cargol" data-menu-part="name">Cargol treu Banya</span></h3><div class="menu-item__prices"><span>4,5</span><span>22</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="cargol" data-menu-part="desc">Coupage Merlot y Tempranillo</span> · DO Costers del Segre.</p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="sabatera" data-menu-part="name">Mas de la Sabatera</span></h3><div class="menu-item__prices"><span>5,9</span><span>29</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="sabatera" data-menu-part="desc">Mà Esquerra Chardonnay.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="perlat" data-menu-part="name">Perlat — Syrah</span></h3><div class="menu-item__prices"><span>5,5</span><span>27</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="itant" data-menu-part="desc">DO Montsant.</p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="peona" data-menu-part="name">La Peona Brisat Orange Blanc</span></h3><span class="menu-item__price">33</span></div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="uvala" data-menu-part="name">Uvala Brisat Malvasia Blanc</span></h3><span class="menu-item__price">36</span></div>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="white">Blancos</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="saltimbanqui" data-menu-part="name">Saltimbanqui — Verdejo</span></h3><div class="menu-item__prices"><span>3,7</span><span>18</span></div></div>
+          <p class="menu-item__desc">DO Rueda.</p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="descarada" data-menu-part="name">La Descarada</span></h3><div class="menu-item__prices"><span>5</span><span>25</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="descarada" data-menu-part="desc">Sauvignon Blanc y Muscat ECO</span> · DO Penedès.</p>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="rose">Rosado</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="freye" data-menu-part="name">Freyé — Syrah y Sumoll</span></h3><div class="menu-item__prices"><span>3,7</span><span>18</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="freye" data-menu-part="desc">DO Penedès.</span></p>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="vermouth">Vermut</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="musugorri" data-menu-part="name">Musugorri — Vermut Solidario</span></h3><div class="menu-item__prices"><span>3,5</span><span>23</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="musugorri" data-menu-part="desc">Tarragona.</span></p>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="cava">Cava</h3>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="brutNature" data-menu-part="name">Brut Nature — ECO</span></h3><div class="menu-item__prices"><span>3,9</span><span>19</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="brutNature" data-menu-part="desc">DO Penedès · Mistinguett.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="combinados">
+      <h2 class="menu-block__title" data-menu-section="spirits" data-menu-field="title">Combinados</h2>
+      <p class="menu-block__note" data-menu-section="spirits" data-menu-field="note">*El precio indicado es por la dosis de licor de 60 ml; los refrescos se cobran aparte.</p>
+
+      <h3 class="menu-subtitle" data-menu-sub="gin">Gin</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Hendrick's</h3><span class="menu-item__price">9</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Gin Mare</h3><span class="menu-item__price">9</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Seagrams</h3><span class="menu-item__price">7</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Tanqueray</h3><span class="menu-item__price">7</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Bulldog</h3><span class="menu-item__price">7</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Gin MG</h3><span class="menu-item__price">5,5</span></div></li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="vodka">Vodka</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Grey Goose</h3><span class="menu-item__price">9</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Absolut</h3><span class="menu-item__price">6</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Skyy</h3><span class="menu-item__price">5,5</span></div></li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="rum">Ron</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Zacapa</h3><span class="menu-item__price">13</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Brugal</h3><span class="menu-item__price">6</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Abuelo Añejo</h3><span class="menu-item__price">5,5</span></div></li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="whiskey">Whiskey</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Glenmorangie</h3><span class="menu-item__price">9</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Johnnie Walker Black Label</h3><span class="menu-item__price">8</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Jack Daniel's</h3><span class="menu-item__price">7</span></div></li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="tequila">Tequila &amp; Co</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Herradura Reposado</h3><span class="menu-item__price">9</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Jose Cuervo Tradicional</h3><span class="menu-item__price">6,5</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Mezcal Unión</h3><span class="menu-item__price">9</span></div></li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-sub="liqueurs">Licores</h3>
+      <ul class="menu-list menu-list--compact">
+        <li class="menu-item"><div class="menu-item__head"><h3>Fernet</h3><span class="menu-item__price">5,5</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Ratafia «L'Hostia»</h3><span class="menu-item__price">6</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Limoncello «Villa Massa»</h3><span class="menu-item__price">6</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Baileys</h3><span class="menu-item__price">5,5</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Campari</h3><span class="menu-item__price">5</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Disaronno</h3><span class="menu-item__price">6</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Aperol</h3><span class="menu-item__price">5</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3>Cointreau</h3><span class="menu-item__price">6</span></div></li>
+      </ul>
+    </section>
+
+    <section class="menu-block" id="cafe-refrescos">
+      <h2 class="menu-block__title" data-menu-section="coffee" data-menu-field="title">Cafetería de especialidad</h2>
+      <p class="menu-block__note" data-menu-section="coffee" data-menu-field="note">Café Familia Osorio, de especialidad y tostado en Barcelona. *Pídelo como más te gusta: leche de avena, descafeinado, con o sin espuma, en taza o en vaso.</p>
+      <p class="menu-block__sizes"><span data-i18n="sizeSmall">Pequeño</span><span data-i18n="sizeLarge">Grande</span></p>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="caramel" data-menu-part="name">Caramel Iced Latte*</span></h3><div class="menu-item__prices"><span>4,5</span><span>5,5</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="classicLatte" data-menu-part="name">Classic Iced Latte*</span></h3><div class="menu-item__prices"><span>3,7</span><span>5</span></div></div>
+        </li>
+        <li class="menu-item"><div class="menu-item__head"><h3><span data-menu-item="flatWhite" data-menu-part="name">Flat White*</span></h3><span class="menu-item__price">3</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3><span data-menu-item="latte" data-menu-part="name">Latte*</span></h3><span class="menu-item__price">2,5</span></div></li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="matcha" data-menu-part="name">Matcha Latte*</span></h3><div class="menu-item__prices"><span>3,7</span><span>5</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="chai" data-menu-part="name">Chai Latte*</span></h3><div class="menu-item__prices"><span>3,7</span><span>5</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="espresso" data-menu-part="name">Espresso</span></h3><div class="menu-item__prices"><span>1,5</span><span>2,5</span></div></div>
+        </li>
+      </ul>
+
+      <h3 class="menu-subtitle" data-menu-section="coffee" data-menu-field="refreshTitle">Refrescos caseros y alternativos</h3>
+      <p class="menu-block__note" data-menu-section="coffee" data-menu-field="refreshNote">Si quieres algo diferente, pide tu refresco favorito.</p>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="icedTea" data-menu-part="name">Iced tea casero</span></h3><div class="menu-item__prices"><span>2,9</span><span>3,9</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="lemonade" data-menu-part="name">Limonada casera</span></h3><div class="menu-item__prices"><span>2,9</span><span>3,9</span></div></div>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="juice" data-menu-part="name">Zumo</span></h3><div class="menu-item__prices"><span>2,9</span><span>3,9</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="juice" data-menu-part="desc">De manzana o naranja, sin más.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="greenQueen" data-menu-part="name">Green Queen</span></h3><div class="menu-item__prices"><span>3,9</span><span>5,2</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="greenQueen" data-menu-part="desc">Espinacas, apio, manzana y jengibre.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="orangePower" data-menu-part="name">Orange Power</span></h3><div class="menu-item__prices"><span>3,9</span><span>5,2</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="orangePower" data-menu-part="desc">Zanahoria, jengibre y naranja.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head"><h3><span data-menu-item="redHunter" data-menu-part="name">Red Hunter</span></h3><div class="menu-item__prices"><span>3,9</span><span>5,2</span></div></div>
+          <p class="menu-item__desc"><span data-menu-item="redHunter" data-menu-part="desc">Remolacha, manzana, limón y jengibre.</span></p>
+        </li>
+        <li class="menu-item"><div class="menu-item__head"><h3><span data-menu-item="gingerBeer" data-menu-part="name">Ginger beer</span></h3><span class="menu-item__price">3,2</span></div></li>
+        <li class="menu-item"><div class="menu-item__head"><h3><span data-menu-item="kombucha" data-menu-part="name">Lov Kombucha</span></h3><span class="menu-item__price">4,6</span></div></li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="sunny" data-menu-part="name">Sunny</span></h3></div>
+          <p class="menu-item__desc"><span data-menu-item="sunny" data-menu-part="desc">Té negro y verde, pera, membrillo</span> y flor de azahar.</p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="tropical" data-menu-part="name">Tropical</span></h3></div>
+          <p class="menu-item__desc"><span data-menu-item="tropical" data-menu-part="desc">Té negro y verde, rooibos, mango</span>, maracuyá, granada e hibisco.</p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="clara" data-menu-part="name">Clara</span></h3></div>
+          <p class="menu-item__desc"><span data-menu-item="claraTea" data-menu-part="desc">Té negro y verde, limón, avena</span>, lúpulo y achicoria.</p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head"><h3><span data-menu-item="baya" data-menu-part="name">Baya</span></h3></div>
+          <p class="menu-item__desc"><span data-menu-item="baya" data-menu-part="desc">Té negro y verde, maracuyá, remolacha</span>, pasionaria, jengibre y açai.</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="menu-page__foot">
+      <div class="menu-page__links">
+        <a class="btn primary" href="https://wearecacho.com/reservas" data-i18n="mp_book">Reservar mesa</a>
+        <a class="btn secondary" href="./comidas.html" data-i18n="mp_foodMenu">Comidas</a>
+        <a class="btn secondary" href="./menu-grupos.html" data-i18n="mp_groupsMenu">Menú grupos</a>
+      </div>
+    </footer>
+  </main>
+
+  <aside id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__view" data-cookie-view="main">
+        <h2 id="cookie-banner-title" class="cookie-banner__title" data-i18n="cookieBannerTitle">Cookies y privacidad</h2>
+        <p class="cookie-banner__text" data-i18n="cookieBannerText">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps. Puedes aceptar todas, usar solo las necesarias o configurarlas.</p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="accept-all" data-i18n="cookieAcceptAll">Aceptar todas</button>
+          <button type="button" class="btn secondary" data-cookie-action="reject" data-i18n="cookieReject">Solo necesarias</button>
+          <button type="button" class="btn secondary" data-cookie-action="open-prefs" data-i18n="cookieCustomize">Configurar</button>
+        </div>
+        <a class="cookie-banner__link" href="./politica-cookies.html" data-i18n="cookieMore">Política de cookies</a>
+      </div>
+      <div class="cookie-banner__view" data-cookie-view="prefs" hidden>
+        <h2 class="cookie-banner__title" data-i18n="cookiePrefsTitle">Preferencias de cookies</h2>
+        <ul class="cookie-prefs">
+          <li class="cookie-prefs__item cookie-prefs__item--locked">
+            <label>
+              <input type="checkbox" checked disabled>
+              <span>
+                <strong data-i18n="cookiePrefEssential">Necesarias</strong>
+                <small data-i18n="cookiePrefEssentialDesc">Idioma y funcionamiento básico del sitio.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="analytics">
+              <span>
+                <strong data-i18n="cookiePrefAnalytics">Analítica (Google Analytics)</strong>
+                <small data-i18n="cookiePrefAnalyticsDesc">Nos ayuda a entender cómo se usa la web.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="marketing">
+              <span>
+                <strong data-i18n="cookiePrefMarketing">Marketing (Meta Pixel)</strong>
+                <small data-i18n="cookiePrefMarketingDesc">Mide campañas y conversiones en redes sociales.</small>
+              </span>
+            </label>
+          </li>
+          <li class="cookie-prefs__item">
+            <label>
+              <input type="checkbox" data-cookie-pref="maps">
+              <span>
+                <strong data-i18n="cookiePrefMaps">Mapa (Google Maps)</strong>
+                <small data-i18n="cookiePrefMapsDesc">Muestra el mapa de ubicación embebido.</small>
+              </span>
+            </label>
+          </li>
+        </ul>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="save-prefs" data-i18n="cookieSave">Guardar preferencias</button>
+          <button type="button" class="btn secondary" data-cookie-action="back" data-i18n="cookieBack">Volver</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="mobile-bottom-bar" data-i18n-aria="mobileBarAria" aria-label="Acciones rápidas">
+    <button type="button" class="cookie-settings-fab" data-cookie-manage data-i18n="cookieSettingsFab">Ajustes cookies</button>
+    <a class="mobile-cta btn primary" href="./index.html#reservas" data-i18n="bookTable">Reservar mesa</a>
+    <a class="whatsapp" href="https://wa.me/" data-i18n-aria="whatsappAria" aria-label="Contactar por WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <strong>CACHO</strong>
+      <p>Carrer de Llull, 27 · Barcelona<br>hello@wearecacho.com · 931 398 813</p>
+    </div>
+    <div>
+      <strong data-i18n="footerNetworks">Redes</strong>
+      <ul class="footer-social">
+        <li>
+          <a class="footer-social__link" href="https://www.instagram.com/wearecacho/" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialInstagram" aria-label="Instagram">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.846-10.405a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.facebook.com/CACHO-110555300531308" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialFacebook" aria-label="Facebook">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer-social__link" href="https://www.tripadvisor.es/Restaurant_Review-g187497-d20861655-Reviews-Cacho-Barcelona_Catalonia.html" target="_blank" rel="noopener noreferrer" data-i18n-aria="footerSocialTripadvisor" aria-label="Tripadvisor">
+            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 2.174-4.35 11.934 11.934 0 0 1 1.86-.151c.664 0 1.313.05 1.943.151a5.958 5.958 0 0 0 2.178 4.353 5.977 5.977 0 0 0 4.036-10.432L24 6.648h-4.35a12.078 12.078 0 0 0-7.644-2.353zM6.003 16.14a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95zm11.994 0a3.975 3.975 0 1 1 0-7.95 3.975 3.975 0 0 1 0 7.95z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <strong data-i18n="footerSitemap">Mapa del sitio</strong>
+      <ul class="footer-sitemap">
+        <li><a href="./index.html" data-i18n="footerHome">Inicio</a></li>
+        <li><a href="./index.html#reservas" data-i18n="footerReservations">Reservas</a></li>
+        <li><a href="./comidas.html" data-i18n="menuFood">Comidas</a></li>
+        <li><a href="./bebidas.html" aria-current="page" data-i18n="menuDrinks">Bebidas</a></li>
+        <li><a href="./menu-grupos.html" data-i18n="menuGroups">Menú grupos</a></li>
+        <li><a href="./index.html#catering" data-i18n="navBusiness">Servicios</a></li>
+        <li><a href="./index.html#location" data-i18n="navLocation">Ubicación</a></li>
+        <li><a href="./index.html#contacto" data-i18n="footerContact">Contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-legal-bar">
+    <p>
+      <span data-i18n="footerLegalCopyright">CACHO © 2020–2026 TODOS LOS DERECHOS RESERVADOS</span> |
+      <a href="./aviso-legal.html" data-i18n="footerLegalNotice">Aviso legal</a> |
+      <a href="./politica-cookies.html" data-i18n="footerLegalCookies">Políticas de cookies</a>
+    </p>
+  </div>
+
+  <script src="./menu-i18n.js?v=1"></script>
+  <script src="./script.js?v=mobile-bar-dock"></script>
+</body>
+</html>
