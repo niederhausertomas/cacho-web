@@ -61,7 +61,7 @@ const translations = {
     cateringCard1Text1:
       "Si tienes un evento, nosotros nos encargamos del sabor. Con nuestro Cacho Catering, te lo ponemos fácil: calidad, buen producto y el toque de Cacho que tu evento merece.",
     cateringCard1Text2:
-      "Para empresas, celebraciones y cualquier ocasión especial. Escríbenos y lo hacemos posible. 💬 HELLO@WEARECACHO.COM",
+      "Para empresas, celebraciones y cualquier ocasión especial. Escríbenos y lo hacemos posible.",
     cateringCard2Title: "Cacho Plato",
     cateringCard2Text1:
       "Entra, coge tu plato y elige entre nuestras diferentes opciones ya cocinadas previamente. Carnes y guarniciones de veggies con los mejores productos de temporada. Una opción sana que te robará poco tiempo en tu ajetreado día a día, además de económico.",
@@ -74,6 +74,7 @@ const translations = {
       "Tus amigos van llegando y cuando pasa nuestra camarera cae la segunda ronda, ya sabes que vas terminando cenando ahí.",
     cateringCard3Text3:
       "Gran variedad de opciones, Smash Burger, carnes Argentinas, milanesas, sandwiches, nachos, opciones veganas, entre otras.",
+    cateringContactLink: "Formulario de contacto",
     tapeLanguages: "IDIOMAS / WPML",
     languagesTitle: "Una página base y sus traducciones SEO por idioma.",
     languagesText:
@@ -253,7 +254,7 @@ const translations = {
     cateringCard1Text1:
       "Si tens un esdeveniment, nosaltres ens encarreguem del sabor. Amb el nostre Cacho Catering, t'ho posem fàcil: qualitat, bon producte i el toc de Cacho que el teu esdeveniment mereix.",
     cateringCard1Text2:
-      "Per a empreses, celebracions i qualsevol ocasió especial. Escriu-nos i ho fem possible. 💬 HELLO@WEARECACHO.COM",
+      "Per a empreses, celebracions i qualsevol ocasió especial. Escriu-nos i ho fem possible.",
     cateringCard2Title: "Cacho Plat",
     cateringCard2Text1:
       "Entra, agafa el teu plat i tria entre les nostres diferents opcions ja cuinades prèviament. Carns i guarnicions de veggies amb els millors productes de temporada. Una opció sana que et robarà poc temps en el teu dia a dia, a més d'econòmica.",
@@ -266,6 +267,7 @@ const translations = {
       "Els teus amics van arribant i quan passa la nostra cambrera cau la segona ronda, ja saps que acabaràs sopant allà.",
     cateringCard3Text3:
       "Gran varietat d'opcions: Smash Burger, carns argentines, milaneses, sandwiches, nachos, opcions veganes, entre d'altres.",
+    cateringContactLink: "Formulari de contacte",
     tapeLanguages: "IDIOMES / WPML",
     languagesTitle: "Una pàgina base i les seves traduccions SEO per idioma.",
     languagesText:
@@ -445,7 +447,7 @@ const translations = {
     cateringCard1Text1:
       "If you have an event, we take care of the flavour. With Cacho Catering, we make it easy: quality, great produce and the Cacho touch your event deserves.",
     cateringCard1Text2:
-      "For companies, celebrations and any special occasion. Get in touch and we'll make it happen. 💬 HELLO@WEARECACHO.COM",
+      "For companies, celebrations and any special occasion. Get in touch and we'll make it happen.",
     cateringCard2Title: "Cacho Plato",
     cateringCard2Text1:
       "Come in, grab your plate and choose from our different pre-cooked options. Meats and veggie sides with the best seasonal produce. A healthy option that won't take much time out of your busy day — and it's affordable too.",
@@ -458,6 +460,7 @@ const translations = {
       "Your friends start arriving and when our server comes by for round two, you know you're going to end up having dinner right there.",
     cateringCard3Text3:
       "A wide range of options: Smash Burger, Argentine meats, milanesas, sandwiches, nachos, vegan options and more.",
+    cateringContactLink: "Contact form",
     tapeLanguages: "LANGUAGES / WPML",
     languagesTitle: "A base page and its SEO translations per language.",
     languagesText:
@@ -636,9 +639,8 @@ function getNavSections() {
 }
 
 function applyActiveNavLink(activeLink) {
-  if (!activeLink) return;
   navSectionLinks.forEach((link) => {
-    const isActive = link === activeLink;
+    const isActive = Boolean(activeLink && link === activeLink);
     link.classList.toggle("is-active", isActive);
     if (isActive) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
@@ -654,6 +656,13 @@ function getNavScrollOffset() {
   return headerHeight + 12;
 }
 
+function getNavScrollExtra() {
+  const extra = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--nav-scroll-extra")
+  );
+  return Number.isFinite(extra) && extra > 0 ? extra : 30;
+}
+
 function getNavScrollTarget(el) {
   if (!el) return null;
   return (
@@ -661,9 +670,10 @@ function getNavScrollTarget(el) {
   );
 }
 
-function getSectionPageTop(el) {
-  const target = getNavScrollTarget(el);
-  return target.getBoundingClientRect().top + window.scrollY;
+function getSectionBounds(el) {
+  const rect = el.getBoundingClientRect();
+  const top = rect.top + window.scrollY;
+  return { top, bottom: top + rect.height };
 }
 
 function scrollToNavSection(selector, { behavior = "smooth", updateHash = true } = {}) {
@@ -672,7 +682,7 @@ function scrollToNavSection(selector, { behavior = "smooth", updateHash = true }
   const section = document.querySelector(selector);
   if (!section) return;
 
-  const offset = getNavScrollOffset();
+  const offset = getNavScrollOffset() + getNavScrollExtra();
   const target = getNavScrollTarget(section);
   const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
 
@@ -687,17 +697,36 @@ function setActiveLink() {
   if (!navSectionLinks.length) return;
 
   const sections = getNavSections().sort(
-    (a, b) => getSectionPageTop(a.el) - getSectionPageTop(b.el)
+    (a, b) => getSectionBounds(a.el).top - getSectionBounds(b.el).top
   );
   if (!sections.length) return;
 
   const scrollPos = window.scrollY + getNavScrollOffset();
+  const firstBounds = getSectionBounds(sections[0].el);
+  const lastBounds = getSectionBounds(sections[sections.length - 1].el);
+
+  if (scrollPos < firstBounds.top - 1) {
+    applyActiveNavLink(null);
+    return;
+  }
+
+  for (const section of sections) {
+    const { top, bottom } = getSectionBounds(section.el);
+    if (scrollPos >= top && scrollPos < bottom) {
+      applyActiveNavLink(section.link);
+      return;
+    }
+  }
+
+  if (scrollPos >= lastBounds.bottom - 1) {
+    applyActiveNavLink(sections[sections.length - 1].link);
+    return;
+  }
+
   let active = sections[0];
-
   sections.forEach((section) => {
-    if (getSectionPageTop(section.el) <= scrollPos + 1) active = section;
+    if (getSectionBounds(section.el).top <= scrollPos + 1) active = section;
   });
-
   applyActiveNavLink(active.link);
 }
 
@@ -713,14 +742,19 @@ function initNavScrollSpy() {
   };
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const sectionAnchorLinks = [
+    ...navSectionLinks,
+    ...document.querySelectorAll(".card-section-link[href^='#']"),
+  ];
 
-  navSectionLinks.forEach((link) => {
+  sectionAnchorLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       const selector = link.getAttribute("href");
       if (!selector || !selector.startsWith("#")) return;
 
       event.preventDefault();
-      applyActiveNavLink(link);
+      const navLink = navSectionLinks.find((item) => item.getAttribute("href") === selector);
+      applyActiveNavLink(navLink || null);
       scrollToNavSection(selector, {
         behavior: prefersReducedMotion ? "auto" : "smooth",
         updateHash: true,
