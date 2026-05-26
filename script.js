@@ -648,12 +648,28 @@ function applyActiveNavLink(activeLink) {
 }
 
 function getNavScrollOffset() {
-  const headerHeight = header ? header.offsetHeight : 0;
-  const scrollPadding = parseFloat(
-    getComputedStyle(document.documentElement).scrollPaddingTop
-  );
-  if (Number.isFinite(scrollPadding) && scrollPadding > 0) return scrollPadding;
-  return headerHeight + 12;
+  if (header) {
+    const shell = header.querySelector(".nav-shell");
+    const brand = shell?.querySelector(".brand");
+    const toggle = shell?.querySelector(".nav-toggle");
+    const lang = shell?.querySelector(".nav-lang");
+    if (brand && toggle) {
+      const headerTop = header.getBoundingClientRect().top;
+      const rowBottom = Math.max(
+        brand.getBoundingClientRect().bottom,
+        toggle.getBoundingClientRect().bottom,
+        lang ? lang.getBoundingClientRect().bottom : 0
+      );
+      return Math.ceil(rowBottom - headerTop) + 8;
+    }
+    return Math.ceil(header.getBoundingClientRect().height) + 8;
+  }
+
+  return 12;
+}
+
+function isMobileNav() {
+  return window.matchMedia("(max-width: 980px)").matches;
 }
 
 function getNavScrollExtra() {
@@ -663,6 +679,13 @@ function getNavScrollExtra() {
   return Number.isFinite(extra) && extra > 0 ? extra : 30;
 }
 
+function getMobileScrollExtra() {
+  const extra = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--nav-scroll-mobile-extra")
+  );
+  return Number.isFinite(extra) && extra >= 0 ? extra : 270;
+}
+
 function getNavScrollTarget(el) {
   if (!el) return null;
   return (
@@ -670,10 +693,25 @@ function getNavScrollTarget(el) {
   );
 }
 
+function getElementPageTop(el) {
+  let top = 0;
+  let node = el;
+
+  while (node) {
+    top += node.offsetTop;
+    node = node.offsetParent;
+  }
+
+  return top;
+}
+
+function prepareSectionForScroll(section) {
+  section.classList.add("is-visible");
+}
+
 function getSectionBounds(el) {
-  const rect = el.getBoundingClientRect();
-  const top = rect.top + window.scrollY;
-  return { top, bottom: top + rect.height };
+  const top = getElementPageTop(el);
+  return { top, bottom: top + el.offsetHeight };
 }
 
 function scrollToNavSection(selector, { behavior = "smooth", updateHash = true } = {}) {
@@ -682,15 +720,33 @@ function scrollToNavSection(selector, { behavior = "smooth", updateHash = true }
   const section = document.querySelector(selector);
   if (!section) return;
 
-  const offset = getNavScrollOffset() + getNavScrollExtra();
-  const target = getNavScrollTarget(section);
-  const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+  const performScroll = () => {
+    prepareSectionForScroll(section);
 
-  if (updateHash && window.location.hash !== selector) {
-    history.pushState(null, "", selector);
+    const mobile = isMobileNav();
+    const target = mobile ? section : getNavScrollTarget(section);
+    const offset =
+      getNavScrollOffset() + (mobile ? getMobileScrollExtra() : getNavScrollExtra());
+    const top = Math.max(0, getElementPageTop(target) - offset);
+
+    if (updateHash && window.location.hash !== selector) {
+      history.pushState(null, "", selector);
+    }
+
+    window.scrollTo({ top, behavior });
+  };
+
+  if (document.body.classList.contains("nav-open")) {
+    closeNav();
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.setTimeout(performScroll, 100);
+      });
+    });
+    return;
   }
 
-  window.scrollTo({ top, behavior });
+  performScroll();
 }
 
 function setActiveLink() {
