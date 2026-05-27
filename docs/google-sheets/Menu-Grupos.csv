@@ -1,0 +1,24 @@
+id,section,order,name_es,name_ca,name_en,desc_es,desc_ca,desc_en,price,price2,mark,active
+package_full,full,1,,,,,,,29,,,TRUE
+gr_starter1,full,2,Olivas al chimi,Olives al chimi,Chimi olives,,,,,,,TRUE
+gr_starter2,full,3,Zanahorias asadas,Pastanagues rostides,Roasted carrots,,,,,,,TRUE
+gr_main1,full,4,Smash burger Cheese & Bacon + patatas bravas,Smash burger Cheese & Bacon + patates braves,Smash burger Cheese & Bacon + bravas potatoes,,,,,,,TRUE
+gr_main2,full,5,Veggie portobello burger + papas horneadas,Veggie portobello burger + patates al forn,Veggie portobello burger + roasted potatoes,,,,,,,TRUE
+gr_main3,full,6,Entraña + patatas con tomates cherry confitados,Entraña + patates amb tomàquets cherry confitats,Skirt steak + potatoes with confit cherry tomatoes,,,,,,,TRUE
+gr_main4,full,7,Milanesa napolitana + papa asada,Milanesa napolitana + patata rostida,Milanesa napolitana + baked potato,,,,,,,TRUE
+gr_dessert1,full,8,Tarta tatin,Tarta tatin,Tatin tart,,,,,,,TRUE
+gr_dessert2,full,9,Brownie (2 por persona),Brownie (2 per persona),Brownie (2 per person),,,,,,,TRUE
+gr_drink1,full,10,Copa Estrella Damm o clara,Copa Estrella Damm o clara,Estrella Damm or shandy,,,,,,,TRUE
+gr_drink2,full,11,Refresco,Refresc,Soft drink,,,,,,,TRUE
+gr_drink3,full,12,Vino Itant o Saltimbanqui,Vi Itant o Saltimbanqui,Itant or Saltimbanqui wine,,,,,,,TRUE
+package_pica,pica,13,,,,,,,29,,,TRUE
+gr_pp1,pica,14,Nachos,Nachos,Nachos,,,,,,,TRUE
+gr_pp2,pica,15,Hummus con focaccia,Hummus amb focaccia,Hummus with focaccia,,,,,,,TRUE
+gr_pp3,pica,16,Patatas bravas,Patates braves,Bravas potatoes,,,,,,,TRUE
+gr_pp4,pica,17,Zanahorias asadas,Pastanagues rostides,Roasted carrots,,,,,,,TRUE
+gr_pp5,pica,18,Entraña (½ ración por persona),Entraña (½ ració per persona),Skirt steak (½ portion per person),,,,,,,TRUE
+gr_pp6,pica,19,Brownie,Brownie,Brownie,,,,,,,TRUE
+gr_pp7,pica,20,Tarta tatin (3 por persona),Tarta tatin (3 per persona),Tatin tart (3 per person),,,,,,,TRUE
+gr_pp8,pica,21,Copa Estrella Damm o clara,Copa Estrella Damm o clara,Estrella Damm or shandy,,,,,,,TRUE
+gr_pp9,pica,22,Refresco,Refresc,Soft drink,,,,,,,TRUE
+gr_pp10,pica,23,Vino Itant o Saltimbanqui,Vi Itant o Saltimbanqui,Itant or Saltimbanqui wine,,,,,,,TRUE

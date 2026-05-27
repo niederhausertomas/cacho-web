@@ -1,0 +1,50 @@
+page,section,field,text_es,text_ca,text_en
+dinner,salads,title,Ensaladas,Amanides,Salads
+dinner,salads,note,*Agrega pollo por solo 3€,*Afegeix pollastre per només 3€,*Add chicken for just €3
+dinner,share,title,Para compartir,Per compartir,To share
+dinner,grill,title,Grill,Graella,Grill
+dinner,grill,note,"*Todas nuestras carnes vienen acompañadas con patatas asadas, tomates cherry confitados y chimichurri.","*Totes les nostres carns vénen amb patates rostides, tomàquets cherry confitats i chimichurri.","*All our meats come with roasted potatoes, confit cherry tomatoes and chimichurri."
+dinner,milanese,title,Milanesas,Milaneses,Milanesas
+dinner,milanese,note,"*Todas las milanesas son de ternera y vienen con patatas asadas, pico de gallo y crème fraîche.","*Totes les milaneses són de vedella i venen amb patates rostides, pico de gallo i crème fraîche.","*All milanesas are beef and come with roasted potatoes, pico de gallo and crème fraîche."
+dinner,burgers,title,Burgers,Burgers,Burgers
+dinner,burgers,extrasTitle,Tunea tu burger o sandwich,Personalitza la teva burger o sandwich,Customise your burger or sandwich
+dinner,burgers,extrasLead,Añade lo que más se te antoje… ¡Sin miedo!,Afegeix el que més et vagi de gust… Sense por!,Add whatever you're craving… No fear!
+dinner,sandwiches,title,Sándwiches,Sandwiches,Sandwiches
+dinner,sandwiches,note,*Todos nuestros sándwiches vienen con pan focaccia.,*Tots els nostres sandwiches venen amb pa focaccia.,*All our sandwiches come on focaccia bread.
+dinner,desserts,title,Dulces,Dolços,Desserts
+dinner,desserts,note,"*Agrégale una bola de helado de vainilla por 2,5€","*Afegeix-hi una bola de gelat de vainilla per 2,5€",*Add a scoop of vanilla ice cream for €2.5
+drinks,cocktails,title,Cocktails & Co,Cocktails & Co,Cocktails & Co
+drinks,cocktails,note,"Si te apetece otro clásico, pídenos tu preferido.","Si et ve de gust un altre clàssic, demana'ns el teu preferit.","If you're in the mood for another classic, just ask for your favourite."
+drinks,beer,title,Cervezas & Co,Cerveses & Co,Beers & Co
+drinks,zero,title,Sin alcohol,Sense alcohol,Non-alcoholic
+drinks,wine,title,Vinos,Vins,Wines
+drinks,spirits,title,Combinados,Combinats,Spirits
+drinks,spirits,note,*El precio indicado es por la dosis de licor de 60 ml; los refrescos se cobran aparte.,*El preu indicat és per la dosi de licor de 60 ml; els refrescos es cobren a part.,*Price is for a 60 ml pour; mixers charged separately.
+drinks,coffee,title,Cafetería de especialidad,Cafeteria d'especialitat,Specialty coffee
+drinks,coffee,note,"Café Familia Osorio, de especialidad y tostado en Barcelona. *Pídelo como más te gusta: leche de avena, descafeinado, con o sin espuma, en taza o en vaso.","Cafè Familia Osorio, d'especialitat i torrat a Barcelona. *Demana'l com més t'agradi: llet d'avena, descafeïnat, amb o sense escuma, en tassa o en got.","Familia Osorio specialty coffee, roasted in Barcelona. *Have it your way: oat milk, decaf, with or without foam, cup or glass."
+drinks,coffee,refreshNote,"Si quieres algo diferente, pide tu refresco favorito.","Si vols alguna cosa diferent, demana el teu refresc preferit.","If you want something different, ask for your favourite soft drink."
+drinks,coffee,refreshTitle,Refrescos caseros y alternativos,Refrescos casolans i alternatius,Homemade & alternative soft drinks
+drinks,wine,subtitle_red,Tintos,Negres,Red
+drinks,wine,subtitle_redNat,Tintos naturales,Negres naturals,Natural reds
+drinks,wine,subtitle_whiteNat,Blancos naturales,Blancs naturals,Natural whites
+drinks,wine,subtitle_white,Blancos,Blancs,Whites
+drinks,wine,subtitle_rose,Rosado,Rosat,Rosé
+drinks,wine,subtitle_vermouth,Vermut,Vermut,Vermouth
+drinks,wine,subtitle_cava,Cava,Cava,Cava
+drinks,wine,subtitle_gin,Gin,Gin,Gin
+drinks,wine,subtitle_vodka,Vodka,Vodka,Vodka
+drinks,wine,subtitle_rum,Ron,Ron,Rum
+drinks,wine,subtitle_whiskey,Whiskey,Whisky,Whiskey
+drinks,wine,subtitle_tequila,Tequila & Co,Tequila & Co,Tequila & Co
+drinks,wine,subtitle_liqueurs,Licores,Licors,Liqueurs
+groups,full,title,Menú grupos,Menú grups,Group menu
+groups,full,note,*Disponible para grupos de 12 personas o más (1 menú cada 3 personas).,*Disponible per a grups de 12 persones o més (1 menú cada 3 persones).,*Available for groups of 12 or more (1 menu per 3 people).
+groups,full,mainTitle,Plato fuerte con acompañamiento a escoger,Plat fort amb acompanyament a escollir,Main course with your choice of side
+groups,full,mainNote,Serviremos ½ ración por persona del plato fuerte elegido.,Servirem ½ ració per persona del plat fort triat.,We'll serve a half portion per person of the selected main course.
+groups,full,dessertTitle,Postre,Postre,Dessert
+groups,full,drinkTitle,Bebida,Beguda,Drink
+groups,full,contactTitle,Reservas y consultas,Reserves i consultes,Bookings & enquiries
+groups,full,contactText,Para cualquier consulta escríbenos a,Per a qualsevol consulta escriu-nos a,"For any enquiries, email us at"
+groups,full,contactTextEnd,o llámanos al 931 398 813.,o truca'ns al 931 398 813.,or call 931 398 813.
+groups,pica,title,Menú pica pica,Menú pica pica,Pica-pica menu
+groups,pica,note,*Disponible para grupos de 24 personas o más (1 menú cada 3 personas).,*Disponible per a grups de 24 persones o més (1 menú cada 3 persones).,*Available for groups of 24 or more (1 menu per 3 people).

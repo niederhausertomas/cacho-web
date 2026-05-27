@@ -628,10 +628,12 @@ function applyMenuContent(lang) {
   } else if (page === "drinks") {
     document.title = MENU_PAGE_TRANSLATIONS[lang].drinksPageTitle;
     if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].drinksPageDesc;
-  } else if (page === "groups") {
+  } else   if (page === "groups") {
     document.title = MENU_PAGE_TRANSLATIONS[lang].groupsPageTitle;
     if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].groupsPageDesc;
   }
+
+  if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);
 }
 
 function mergeMenuTranslations() {

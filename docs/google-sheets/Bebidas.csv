@@ -1,0 +1,26 @@
+id,section,order,name_es,name_ca,name_en,desc_es,desc_ca,desc_en,price,price2,mark,active
+tommy,cocktails,1,Tommy's Margarita,Tommy's Margarita,Tommy's Margarita,"Tequila, lima y sirope de agave.","Tequila, llima i xarop d'agave.","Tequila, lime and agave syrup.",9,,,TRUE
+pornstar,cocktails,2,Porn Star Martini,Porn Star Martini,Porn Star Martini,"Vodka infusionado con vainilla, fruta de la pasión, sirope de vainilla y shot de cava.","Vodka infusionat amb vainilla, fruita de la passió, xarop de vainilla i xampany.","Vanilla-infused vodka, passion fruit, vanilla syrup and cava shot.",9,,,TRUE
+darkstormy,cocktails,3,Dark and Stormy,Dark and Stormy,Dark and Stormy,"Ron añejo, ginger beer, lima y angostura.","Ron envellit, ginger beer, llima i angostura.","Aged rum, ginger beer, lime and angostura.","8,5",,,TRUE
+spritz,cocktails,4,Aperol Spritz / Campari Spritz,Aperol Spritz / Campari Spritz,Aperol Spritz / Campari Spritz,"Aperol o Campari, cava y soda.","Aperol o Campari, cava i soda.","Aperol or Campari, cava and soda.",7,,,TRUE
+bloody,cocktails,5,Bloody Mary,Bloody Mary,Bloody Mary,"Vodka, salsa bloody, tomate y limón.","Vodka, salsa bloody, tomàquet i llimona.","Vodka, bloody sauce, tomato and lemon.","8,5",,,TRUE
+mimosa,cocktails,6,Mimosa Pomegranate,Mimosa Pomegranate,Mimosa Pomegranate,"Cava, zumo fresco de naranja y granada.","Cava, suc de taronja i magrana.","Cava, fresh orange and pomegranate juice.","5,5",,,TRUE
+mule,cocktails,7,Moscow Mule,Moscow Mule,Moscow Mule,"Vodka, ginger beer, lima y pepino.","Vodka, ginger beer, llima i cogombre.","Vodka, ginger beer, lime and cucumber.","8,5",,,TRUE
+mojito,cocktails,8,Mojito clásico,Mojito clàssic,Classic mojito,"Ron añejo, menta, lima, azúcar y soda.","Ron envellit, menta, llima, sucre i soda.","Aged rum, mint, lime, sugar and soda.","8,5",,,TRUE
+paloma,cocktails,9,Med Paloma,Med Paloma,Med Paloma,"Tequila infusionada con romero, Schweppes al pomelo rosa y lima.","Tequila infusionada amb romaní, Schweppes de pomelo rosa i llima.","Rosemary-infused tequila, pink grapefruit Schweppes and lime.","9,5",,,TRUE
+virginMojito,zero,10,Virgin Mojito,Virgin Mojito,Virgin Mojito,"Manzana, menta, lima y soda.","Poma, menta, llima i soda.","Apple, mint, lime and soda.","7,5",,,TRUE
+virginMary,zero,11,Virgin Mary,Virgin Mary,Virgin Mary,"Bloody Mary mix, zumo de tomate.","Mix Bloody Mary, suc de tomàquet.","Bloody Mary mix, tomato juice.","7,5",,,TRUE
+shirley,zero,12,Spicy Shirley,Spicy Shirley,Spicy Shirley,"Sirope de granada, limón y ginger beer.","Xarop de magrana, llimona i ginger beer.","Pomegranate syrup, lemon and ginger beer.",6,,,TRUE
+crodino,zero,13,Crodino Spritz,Crodino Spritz,Crodino Spritz,Crodino con un splash de soda.,Crodino amb un toc de soda.,Crodino with a splash of soda.,"5,5",,,TRUE
+karma,wine,14,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,,,,28,,,TRUE
+trus,wine,15,Trus Crianza 2020,Trus Criança 2020,Trus Crianza 2020,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,32,,,TRUE
+peona,wine,16,La Peona Brisat Orange Blanc,La Peona Brisat Orange Blanc,La Peona Brisat Orange Blanc,,,,33,,,TRUE
+uvala,wine,17,Uvala Brisat Malvasia Blanc,Uvala Brisat Malvasia Blanc,Uvala Brisat Malvasia Blanc,,,,36,,,TRUE
+flatWhite,coffee,18,Flat White*,Flat White*,Flat White*,,,,3,,,TRUE
+latte,coffee,19,Latte*,Latte*,Latte*,,,,"2,5",,,TRUE
+gingerBeer,coffee,20,Ginger beer,Ginger beer,Ginger beer,,,,"3,2",,,TRUE
+kombucha,coffee,21,Lov Kombucha,Lov Kombucha,Lov Kombucha,,,,"4,6",,,TRUE
+sunny,coffee,22,Sunny,Sunny,Sunny,"Té negro y verde, pera, membrillo y flor de azahar.","Te negre i verd, pera, codony i flor de taronger.","Black and green tea, pear, quince and orange blossom.",,,,TRUE
+tropical,coffee,23,Tropical,Tropical,Tropical,"Té negro y verde, rooibos, mango, maracuyá, granada e hibisco.","Te negre i verd, rooibos, mango, maracuyá, magrana i flor d'hibisc.","Black and green tea, rooibos, mango, passion fruit, pomegranate and hibiscus.",,,,TRUE
+clara,coffee,24,Clara,Clara,Shandy,,,,,,,TRUE
+baya,coffee,25,Baya,Baya,Baya,"Té negro y verde, maracuyá, remolacha, pasionaria, jengibre y açai.","Te negre i verd, maracuyá, remolatxa, passiflora, gingebre i açai.","Black and green tea, passion fruit, beetroot, passionaria, ginger and açai.",,,,TRUE
