@@ -9,7 +9,7 @@ const MENU_PAGE_KEYS = {
   groups: "grupos",
 };
 
-const MENU_CACHE_KEY = "cacho-menu-sheet-v1";
+const MENU_CACHE_KEY = "cacho-menu-sheet-v2";
 const MENU_CACHE_MS = 5 * 60 * 1000;
 
 let menuSheetData = null;
@@ -20,12 +20,23 @@ function menuLangSuffix(lang) {
   return ["es", "ca", "en"].includes(code) ? code : "es";
 }
 
+function currentMenuLang() {
+  return menuLangSuffix(
+    document.documentElement.lang ||
+      document.body.dataset.lang ||
+      localStorage.getItem("cacho-lang") ||
+      "es"
+  );
+}
+
 function formatPrice(value) {
   if (value === "" || value == null) return "";
-  const n = typeof value === "number" ? value : parseFloat(String(value).replace(",", "."));
+  const n =
+    typeof value === "number"
+      ? value
+      : parseFloat(String(value).replace(",", "."));
   if (Number.isNaN(n)) return String(value);
-  const s = Number.isInteger(n) ? String(n) : n.toFixed(1).replace(".", ",");
-  return s;
+  return Number.isInteger(n) ? String(n) : n.toFixed(1).replace(".", ",");
 }
 
 function pickLocalized(row, lang, base) {
@@ -41,7 +52,7 @@ function readCache() {
     const raw = sessionStorage.getItem(MENU_CACHE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-    if (!parsed.updatedAt || Date.now() - parsed.cachedAt > MENU_CACHE_MS) return null;
+    if (!parsed.data || Date.now() - parsed.cachedAt > MENU_CACHE_MS) return null;
     return parsed.data;
   } catch {
     return null;
@@ -64,27 +75,49 @@ function fetchMenuSheetJsonp(url) {
     const cb = `cachoMenu_${Date.now()}`;
     const separator = url.includes("?") ? "&" : "?";
     const script = document.createElement("script");
+    const timeout = setTimeout(() => {
+      cleanup();
+      reject(new Error("Timeout cargando carta (JSONP)"));
+    }, 15000);
 
-    window[cb] = (data) => {
-      resolve(data);
+    function cleanup() {
+      clearTimeout(timeout);
       delete window[cb];
       script.remove();
+    }
+
+    window[cb] = (data) => {
+      cleanup();
+      resolve(data);
     };
 
     script.src = `${url}${separator}callback=${cb}`;
     script.onerror = () => {
-      delete window[cb];
-      script.remove();
-      reject(new Error("No se pudo cargar la carta desde Google Sheets"));
+      cleanup();
+      reject(new Error("JSONP falló (¿Apps Script con soporte callback?)"));
     };
 
     document.head.appendChild(script);
   });
 }
 
+async function fetchMenuSheet(url) {
+  try {
+    const res = await fetch(url, { redirect: "follow", cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (fetchErr) {
+    console.warn("[menu-sheet] fetch:", fetchErr.message, "→ probando JSONP");
+    return fetchMenuSheetJsonp(url);
+  }
+}
+
 function loadMenuSheetData() {
   const url = (window.CACHO_MENU_SHEET_URL || "").trim();
-  if (!url) return Promise.resolve(null);
+  if (!url) {
+    console.warn("[menu-sheet] CACHO_MENU_SHEET_URL vacía en menu-sheet-config.js");
+    return Promise.resolve(null);
+  }
 
   const cached = readCache();
   if (cached) {
@@ -94,14 +127,16 @@ function loadMenuSheetData() {
 
   if (menuSheetLoadPromise) return menuSheetLoadPromise;
 
-  menuSheetLoadPromise = fetchMenuSheetJsonp(url)
+  menuSheetLoadPromise = fetchMenuSheet(url)
     .then((data) => {
+      if (!data || !data.comidas) throw new Error("Respuesta inválida del script");
       menuSheetData = data;
       writeCache(data);
+      console.info("[menu-sheet] Carta cargada", data.updatedAt);
       return data;
     })
     .catch((err) => {
-      console.warn("[menu-sheet]", err.message);
+      console.error("[menu-sheet]", err.message);
       return null;
     })
     .finally(() => {
@@ -141,8 +176,7 @@ function applyMenuFromSheet(lang) {
   const secciones = menuSheetData.secciones || [];
 
   document.querySelectorAll("[data-menu-item]").forEach((node) => {
-    const id = node.dataset.menuItem;
-    const row = items[id];
+    const row = items[node.dataset.menuItem];
     if (!row) return;
 
     const part = node.dataset.menuPart;
@@ -175,39 +209,46 @@ function applyMenuFromSheet(lang) {
   Object.keys(items).forEach((id) => {
     if (!id.startsWith("package_")) return;
     const row = items[id];
-    const section = row.section;
     const block = document.querySelector(
-      `[data-menu-section="${section}"]`
+      `[data-menu-section="${row.section}"]`
     )?.closest(".menu-block");
     const amount = block?.querySelector(".menu-package-price__amount");
     if (amount && row.price) amount.textContent = formatPrice(row.price);
   });
 
   document.querySelectorAll("[data-menu-section][data-menu-field]").forEach((node) => {
-    const section = node.dataset.menuSection;
-    const field = node.dataset.menuField || "title";
-    const text = sectionText(secciones, page, section, field, lang);
+    const text = sectionText(
+      secciones,
+      page,
+      node.dataset.menuSection,
+      node.dataset.menuField || "title",
+      lang
+    );
     if (text && node.childElementCount === 0) node.textContent = text;
   });
 
   document.querySelectorAll("[data-menu-sub]").forEach((node) => {
-    const sub = node.dataset.menuSub;
-    const text = sectionText(secciones, page, "wine", `subtitle_${sub}`, lang);
+    const text = sectionText(
+      secciones,
+      page,
+      "wine",
+      `subtitle_${node.dataset.menuSub}`,
+      lang
+    );
     if (text) node.textContent = text;
+  });
+}
+
+function refreshMenuFromSheet(lang) {
+  return loadMenuSheetData().then(() => {
+    applyMenuFromSheet(menuLangSuffix(lang || currentMenuLang()));
   });
 }
 
 function initMenuSheet() {
   if (!document.body.dataset.menuPage) return;
 
-  loadMenuSheetData().then(() => {
-    const lang =
-      document.documentElement.lang ||
-      document.body.dataset.lang ||
-      localStorage.getItem("cacho-lang") ||
-      "es";
-    applyMenuFromSheet(menuLangSuffix(lang));
-  });
+  refreshMenuFromSheet(currentMenuLang());
 }
 
 initMenuSheet();
