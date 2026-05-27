@@ -48,3 +48,14 @@ groups,full,contactText,Para cualquier consulta escríbenos a,Per a qualsevol co
 groups,full,contactTextEnd,o llámanos al 931 398 813.,o truca'ns al 931 398 813.,or call 931 398 813.
 groups,pica,title,Menú pica pica,Menú pica pica,Pica-pica menu
 groups,pica,note,*Disponible para grupos de 24 personas o más (1 menú cada 3 personas).,*Disponible per a grups de 24 persones o més (1 menú cada 3 persones).,*Available for groups of 24 or more (1 menu per 3 people).
+cachoBurgers,fries,title,Fritas & Co,Fritas & Co,Fries & Co
+cachoBurgers,fries,extrasTitle,+ Extras,+ Extras,+ Extras
+cachoBurgers,cookies,title,New York Cookie,New York Cookie,New York Cookie
+cachoBurgers,burgers,title,Burgers,Burgers,Burgers
+cachoBurgers,combo,title,Combo,Combo,Combo
+cachoBurgers,combo,lead,Elige tu burger,Tria la teva burger,Pick your burger
+cachoBurgers,combo,note,Incluye patatas naturales + refresco o Estrella Damm,Inclou patates naturals + refresc o Estrella Damm,Includes natural fries + soft drink or Estrella Damm
+cachoBurgers,combo,priceLabel,Añádelo por solo,Afegeix-lo per només,Add it for just
+cachoBurgers,addons,title,Añade a tu burger,Afegeix a la teva burger,Add to your burger
+cachoBurgers,kids,title,Kids menu,Kids menu,Kids menu
+cachoBurgers,kids,note,Cheeseburger simple o fingers kids · incluye patatas + refresco,Cheeseburger simple o fingers kids · inclou patates + refresc,Simple cheeseburger or kids fingers · includes fries + soft drink

@@ -7,13 +7,14 @@ La web ya tiene selector **ES / CA / EN**. La hoja debe reflejar eso: **cada tex
 ## Tu primer paso (ahora)
 
 1. [Google Sheets](https://sheets.google.com) → hoja en blanco → nombre: **CACHO — Cartas**.
-2. Creá **4 pestañas** (nombres exactos):
+2. Creá **5 pestañas** (nombres exactos):
 
 | Pestaña | Contenido |
 |---------|-----------|
 | `Comidas` | Platos, precios, descripciones × 3 idiomas |
 | `Bebidas` | Igual |
 | `Menú Grupos` | Ítems de menús de grupo × 3 idiomas |
+| `Cacho Burgers` | Carta smash burgers × 3 idiomas |
 | `Secciones` | Títulos de bloque, notas, subtítulos de vinos × 3 idiomas |
 
 3. Importá los CSV de `docs/google-sheets/` (Archivo → Importar → una pestaña cada vez):
@@ -23,7 +24,12 @@ La web ya tiene selector **ES / CA / EN**. La hoja debe reflejar eso: **cada tex
 | `Comidas.csv` | Comidas |
 | `Bebidas.csv` | Bebidas |
 | `Menu-Grupos.csv` | Menú Grupos |
+| `Cacho-Burgers.csv` | Cacho Burgers |
 | `Secciones.csv` | Secciones |
+
+Al importar: **Reemplazar datos en la hoja seleccionada** + separador **Coma**. Nunca «Reemplazar hoja de cálculo» (borra las otras pestañas).
+
+Tras importar `Cacho-Burgers.csv`, comprobá una fila sin descripción (ej. `cb_fries`): columna **J** = `price`, columna **M** = `TRUE` en `active`, columna **L** `mark` vacía.
 
 4. Avisame con la **URL de la hoja** para el Apps Script y conectar la web.
 
@@ -77,7 +83,7 @@ node scripts/export-menu-to-csv.mjs
 
 1. **Extensiones → Apps Script** → pegar `docs/google-sheets/apps-script.gs`.
 2. **Implementar → Aplicación web** → acceso **Cualquier persona**.
-3. La URL `/exec` devuelve JSON con `comidas`, `bebidas`, `grupos` y `secciones` (todo multidioma).
+3. La URL `/exec` devuelve JSON con `comidas`, `bebidas`, `grupos`, `cachoBurgers` y `secciones` (todo multidioma).
 4. Si cambiás el script, **Implementar → Administrar implementaciones → editar → Nueva versión** (la web usa la versión publicada).
 
 **Importante:** Tras añadir soporte JSONP al script, volvé a publicar una **nueva versión** de la implementación.
@@ -117,3 +123,5 @@ Los textos de navegación (Reservar, Contacto, etc.) siguen en `menu-i18n.js` / 
 **Comidas:** `salads`, `share`, `grill`, `milanese`, `burgers`, `sandwiches`, `desserts`  
 **Bebidas:** `cocktails`, `beer`, `zero`, `wine`, `spirits`, `coffee`  
 **Grupos:** `full`, `pica`
+
+**Cacho Burgers:** `fries`, `cookies`, `burgers`, `combo`, `addons`, `kids`

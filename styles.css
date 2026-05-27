@@ -962,6 +962,11 @@ iframe {
   line-height: 1.4;
 }
 
+.burgers-cta {
+  margin-top: 20px;
+  display: inline-flex;
+}
+
 .burgers-meet {
   padding-top: clamp(8px, 1.5vw, 14px);
   border-top: 1px solid var(--line);
@@ -1907,6 +1912,130 @@ body.cookie-banner-open .cookie-settings-fab {
 
 .menu-page--wide {
   max-width: 780px;
+}
+
+.menu-doc-page--cacho-burgers {
+  background: var(--paper-warm);
+}
+
+.menu-page--burgers {
+  max-width: 640px;
+}
+
+.menu-page--burgers .menu-page__brand {
+  display: block;
+  width: min(200px, 55vw);
+  height: auto;
+  margin: 0 auto 12px;
+}
+
+.tape--burgers {
+  background: var(--beer);
+  color: var(--black);
+}
+
+.menu-page--burgers .menu-block__title {
+  background: var(--black);
+}
+
+.menu-burgers-panel {
+  margin-top: 16px;
+  padding: 18px 20px;
+  background: var(--beer);
+  border-radius: var(--radius);
+  color: var(--black);
+}
+
+.menu-burgers-panel--addons {
+  margin-top: 24px;
+}
+
+.menu-burgers-panel__title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menu-burgers-panel .menu-extras__grid li {
+  font-weight: 700;
+}
+
+.menu-burgers-panel .menu-item__price::after {
+  content: " €";
+}
+
+.menu-burgers-promo {
+  padding: 24px 22px;
+  text-align: center;
+  background: var(--beer);
+  border-radius: var(--radius);
+  color: var(--black);
+}
+
+.menu-burgers-promo--kids {
+  text-align: left;
+}
+
+.menu-burgers-promo__title {
+  margin: 0 0 8px;
+  font-family: var(--font-cartel);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menu-burgers-promo--kids .menu-block__title {
+  margin: 0 0 10px;
+  padding: 0;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+
+.menu-burgers-promo__lead {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.menu-burgers-promo__text {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.menu-burgers-promo__price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.menu-burgers-promo__price strong {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1;
+}
+
+.menu-burgers-promo__price--solo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.menu-burgers-promo__price--solo .menu-item__price {
+  font-family: var(--font-display);
+  font-size: 36px;
+}
+
+.menu-block__sizes--burgers {
+  margin-bottom: 8px;
 }
 
 .menu-block__sizes {

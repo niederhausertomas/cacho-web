@@ -46,7 +46,20 @@ const MENU_PAGE_TRANSLATIONS = {
     sizeBottle: "Botella",
     sizeSmall: "Pequeño",
     sizeLarge: "Grande",
-    pricePerPerson: "/ persona"
+    pricePerPerson: "/ persona",
+    cbPageTitle: "Cacho Burgers | CACHO",
+    cbPageDesc: "Carta Cacho Burgers Barcelona — smash burgers, fritas, cookies y menú infantil.",
+    cbTape: "Cacho Burgers",
+    cbClaim: "Sin postureo",
+    cbLead: "Pujades, 195 · Poblenou · Barcelona",
+    cbNavFries: "Fritas & Co",
+    cbNavCookies: "Cookies",
+    cbNavBurgers: "Burgers",
+    cbNavCombo: "Combo",
+    cbNavKids: "Kids",
+    cbSizeSimple: "Simple",
+    cbSizeDouble: "Doble",
+    mp_burgersMenu: "Cacho Burgers"
   },
   ca: {
     mp_navContact: "Contacte",
@@ -94,7 +107,20 @@ const MENU_PAGE_TRANSLATIONS = {
     sizeBottle: "Ampolla",
     sizeSmall: "Petit",
     sizeLarge: "Gran",
-    pricePerPerson: "/ persona"
+    pricePerPerson: "/ persona",
+    cbPageTitle: "Cacho Burgers | CACHO",
+    cbPageDesc: "Carta Cacho Burgers Barcelona — smash burgers, patates, galetes i menú infantil.",
+    cbTape: "Cacho Burgers",
+    cbClaim: "Sense postureo",
+    cbLead: "Pujades, 195 · Poblenou · Barcelona",
+    cbNavFries: "Fritas & Co",
+    cbNavCookies: "Galetes",
+    cbNavBurgers: "Burgers",
+    cbNavCombo: "Combo",
+    cbNavKids: "Kids",
+    cbSizeSimple: "Simple",
+    cbSizeDouble: "Doble",
+    mp_burgersMenu: "Cacho Burgers"
   },
   en: {
     mp_navContact: "Contact",
@@ -142,7 +168,20 @@ const MENU_PAGE_TRANSLATIONS = {
     sizeBottle: "Bottle",
     sizeSmall: "Small",
     sizeLarge: "Large",
-    pricePerPerson: "/ person"
+    pricePerPerson: "/ person",
+    cbPageTitle: "Cacho Burgers | CACHO",
+    cbPageDesc: "Cacho Burgers menu Barcelona — smash burgers, fries, cookies and kids menu.",
+    cbTape: "Cacho Burgers",
+    cbClaim: "No posture",
+    cbLead: "Pujades, 195 · Poblenou · Barcelona",
+    cbNavFries: "Fries & Co",
+    cbNavCookies: "Cookies",
+    cbNavBurgers: "Burgers",
+    cbNavCombo: "Combo",
+    cbNavKids: "Kids",
+    cbSizeSimple: "Single",
+    cbSizeDouble: "Double",
+    mp_burgersMenu: "Cacho Burgers"
   }
 };
 
@@ -183,6 +222,22 @@ const MENU_CONTENT = {
         note: "*Disponible para grupos de 24 personas o más (1 menú cada 3 personas)."
       }
     },
+    cachoBurgers: {
+      fries: { title: "Fritas & Co", extrasTitle: "+ Extras" },
+      cookies: { title: "New York Cookie" },
+      burgers: { title: "Burgers" },
+      combo: {
+        title: "Combo",
+        lead: "Elige tu burger",
+        note: "Incluye patatas naturales + refresco o Estrella Damm",
+        priceLabel: "Añádelo por solo"
+      },
+      addons: { title: "Añade a tu burger" },
+      kids: {
+        title: "Kids menu",
+        note: "Cheeseburger simple o fingers kids · incluye patatas + refresco"
+      }
+    },
     items: {}
   },
   ca: {
@@ -221,6 +276,22 @@ const MENU_CONTENT = {
         note: "*Disponible per a grups de 24 persones o més (1 menú cada 3 persones)."
       }
     },
+    cachoBurgers: {
+      fries: { title: "Fritas & Co", extrasTitle: "+ Extras" },
+      cookies: { title: "New York Cookie" },
+      burgers: { title: "Burgers" },
+      combo: {
+        title: "Combo",
+        lead: "Tria la teva burger",
+        note: "Inclou patates naturals + refresc o Estrella Damm",
+        priceLabel: "Afegeix-lo per només"
+      },
+      addons: { title: "Afegeix a la teva burger" },
+      kids: {
+        title: "Kids menu",
+        note: "Cheeseburger simple o fingers kids · inclou patates + refresc"
+      }
+    },
     items: {}
   },
   en: {
@@ -257,6 +328,22 @@ const MENU_CONTENT = {
       pica: {
         title: "Pica-pica menu",
         note: "*Available for groups of 24 or more (1 menu per 3 people)."
+      }
+    },
+    cachoBurgers: {
+      fries: { title: "Fries & Co", extrasTitle: "+ Extras" },
+      cookies: { title: "New York Cookie" },
+      burgers: { title: "Burgers" },
+      combo: {
+        title: "Combo",
+        lead: "Pick your burger",
+        note: "Includes natural fries + soft drink or Estrella Damm",
+        priceLabel: "Add it for just"
+      },
+      addons: { title: "Add to your burger" },
+      kids: {
+        title: "Kids menu",
+        note: "Simple cheeseburger or kids fingers · includes fries + soft drink"
       }
     },
     items: {}
@@ -370,7 +457,22 @@ const MENU_ITEMS = {
     sunny: { name: "Sunny", desc: "Té negro y verde, pera, membrillo y flor de azahar." },
     tropical: { name: "Tropical", desc: "Té negro y verde, rooibos, mango, maracuyá, granada e hibisco." },
     claraTea: { name: "Clara", desc: "Té negro y verde, limón, avena, lúpulo y achicoria." },
-    baya: { name: "Baya", desc: "Té negro y verde, maracuyá, remolacha, pasionaria, jengibre y açai." }
+    baya: { name: "Baya", desc: "Té negro y verde, maracuyá, remolacha, pasionaria, jengibre y açai." },
+    cb_fries: { name: "Patatas fritas naturales" },
+    cb_fingers: { name: "Fingers de pollo" },
+    cb_extra_xl: { name: "Format XL" },
+    cb_extra_bacon: { name: "Queso y bacon" },
+    cb_extra_jalapeno: { name: "Queso y jalapeños" },
+    cb_extra_salsa: { name: "Salsas caseras" },
+    cb_cookie: { name: "New York Cookie", desc: "Pistacho / Dulce de leche / Nutella" },
+    cb_cheese_bacon: { name: "Cheese & Bacon", desc: "Ternera, queso, bacon y salsa Cacho." },
+    cb_clasica: { name: "La clásica", desc: "Ternera, queso, lechuga, tomate, pepinillos, mayonesa y mostaza." },
+    cb_hot_latina: { name: "Hot Latina", desc: "Ternera, queso, huevo, salsa de jalapeño y cebolla." },
+    cb_pollo_frito: { name: "La de pollo frito", desc: "Pollo frito marinado, lechuga, tomate, cebolla adobada y salsa rebelde." },
+    cb_vegetariana: { name: "La vegetariana", desc: "Burger de alubias negras con queso, cebolla adobada, lechuga, tomate y salsa rebelde." },
+    cb_addon_meat: { name: "Carne extra" },
+    cb_addon_cheese: { name: "Queso / Bacon / Pepinillo" },
+    cb_kids: { name: "Kids menu" }
   },
   ca: {
     pumpkin: { name: "Pumpkin Salad", desc: "Carbassa rostida, espinacs, rúcula, feta, nous, vinagreta d'agave, gingebre, coriandre i llima." },
@@ -477,7 +579,22 @@ const MENU_ITEMS = {
     sunny: { name: "Sunny", desc: "Te negre i verd, pera, codony i flor de taronger." },
     tropical: { name: "Tropical", desc: "Te negre i verd, rooibos, mango, maracuyá, magrana i flor d'hibisc." },
     claraTea: { name: "Clara", desc: "Te negre i verd, llimona, civada, llúpol i achicoria." },
-    baya: { name: "Baya", desc: "Te negre i verd, maracuyá, remolatxa, passiflora, gingebre i açai." }
+    baya: { name: "Baya", desc: "Te negre i verd, maracuyá, remolatxa, passiflora, gingebre i açai." },
+    cb_fries: { name: "Patates fregides naturals" },
+    cb_fingers: { name: "Fingers de pollastre" },
+    cb_extra_xl: { name: "Format XL" },
+    cb_extra_bacon: { name: "Formatge i bacon" },
+    cb_extra_jalapeno: { name: "Formatge i jalapeños" },
+    cb_extra_salsa: { name: "Salses casolanes" },
+    cb_cookie: { name: "New York Cookie", desc: "Festuc / Dolç de llet / Nutella" },
+    cb_cheese_bacon: { name: "Cheese & Bacon", desc: "Vedella, formatge, bacon i salsa Cacho." },
+    cb_clasica: { name: "La clàssica", desc: "Vedella, formatge, enciam, tomàquet, cogombres, maionesa i mostassa." },
+    cb_hot_latina: { name: "Hot Latina", desc: "Vedella, formatge, ou, salsa de jalapeño i ceba." },
+    cb_pollo_frito: { name: "La de pollastre fregit", desc: "Pollastre fregit marinat, enciam, tomàquet, ceba adobada i salsa rebel." },
+    cb_vegetariana: { name: "La vegetariana", desc: "Burger de mongetes negres amb formatge, ceba adobada, enciam, tomàquet i salsa rebel." },
+    cb_addon_meat: { name: "Carn extra" },
+    cb_addon_cheese: { name: "Formatge / Bacon / Cogombre" },
+    cb_kids: { name: "Kids menu" }
   },
   en: {
     pumpkin: { name: "Pumpkin Salad", desc: "Roasted pumpkin, spinach, rocket, feta, walnuts, agave vinaigrette, ginger, coriander and lime." },
@@ -584,7 +701,22 @@ const MENU_ITEMS = {
     sunny: { name: "Sunny", desc: "Black and green tea, pear, quince and orange blossom." },
     tropical: { name: "Tropical", desc: "Black and green tea, rooibos, mango, passion fruit, pomegranate and hibiscus." },
     claraTea: { name: "Clara", desc: "Black and green tea, lemon, oats, hops and chicory." },
-    baya: { name: "Baya", desc: "Black and green tea, passion fruit, beetroot, passionaria, ginger and açai." }
+    baya: { name: "Baya", desc: "Black and green tea, passion fruit, beetroot, passionaria, ginger and açai." },
+    cb_fries: { name: "Natural fries" },
+    cb_fingers: { name: "Chicken fingers" },
+    cb_extra_xl: { name: "XL size" },
+    cb_extra_bacon: { name: "Cheese & bacon" },
+    cb_extra_jalapeno: { name: "Cheese & jalapeños" },
+    cb_extra_salsa: { name: "Homemade sauces" },
+    cb_cookie: { name: "New York Cookie", desc: "Pistachio / Dulce de leche / Nutella" },
+    cb_cheese_bacon: { name: "Cheese & Bacon", desc: "Beef, cheese, bacon and Cacho sauce." },
+    cb_clasica: { name: "La clásica", desc: "Beef, cheese, lettuce, tomato, pickles, mayo and mustard." },
+    cb_hot_latina: { name: "Hot Latina", desc: "Beef, cheese, egg, jalapeño sauce and onion." },
+    cb_pollo_frito: { name: "Fried chicken", desc: "Marinated fried chicken, lettuce, tomato, pickled onion and rebel sauce." },
+    cb_vegetariana: { name: "Veggie burger", desc: "Black bean burger with cheese, pickled onion, lettuce, tomato and rebel sauce." },
+    cb_addon_meat: { name: "Extra meat" },
+    cb_addon_cheese: { name: "Cheese / Bacon / Pickle" },
+    cb_kids: { name: "Kids menu" }
   }
 };
 
@@ -628,9 +760,12 @@ function applyMenuContent(lang) {
   } else if (page === "drinks") {
     document.title = MENU_PAGE_TRANSLATIONS[lang].drinksPageTitle;
     if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].drinksPageDesc;
-  } else   if (page === "groups") {
+  } else if (page === "groups") {
     document.title = MENU_PAGE_TRANSLATIONS[lang].groupsPageTitle;
     if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].groupsPageDesc;
+  } else if (page === "cachoBurgers") {
+    document.title = MENU_PAGE_TRANSLATIONS[lang].cbPageTitle;
+    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].cbPageDesc;
   }
 
   if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);

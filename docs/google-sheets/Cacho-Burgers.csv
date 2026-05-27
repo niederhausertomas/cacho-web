@@ -1,0 +1,16 @@
+id,section,order,name_es,name_ca,name_en,desc_es,desc_ca,desc_en,price,price2,mark,active
+cb_fries,fries,1,Patatas fritas naturales,Patates fregides naturals,Natural fries,,,,"3,9",,,TRUE
+cb_fingers,fries,2,Fingers de pollo,Fingers de pollastre,Chicken fingers,,,,"8,5",,,TRUE
+cb_extra_xl,fries,3,Format XL,Format XL,XL size,,,,"1,5",,,TRUE
+cb_extra_bacon,fries,4,Queso y bacon,Formatge i bacon,Cheese & bacon,,,,"1,5",,,TRUE
+cb_extra_jalapeno,fries,5,Queso y jalapeños,Formatge i jalapeños,Cheese & jalapeños,,,,2,,,TRUE
+cb_extra_salsa,fries,6,Salsas caseras,Salses casolanes,Homemade sauces,,,,1,,,TRUE
+cb_cookie,cookies,7,New York Cookie,New York Cookie,New York Cookie,Pistacho / Dulce de leche / Nutella,Festuc / Dolç de llet / Nutella,Pistachio / Dulce de leche / Nutella,"4,5",,,TRUE
+cb_cheese_bacon,burgers,8,Cheese & Bacon,Cheese & Bacon,Cheese & Bacon,"Ternera, queso, bacon y salsa Cacho.","Vedella, formatge, bacon i salsa Cacho.","Beef, cheese, bacon and Cacho sauce.","7,9","12,5",,TRUE
+cb_clasica,burgers,9,La clásica,La clàssica,La clásica,"Ternera, queso, lechuga, tomate, pepinillos, mayonesa y mostaza.","Vedella, formatge, enciam, tomàquet, cogombres, maionesa i mostassa.","Beef, cheese, lettuce, tomato, pickles, mayo and mustard.","8,5",13,,TRUE
+cb_hot_latina,burgers,10,Hot Latina,Hot Latina,Hot Latina,"Ternera, queso, huevo, salsa de jalapeño y cebolla.","Vedella, formatge, ou, salsa de jalapeño i ceba.","Beef, cheese, egg, jalapeño sauce and onion.","9,2","13,6",,TRUE
+cb_pollo_frito,burgers,11,La de pollo frito,La de pollastre fregit,Fried chicken,"Pollo frito marinado, lechuga, tomate, cebolla adobada y salsa rebelde.","Pollastre fregit marinat, enciam, tomàquet, ceba adobada i salsa rebel.","Marinated fried chicken, lettuce, tomato, pickled onion and rebel sauce.","9,5",,,TRUE
+cb_vegetariana,burgers,12,La vegetariana,La vegetariana,Veggie burger,"Burger de alubias negras con queso, cebolla adobada, lechuga, tomate y salsa rebelde.","Burger de mongetes negres amb formatge, ceba adobada, enciam, tomàquet i salsa rebel.","Black bean burger with cheese, pickled onion, lettuce, tomato and rebel sauce.","8,9",,,TRUE
+cb_addon_meat,addons,13,Carne extra,Carn extra,Extra meat,,,,"3,9",,,TRUE
+cb_addon_cheese,addons,14,Queso / Bacon / Pepinillo,Formatge / Bacon / Cogombre,Cheese / Bacon / Pickle,,,,1,,,TRUE
+cb_kids,kids,15,Kids menu,Kids menu,Kids menu,,,,"10,9",,,TRUE

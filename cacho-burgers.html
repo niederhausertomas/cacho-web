@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cacho Burgers | CACHO</title>
+  <meta name="description" content="Carta Cacho Burgers Barcelona — smash burgers, fritas, cookies y menú infantil. Pujades 195 · Poblenou.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=cacho-burgers">
+</head>
+<body class="menu-doc-page menu-doc-page--cacho-burgers" data-menu-page="cachoBurgers">
+  <header class="site-header">
+    <nav class="nav-shell" data-i18n-aria="navAria" aria-label="Navegación principal">
+      <a class="brand" href="./index.html#home" aria-label="CACHO home">
+        <img src="images/logo-cacho.png" width="160" height="48" alt="CACHO — casero y sin miedo">
+      </a>
+      <div class="language-switcher nav-lang" data-i18n-aria="langSwitcherAria" aria-label="Selector de idioma">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="ca">CA</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="navToggleLabel" aria-label="Abrir menú">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-links">
+          <a href="./index.html#menu-hub" data-i18n="navMenu">Carta</a>
+          <a href="./index.html#catering" data-i18n="navBusiness">Servicios</a>
+          <a href="./index.html#location" data-i18n="navLocation">Ubicación</a>
+          <a href="./index.html#contacto" data-i18n="navContact">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-cta" href="./index.html#reservas" data-i18n="navBook">Reservar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-page menu-page--burgers">
+    <header class="menu-page__head">
+      <img class="menu-page__brand" src="images/cacho-burger.png" width="200" height="80" data-i18n-alt="altBurgersBrand" alt="Cacho Burgers">
+      <p class="tape small tape--burgers" data-i18n="cbTape">Cacho Burgers</p>
+      <h1 data-i18n="cbClaim">Sin postureo</h1>
+      <p class="menu-page__lead" data-i18n="cbLead">Pujades, 195 · Poblenou · Barcelona</p>
+    </header>
+
+    <nav class="menu-page__nav" aria-label="Secciones de la carta">
+      <a href="#fritas" data-i18n="cbNavFries">Fritas &amp; Co</a>
+      <a href="#cookies" data-i18n="cbNavCookies">Cookies</a>
+      <a href="#burgers" data-i18n="cbNavBurgers">Burgers</a>
+      <a href="#combo" data-i18n="cbNavCombo">Combo</a>
+      <a href="#kids" data-i18n="cbNavKids">Kids</a>
+    </nav>
+
+    <section class="menu-block" id="fritas">
+      <h2 class="menu-block__title" data-menu-section="fries" data-menu-field="title">Fritas &amp; Co</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_fries" data-menu-part="name">Patatas fritas naturales</span></h3>
+            <span class="menu-item__price">3,9</span>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_fingers" data-menu-part="name">Fingers de pollo</span></h3>
+            <span class="menu-item__price">8,5</span>
+          </div>
+        </li>
+      </ul>
+      <aside class="menu-burgers-panel">
+        <h3 class="menu-burgers-panel__title" data-menu-section="fries" data-menu-field="extrasTitle">+ Extras</h3>
+        <ul class="menu-extras__grid">
+          <li><span data-menu-item="cb_extra_xl" data-menu-part="name">Format XL</span><span class="menu-item__price">1,5</span></li>
+          <li><span data-menu-item="cb_extra_bacon" data-menu-part="name">Queso y bacon</span><span class="menu-item__price">1,5</span></li>
+          <li><span data-menu-item="cb_extra_jalapeno" data-menu-part="name">Queso y jalapeños</span><span class="menu-item__price">2</span></li>
+          <li><span data-menu-item="cb_extra_salsa" data-menu-part="name">Salsas caseras</span><span class="menu-item__price">1</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="menu-block" id="cookies">
+      <h2 class="menu-block__title" data-menu-section="cookies" data-menu-field="title">New York Cookie</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_cookie" data-menu-part="name">New York Cookie</span></h3>
+            <span class="menu-item__price">4,5</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_cookie" data-menu-part="desc">Pistacho / Dulce de leche / Nutella</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-block menu-block--burgers-list" id="burgers">
+      <h2 class="menu-block__title" data-menu-section="burgers" data-menu-field="title">Burgers</h2>
+      <p class="menu-block__sizes menu-block__sizes--burgers"><span data-i18n="cbSizeSimple">Simple</span><span data-i18n="cbSizeDouble">Doble</span></p>
+      <ul class="menu-list">
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_cheese_bacon" data-menu-part="name">Cheese &amp; Bacon</span></h3>
+            <div class="menu-item__prices"><span>7,9</span><span>12,5</span></div>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_cheese_bacon" data-menu-part="desc">Ternera, queso, bacon y salsa Cacho.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_clasica" data-menu-part="name">La clásica</span></h3>
+            <div class="menu-item__prices"><span>8,5</span><span>13</span></div>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_clasica" data-menu-part="desc">Ternera, queso, lechuga, tomate, pepinillos, mayonesa y mostaza.</span></p>
+        </li>
+        <li class="menu-item menu-item--dual">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_hot_latina" data-menu-part="name">Hot Latina</span></h3>
+            <div class="menu-item__prices"><span>9,2</span><span>13,6</span></div>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_hot_latina" data-menu-part="desc">Ternera, queso, huevo, salsa de jalapeño y cebolla.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_pollo_frito" data-menu-part="name">La de pollo frito</span></h3>
+            <span class="menu-item__price">9,5</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_pollo_frito" data-menu-part="desc">Pollo frito marinado, lechuga, tomate, cebolla adobada y salsa rebelde.</span></p>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__head">
+            <h3><span data-menu-item="cb_vegetariana" data-menu-part="name">La vegetariana</span></h3>
+            <span class="menu-item__price">8,9</span>
+          </div>
+          <p class="menu-item__desc"><span data-menu-item="cb_vegetariana" data-menu-part="desc">Burger de alubias negras con queso, cebolla adobada, lechuga, tomate y salsa rebelde.</span></p>
+        </li>
+      </ul>
+
+      <aside class="menu-burgers-panel menu-burgers-panel--addons">
+        <h3 class="menu-burgers-panel__title" data-menu-section="addons" data-menu-field="title">Añade a tu burger</h3>
+        <ul class="menu-extras__grid">
+          <li><span data-menu-item="cb_addon_meat" data-menu-part="name">Carne extra</span><span class="menu-item__price">3,9</span></li>
+          <li><span data-menu-item="cb_addon_cheese" data-menu-part="name">Queso / Bacon / Pepinillo</span><span class="menu-item__price">1</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="menu-block" id="combo">
+      <div class="menu-burgers-promo">
+        <h2 class="menu-burgers-promo__title" data-menu-section="combo" data-menu-field="title">Combo</h2>
+        <p class="menu-burgers-promo__lead" data-menu-section="combo" data-menu-field="lead">Elige tu burger</p>
+        <p class="menu-burgers-promo__text" data-menu-section="combo" data-menu-field="note">Incluye patatas naturales + refresco o Estrella Damm</p>
+        <p class="menu-burgers-promo__price"><span data-menu-section="combo" data-menu-field="priceLabel">Añádelo por solo</span> <strong>+4</strong></p>
+      </div>
+    </section>
+
+    <section class="menu-block" id="kids">
+      <div class="menu-burgers-promo menu-burgers-promo--kids">
+        <h2 class="menu-block__title" data-menu-section="kids" data-menu-field="title">Kids menu</h2>
+        <p class="menu-burgers-promo__text" data-menu-section="kids" data-menu-field="note">Cheeseburger simple o fingers kids · incluye patatas + refresco</p>
+        <p class="menu-burgers-promo__price menu-burgers-promo__price--solo"><strong data-menu-item="cb_kids" data-menu-part="name">Kids menu</strong> <span class="menu-item__price">10,9</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__view" data-cookie-view="main">
+        <h2 id="cookie-banner-title" class="cookie-banner__title" data-i18n="cookieBannerTitle">Cookies y privacidad</h2>
+        <p class="cookie-banner__text" data-i18n="cookieBannerText">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps.</p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn primary" data-cookie-action="accept-all" data-i18n="cookieAcceptAll">Aceptar todas</button>
+          <button type="button" class="btn secondary" data-cookie-action="reject" data-i18n="cookieReject">Solo necesarias</button>
+          <button type="button" class="btn secondary" data-cookie-action="open-prefs" data-i18n="cookieCustomize">Configurar</button>
+        </div>
+        <a class="cookie-banner__link" href="./politica-cookies.html" data-i18n="cookieMore">Política de cookies</a>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div>
+      <strong>CACHO</strong>
+      <p>Carrer de Pujades, 195 · Barcelona<br>hello@wearecacho.com · 931 398 813</p>
+    </div>
+    <div>
+      <strong data-i18n="footerSitemap">Mapa del sitio</strong>
+      <ul class="footer-sitemap">
+        <li><a href="./index.html" data-i18n="footerHome">Inicio</a></li>
+        <li><a href="./comidas.html" data-i18n="mp_foodMenu">Comidas</a></li>
+        <li><a href="./bebidas.html" data-i18n="mp_drinksMenu">Bebidas</a></li>
+        <li><a href="./cacho-burgers.html" aria-current="page" data-i18n="cbTape">Cacho Burgers</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-legal-bar">
+    <p>
+      <span data-i18n="footerLegalCopyright">CACHO © 2020–2026 TODOS LOS DERECHOS RESERVADOS</span> |
+      <a href="./aviso-legal.html" data-i18n="footerLegalNotice">Aviso legal</a>
+    </p>
+  </div>
+
+  <script src="./menu-i18n.js?v=3"></script>
+  <script src="./menu-sheet-config.js?v=2"></script>
+  <script src="./menu-sheet.js?v=4"></script>
+  <script src="./script.js?v=mobile-bar-dock"></script>
+</body>
+</html>

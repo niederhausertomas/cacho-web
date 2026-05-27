@@ -9,6 +9,7 @@ function doGet(e) {
     comidas: sheetToObjects("Comidas"),
     bebidas: sheetToObjects("Bebidas"),
     grupos: sheetToObjects("Menú Grupos"),
+    cachoBurgers: sheetToObjects("Cacho Burgers"),
     secciones: sheetToObjects("Secciones"),
   };
 

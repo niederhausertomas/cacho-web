@@ -7,10 +7,8 @@ const MENU_PAGE_KEYS = {
   dinner: "comidas",
   drinks: "bebidas",
   groups: "grupos",
+  cachoBurgers: "cachoBurgers",
 };
-
-const MENU_CACHE_KEY = "cacho-menu-sheet-v2";
-const MENU_CACHE_MS = 5 * 60 * 1000;
 
 let menuSheetData = null;
 let menuSheetLoadPromise = null;
@@ -47,29 +45,6 @@ function pickLocalized(row, lang, base) {
   return row[`${base}_es`] != null ? String(row[`${base}_es`]).trim() : "";
 }
 
-function readCache() {
-  try {
-    const raw = sessionStorage.getItem(MENU_CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (!parsed.data || Date.now() - parsed.cachedAt > MENU_CACHE_MS) return null;
-    return parsed.data;
-  } catch {
-    return null;
-  }
-}
-
-function writeCache(data) {
-  try {
-    sessionStorage.setItem(
-      MENU_CACHE_KEY,
-      JSON.stringify({ cachedAt: Date.now(), data, updatedAt: data.updatedAt })
-    );
-  } catch {
-    /* quota */
-  }
-}
-
 function fetchMenuSheetJsonp(url) {
   return new Promise((resolve, reject) => {
     const cb = `cachoMenu_${Date.now()}`;
@@ -101,14 +76,20 @@ function fetchMenuSheetJsonp(url) {
   });
 }
 
+function sheetFetchUrl(baseUrl) {
+  const sep = baseUrl.includes("?") ? "&" : "?";
+  return `${baseUrl}${sep}_=${Date.now()}`;
+}
+
 async function fetchMenuSheet(url) {
+  const requestUrl = sheetFetchUrl(url);
   try {
-    const res = await fetch(url, { redirect: "follow", cache: "no-store" });
+    const res = await fetch(requestUrl, { redirect: "follow", cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (fetchErr) {
     console.warn("[menu-sheet] fetch:", fetchErr.message, "→ probando JSONP");
-    return fetchMenuSheetJsonp(url);
+    return fetchMenuSheetJsonp(requestUrl);
   }
 }
 
@@ -119,19 +100,12 @@ function loadMenuSheetData() {
     return Promise.resolve(null);
   }
 
-  const cached = readCache();
-  if (cached) {
-    menuSheetData = cached;
-    return Promise.resolve(cached);
-  }
-
   if (menuSheetLoadPromise) return menuSheetLoadPromise;
 
   menuSheetLoadPromise = fetchMenuSheet(url)
     .then((data) => {
-      if (!data || !data.comidas) throw new Error("Respuesta inválida del script");
+      if (!data || !data.updatedAt) throw new Error("Respuesta inválida del script");
       menuSheetData = data;
-      writeCache(data);
       console.info("[menu-sheet] Carta cargada", data.updatedAt);
       return data;
     })
@@ -196,14 +170,38 @@ function applyMenuFromSheet(lang) {
     const idNode = li.querySelector("[data-menu-item]");
     if (!idNode) return;
     const row = items[idNode.dataset.menuItem];
-    if (!row || row.price === "" || row.price == null) return;
+    if (!row) return;
 
-    const prices = li.querySelectorAll(".menu-item__price");
-    if (prices[0]) prices[0].textContent = formatPrice(row.price);
-    if (prices[1] && row.price2) prices[1].textContent = formatPrice(row.price2);
+    const priceGroup = li.querySelector(".menu-item__prices");
+    if (priceGroup) {
+      const spans = priceGroup.querySelectorAll("span");
+      if (spans[0] && row.price !== "" && row.price != null) {
+        spans[0].textContent = formatPrice(row.price);
+      }
+      if (spans[1] && row.price2 !== "" && row.price2 != null) {
+        spans[1].textContent = formatPrice(row.price2);
+      }
+    } else {
+      const prices = li.querySelectorAll(".menu-item__price");
+      if (prices[0] && row.price !== "" && row.price != null) {
+        prices[0].textContent = formatPrice(row.price);
+      }
+      if (prices[1] && row.price2) prices[1].textContent = formatPrice(row.price2);
+    }
 
     const mark = li.querySelector(".menu-item__mark");
     if (mark) mark.hidden = row.mark !== "*";
+  });
+
+  document.querySelectorAll(".menu-extras__grid li").forEach((li) => {
+    const idNode = li.querySelector("[data-menu-item]");
+    if (!idNode) return;
+    const row = items[idNode.dataset.menuItem];
+    if (!row) return;
+    const priceEl = li.querySelector(".menu-item__price");
+    if (priceEl && row.price !== "" && row.price != null) {
+      priceEl.textContent = formatPrice(row.price);
+    }
   });
 
   Object.keys(items).forEach((id) => {
@@ -224,7 +222,15 @@ function applyMenuFromSheet(lang) {
       node.dataset.menuField || "title",
       lang
     );
-    if (text && node.childElementCount === 0) node.textContent = text;
+    if (!text) return;
+    if (node.childElementCount === 0) {
+      node.textContent = text;
+      return;
+    }
+    if (node.matches(".menu-burgers-promo__price") && node.querySelector("strong")) {
+      const label = node.querySelector("span, [data-menu-section]");
+      if (label && label.childElementCount === 0) label.textContent = text;
+    }
   });
 
   document.querySelectorAll("[data-menu-sub]").forEach((node) => {
@@ -247,6 +253,12 @@ function refreshMenuFromSheet(lang) {
 
 function initMenuSheet() {
   if (!document.body.dataset.menuPage) return;
+
+  try {
+    sessionStorage.removeItem("cacho-menu-sheet-v2");
+  } catch {
+    /* caché antigua */
+  }
 
   refreshMenuFromSheet(currentMenuLang());
 }

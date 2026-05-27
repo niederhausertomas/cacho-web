@@ -235,6 +235,11 @@ writeCsv(
   ITEM_HEADERS,
   enrichItemRows(parseHtmlMenu("menu-grupos.html"), items)
 );
+writeCsv(
+  "Cacho-Burgers.csv",
+  ITEM_HEADERS,
+  enrichItemRows(parseHtmlMenu("cacho-burgers.html"), items)
+);
 writeCsv("Secciones.csv", SECTION_HEADERS, exportSections(content));
 
 console.log(
