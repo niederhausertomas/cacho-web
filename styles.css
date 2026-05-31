@@ -3119,3 +3119,27 @@ body:has(.mobile-cta).cookie-banner-open .cookie-settings-fab {
     border-bottom: 0;
   }
 }
+
+.error-page {
+  min-height: 60vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 48px 20px 80px;
+}
+
+.error-page__code {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(4rem, 18vw, 7rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--accent, #c8a24e);
+}
+
+.error-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}

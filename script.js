@@ -12,8 +12,9 @@ const FORMSPREE_FORM_ID = "";
 
 const translations = {
   es: {
-    pageTitle: "CACHO | MVP rediseño",
-    pageDescription: "MVP visual para la nueva estructura de CACHO Barcelona.",
+    pageTitle: "CACHO | Restaurante en Poblenou, Barcelona",
+    pageDescription:
+      "Comida casera sin postureo en Poblenou: carta, reservas online, terraza, Cacho Burgers y catering. Carrer de Llull, 27 · Barcelona.",
     navAria: "Navegación principal",
     langSwitcherAria: "Selector de idioma",
     navToggleLabel: "Abrir menú",
@@ -213,8 +214,9 @@ const translations = {
     mapOpenExternal: "Abrir en Google Maps"
   },
   ca: {
-    pageTitle: "CACHO | MVP redisseny",
-    pageDescription: "MVP visual per a la nova estructura de CACHO Barcelona.",
+    pageTitle: "CACHO | Restaurant al Poblenou, Barcelona",
+    pageDescription:
+      "Menjar casolà sense postureo al Poblenou: carta, reserves en línia, terrassa, Cacho Burgers i catering. Carrer de Llull, 27 · Barcelona.",
     navAria: "Navegació principal",
     langSwitcherAria: "Selector d'idioma",
     navToggleLabel: "Obrir menú",
@@ -414,8 +416,9 @@ const translations = {
     mapOpenExternal: "Obrir a Google Maps"
   },
   en: {
-    pageTitle: "CACHO | MVP redesign",
-    pageDescription: "Visual MVP for the new CACHO Barcelona site structure.",
+    pageTitle: "CACHO | Restaurant in Poblenou, Barcelona",
+    pageDescription:
+      "Homemade food without the fuss in Poblenou: menu, online booking, terrace, Cacho Burgers and catering. Carrer de Llull, 27 · Barcelona.",
     navAria: "Main navigation",
     langSwitcherAria: "Language selector",
     navToggleLabel: "Open menu",
@@ -656,6 +659,10 @@ function applyTranslations(dictionary) {
     } else if (dictionary.pageDescription) {
       meta.content = dictionary.pageDescription;
     }
+  }
+
+  if (typeof window.updateHomeSocialMeta === "function") {
+    window.updateHomeSocialMeta(dictionary, document.documentElement.lang || "es");
   }
 }
 
@@ -1147,12 +1154,12 @@ initMenuPageLinks();
 const COOKIE_CONSENT_KEY = "cacho-cookie-consent";
 const COOKIE_CONSENT_VERSION = 1;
 
-/** Sustituye por tus IDs reales antes de publicar (vacío = no carga el script). */
 const TRACKING_CONFIG = {
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Carrer%20de%20Llull%2027%20Barcelona&output=embed",
   gaMeasurementId: "",
   metaPixelId: "",
-  mapsEmbedUrl:
-    "https://www.google.com/maps?q=Carrer%20de%20Llull%2027%20Barcelona&output=embed"
+  ...(window.CACHO_TRACKING || {}),
 };
 
 const cookieBanner = document.getElementById("cookie-banner");

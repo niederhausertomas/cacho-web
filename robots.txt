@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niederhausertomas.github.io/cacho-web/sitemap.xml
