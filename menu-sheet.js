@@ -245,9 +245,46 @@ function applyMenuFromSheet(lang) {
   });
 }
 
-function refreshMenuFromSheet(lang) {
+function hoursLookupKey(row) {
+  const scope = String(row.scope || "home").trim().toLowerCase();
+  const key = String(row.key || "").trim();
+  return `${scope}::${key}`;
+}
+
+function hoursByKey(rows) {
+  const map = Object.create(null);
+  (rows || []).forEach((row) => {
+    if (row.key) map[hoursLookupKey(row)] = row;
+  });
+  return map;
+}
+
+function applyHoursFromSheet(lang) {
+  if (!menuSheetData?.horarios?.length) return;
+
+  const map = hoursByKey(menuSheetData.horarios);
+  document.querySelectorAll("[data-sheet-hours]").forEach((node) => {
+    const scope = (node.dataset.sheetHoursScope || "home").toLowerCase();
+    const key = node.dataset.sheetHours;
+    if (!key) return;
+    const row = map[`${scope}::${key}`];
+    if (!row) return;
+    const text = pickLocalized(row, lang, "text");
+    if (text) node.textContent = text;
+  });
+}
+
+function refreshHoursFromSheet(lang) {
   return loadMenuSheetData().then(() => {
-    applyMenuFromSheet(menuLangSuffix(lang || currentMenuLang()));
+    applyHoursFromSheet(menuLangSuffix(lang || currentMenuLang()));
+  });
+}
+
+function refreshMenuFromSheet(lang) {
+  const code = menuLangSuffix(lang || currentMenuLang());
+  return loadMenuSheetData().then(() => {
+    applyMenuFromSheet(code);
+    applyHoursFromSheet(code);
   });
 }
 
@@ -263,4 +300,12 @@ function initMenuSheet() {
   refreshMenuFromSheet(currentMenuLang());
 }
 
+function initHoursSheet() {
+  if (!document.querySelector("[data-sheet-hours]")) return;
+  refreshHoursFromSheet(currentMenuLang());
+}
+
+window.refreshHoursFromSheet = refreshHoursFromSheet;
+
 initMenuSheet();
+initHoursSheet();

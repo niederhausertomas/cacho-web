@@ -268,7 +268,7 @@ body.nav-open .site-header {
   object-fit: cover;
   opacity: 0;
   transform: scale(1.06);
-  animation: slideShow 24s infinite;
+  animation: slideShow 20s infinite;
   will-change: opacity, transform;
 }
 
@@ -690,6 +690,28 @@ main section.parallax-band {
   border-radius: var(--radius);
   background: rgba(255, 255, 255, .06);
   transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-soft);
+}
+
+.band .cards article {
+  padding: 0 0 22px;
+  overflow: hidden;
+}
+
+.band .card-service-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.band .cards article h3,
+.band .cards article p,
+.band .cards article .card-section-link {
+  margin-inline: 22px;
+}
+
+.band .cards article h3 {
+  margin-top: 22px;
 }
 
 .cards article:hover,
@@ -1886,6 +1908,34 @@ body.cookie-banner-open .cookie-settings-fab {
   font-weight: 400;
 }
 
+.menu-page__hours {
+  margin-top: 40px;
+  padding: 24px 20px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .55);
+}
+
+.menu-page__hours-title {
+  margin: 0 0 14px;
+  font-family: var(--font-cartel);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.menu-page__hours-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .menu-page__foot {
   margin-top: 48px;
   padding-top: 28px;
@@ -1916,6 +1966,26 @@ body.cookie-banner-open .cookie-settings-fab {
 
 .menu-doc-page--cacho-burgers {
   background: var(--paper-warm);
+}
+
+.reservas-doc-page {
+  background: var(--paper);
+}
+
+.reservas-page {
+  padding: calc(var(--header-h) + 8px) var(--page-pad) var(--page-pad);
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.covermanager-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(100dvh - var(--header-h) - 24px);
+  border: 0;
+  background: var(--white);
+  border-radius: var(--radius);
 }
 
 .menu-page--burgers {
@@ -2241,14 +2311,14 @@ body:has(.mobile-cta).cookie-banner-open .cookie-settings-fab {
 
 @keyframes slideShow {
   0%,
-  18% {
+  25% {
     opacity: 1;
     transform: scale(1);
   }
-  22%,
+  28%,
   100% {
     opacity: 0;
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 }
 

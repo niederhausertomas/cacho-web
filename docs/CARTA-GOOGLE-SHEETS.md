@@ -7,7 +7,7 @@ La web ya tiene selector **ES / CA / EN**. La hoja debe reflejar eso: **cada tex
 ## Tu primer paso (ahora)
 
 1. [Google Sheets](https://sheets.google.com) → hoja en blanco → nombre: **CACHO — Cartas**.
-2. Creá **5 pestañas** (nombres exactos):
+2. Creá **6 pestañas** (nombres exactos):
 
 | Pestaña | Contenido |
 |---------|-----------|
@@ -16,6 +16,7 @@ La web ya tiene selector **ES / CA / EN**. La hoja debe reflejar eso: **cada tex
 | `Menú Grupos` | Ítems de menús de grupo × 3 idiomas |
 | `Cacho Burgers` | Carta smash burgers × 3 idiomas |
 | `Secciones` | Títulos de bloque, notas, subtítulos de vinos × 3 idiomas |
+| `Horarios` | Líneas de horario de apertura × 3 idiomas (home) |
 
 3. Importá los CSV de `docs/google-sheets/` (Archivo → Importar → una pestaña cada vez):
 
@@ -26,6 +27,7 @@ La web ya tiene selector **ES / CA / EN**. La hoja debe reflejar eso: **cada tex
 | `Menu-Grupos.csv` | Menú Grupos |
 | `Cacho-Burgers.csv` | Cacho Burgers |
 | `Secciones.csv` | Secciones |
+| `Horarios.csv` | Horarios |
 
 Al importar: **Reemplazar datos en la hoja seleccionada** + separador **Coma**. Nunca «Reemplazar hoja de cálculo» (borra las otras pestañas).
 
@@ -71,6 +73,33 @@ La web elegirá `text_es`, `text_ca` o `text_en` según el botón ES / CA / EN (
 
 ---
 
+## Columnas de horarios (pestaña Horarios)
+
+Usada en la home, bloque **Ubicación y horarios** (debajo del mapa).
+
+```
+key | scope | order | text_es | text_ca | text_en | active
+```
+
+| scope | Dónde se ve |
+|-------|-------------|
+| `home` | Home → Ubicación y horarios (Llull 27) |
+| `burgers` | Página [cacho-burgers.html](cacho-burgers.html) (Pujades 195) |
+
+Mismas claves en cada scope:
+
+| key | Línea |
+|-----|--------|
+| `hoursMonWed` | Primera línea |
+| `hoursThuFri` | Segunda línea |
+| `hoursWeekend` | Tercera línea |
+
+Editá el texto completo de cada línea en los tres idiomas (incluida la etiqueta del día, p. ej. «Lun-mié:»). Podés poner horarios distintos en `home` y `burgers`. Si falta la columna `scope`, la fila se trata como `home`.
+
+Para ocultar una línea sin borrarla: `active` = `FALSE`.
+
+---
+
 ## Regenerar CSV desde el código
 
 ```bash
@@ -83,7 +112,7 @@ node scripts/export-menu-to-csv.mjs
 
 1. **Extensiones → Apps Script** → pegar `docs/google-sheets/apps-script.gs`.
 2. **Implementar → Aplicación web** → acceso **Cualquier persona**.
-3. La URL `/exec` devuelve JSON con `comidas`, `bebidas`, `grupos`, `cachoBurgers` y `secciones` (todo multidioma).
+3. La URL `/exec` devuelve JSON con `comidas`, `bebidas`, `grupos`, `cachoBurgers`, `secciones` y `horarios` (todo multidioma).
 4. Si cambiás el script, **Implementar → Administrar implementaciones → editar → Nueva versión** (la web usa la versión publicada).
 
 **Importante:** Tras añadir soporte JSONP al script, volvé a publicar una **nueva versión** de la implementación.
@@ -105,7 +134,7 @@ item.desc = row[`desc_${lang}`] || row.desc_es;
 section.title = sec[`text_${lang}`] || sec.text_es;
 ```
 
-Los textos de navegación (Reservar, Contacto, etc.) siguen en `menu-i18n.js` / `script.js`; **solo la carta** sale de Sheets.
+Los textos de navegación (Reservar, Contacto, etc.) siguen en `menu-i18n.js` / `script.js`. Desde Sheets salen **la carta** y los **tres renglones de horario** de la home.
 
 ---
 

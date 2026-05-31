@@ -11,6 +11,7 @@ function doGet(e) {
     grupos: sheetToObjects("Menú Grupos"),
     cachoBurgers: sheetToObjects("Cacho Burgers"),
     secciones: sheetToObjects("Secciones"),
+    horarios: sheetToObjects("Horarios"),
   };
 
   const json = JSON.stringify(payload);

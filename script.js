@@ -7,8 +7,8 @@ const languageButtons = [...document.querySelectorAll(".language-switcher button
 const mobileCta = document.querySelector(".mobile-cta");
 const LANG_STORAGE_KEY = "cacho-lang";
 
-/** Reemplaza con tu ID de Formspree (https://formspree.io → nuevo formulario → hello@wearecacho.com). */
-const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+/** Fallback si no existe contact-form-config.js (preferir window.CACHO_FORMSPREE_FORM_ID). */
+const FORMSPREE_FORM_ID = "";
 
 const translations = {
   es: {
@@ -38,6 +38,9 @@ const translations = {
     bookingText:
       "El rediseño convierte la reserva en el primer camino natural. El botón se repite en zonas clave y se mantiene fijo como acción rápida en móvil.",
     bookNow: "Reservar ahora",
+    reservasPageTitle: "Reservas | CACHO",
+    reservasPageDesc: "Reserva mesa en CACHO Barcelona — Poblenou.",
+    reservasIframeTitle: "Reservar mesa en CACHO",
     bookingArea: "PobleNou",
     hoursMonWed: "Lun-mié: 12:30h - 23h",
     hoursThuFri: "Jue-vie: 12:30h - 24h",
@@ -232,6 +235,9 @@ const translations = {
     bookingText:
       "El redisseny converteix la reserva en el primer camí natural. El botó es repeteix a zones clau i es manté fix com a acció ràpida al mòbil.",
     bookNow: "Reservar ara",
+    reservasPageTitle: "Reserves | CACHO",
+    reservasPageDesc: "Reserva taula a CACHO Barcelona — Poblenou.",
+    reservasIframeTitle: "Reservar taula a CACHO",
     bookingArea: "PobleNou",
     hoursMonWed: "Dill-dij: 12:30h - 23h",
     hoursThuFri: "Div-diss: 12:30h - 24h",
@@ -426,6 +432,9 @@ const translations = {
     bookingText:
       "The redesign makes booking the natural first path. The button appears in key areas and stays fixed as a quick mobile action.",
     bookNow: "Book now",
+    reservasPageTitle: "Bookings | CACHO",
+    reservasPageDesc: "Book a table at CACHO Barcelona — Poblenou.",
+    reservasIframeTitle: "Book a table at CACHO",
     bookingArea: "Poblenou",
     hoursMonWed: "Mon-Wed: 12:30pm - 11pm",
     hoursThuFri: "Thu-Fri: 12:30pm - 12am",
@@ -622,11 +631,19 @@ function applyTranslations(dictionary) {
     if (dictionary[key]) node.title = dictionary[key];
   });
 
-  if (dictionary.pageTitle) document.title = dictionary.pageTitle;
+  if (document.body.classList.contains("reservas-doc-page")) {
+    if (dictionary.reservasPageTitle) document.title = dictionary.reservasPageTitle;
+  } else if (dictionary.pageTitle) {
+    document.title = dictionary.pageTitle;
+  }
 
   const meta = document.querySelector('meta[name="description"]');
-  if (meta && dictionary.pageDescription) {
-    meta.content = dictionary.pageDescription;
+  if (meta) {
+    if (document.body.classList.contains("reservas-doc-page") && dictionary.reservasPageDesc) {
+      meta.content = dictionary.reservasPageDesc;
+    } else if (dictionary.pageDescription) {
+      meta.content = dictionary.pageDescription;
+    }
   }
 }
 
@@ -905,6 +922,12 @@ function setLanguage(lang) {
 
   applyTranslations(dictionary);
   if (typeof applyMenuContent === "function") applyMenuContent(lang);
+  if (typeof window.refreshHoursFromSheet === "function") {
+    window.refreshHoursFromSheet(lang);
+  }
+  if (typeof window.updateCoverManagerReserveLang === "function") {
+    window.updateCoverManagerReserveLang(lang);
+  }
 
   languageButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
@@ -1362,6 +1385,8 @@ function getActiveDictionary() {
 }
 
 function getFormspreeFormId() {
+  const fromWindow = (window.CACHO_FORMSPREE_FORM_ID || "").trim();
+  if (fromWindow && fromWindow !== "YOUR_FORM_ID") return fromWindow;
   const fromData = contactForm?.dataset.formspreeId?.trim();
   if (fromData && fromData !== "YOUR_FORM_ID") return fromData;
   if (FORMSPREE_FORM_ID && FORMSPREE_FORM_ID !== "YOUR_FORM_ID") return FORMSPREE_FORM_ID;

@@ -1,0 +1,7 @@
+key,scope,order,text_es,text_ca,text_en,active
+hoursMonWed,home,1,"Lun-mié: 12:30h - 23h","Dill-dij: 12:30h - 23h","Mon-Wed: 12:30pm - 11pm",TRUE
+hoursThuFri,home,2,"Jue-vie: 12:30h - 24h","Div-diss: 12:30h - 24h","Thu-Fri: 12:30pm - 12am",TRUE
+hoursWeekend,home,3,"Fin de semana: 12h - 23:30h","Cap de setmana: 12h - 23:30h","Weekend: 12pm - 11:30pm",TRUE
+hoursMonWed,burgers,1,"Lun-mié: 12:30h - 23h","Dill-dij: 12:30h - 23h","Mon-Wed: 12:30pm - 11pm",TRUE
+hoursThuFri,burgers,2,"Jue-vie: 12:30h - 24h","Div-diss: 12:30h - 24h","Thu-Fri: 12:30pm - 12am",TRUE
+hoursWeekend,burgers,3,"Fin de semana: 12h - 23:30h","Cap de setmana: 12h - 23:30h","Weekend: 12pm - 11:30pm",TRUE
