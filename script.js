@@ -55,6 +55,10 @@ const translations = {
     altBeer: "Cerveza CACHO",
     aboutTitle: "Qué es Cacho",
     altAbout: "Equipo y ambiente de CACHO",
+    altCarousel1: "Terraza y ambiente en CACHO Poblenou, Barcelona",
+    altCarousel2: "Platos y comida casera en el restaurante CACHO",
+    altCarousel3: "Interior del local CACHO en el barrio del 22@",
+    altCarousel4: "Experiencia gastronómica en CACHO Barcelona",
     aboutText1:
       "Somos CACHO y llegamos a Poblenou con ganas de generar un espacio diferente donde los vecinos del barrio puedan encontrar comida casera y de calidad, cervezas tiradas y un ambiente genial en la terraza más grande del @22.",
     aboutText2:
@@ -252,6 +256,10 @@ const translations = {
     altBeer: "Cervesa CACHO",
     aboutTitle: "Què és Cacho",
     altAbout: "Equip i ambient de CACHO",
+    altCarousel1: "Terrassa i ambient a CACHO Poblenou, Barcelona",
+    altCarousel2: "Plats i menjar casolà al restaurant CACHO",
+    altCarousel3: "Interior del local CACHO al barri del 22@",
+    altCarousel4: "Experiència gastronòmica a CACHO Barcelona",
     aboutText1:
       "Som CACHO i arribem al Poblenou amb ganes de generar un espai diferent on els veïns del barri puguin trobar menjar casolà i de qualitat, cerveses tirades i un ambient genial a la terrassa més gran del @22.",
     aboutText2:
@@ -449,6 +457,10 @@ const translations = {
     altBeer: "CACHO beer",
     aboutTitle: "What is Cacho",
     altAbout: "CACHO team and atmosphere",
+    altCarousel1: "Terrace and atmosphere at CACHO Poblenou, Barcelona",
+    altCarousel2: "Homemade dishes at CACHO restaurant",
+    altCarousel3: "Inside CACHO in the 22@ district",
+    altCarousel4: "Dining experience at CACHO Barcelona",
     aboutText1:
       "We are CACHO and we came to Poblenou to create a different space where neighbours can find homemade, quality food, draught beer and a great vibe on the biggest terrace in @22.",
     aboutText2:
