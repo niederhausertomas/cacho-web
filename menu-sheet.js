@@ -93,6 +93,29 @@ async function fetchMenuSheet(url) {
   }
 }
 
+/** IDs de Comidas que deben ir en section `burgers` aunque en Sheets figure otro valor. */
+const COMIDAS_BURGER_SECTION_BY_ID = Object.freeze({
+  provoloneBurger: "burgers",
+  picante: "burgers",
+  portobello: "burgers",
+  clasica: "burgers",
+  cheeseBacon: "burgers",
+  extraEgg: "burgers",
+  extraBacon: "burgers",
+  extraAvocado: "burgers",
+  extraPickles: "burgers",
+  extraCheese: "burgers",
+  extraTomato: "burgers",
+});
+
+/** Corrige section en Comidas (p. ej. burgers etiquetadas como milanese en Sheets). */
+function resolveMenuSection(row, sheetKey) {
+  const section = String(row.section || "").trim();
+  if (sheetKey !== "comidas") return section;
+  const inferred = COMIDAS_BURGER_SECTION_BY_ID[String(row.id || "")];
+  return inferred || section;
+}
+
 /** Si falta la columna `group` en Sheets, se infiere por id (menú grupos). */
 function resolveMenuGroup(row) {
   const existing = row.group;
@@ -114,9 +137,10 @@ function resolveMenuGroup(row) {
   return "";
 }
 
-function normalizeMenuSheetRows(rows) {
+function normalizeMenuSheetRows(rows, sheetKey) {
   return (rows || []).map((row) => ({
     ...row,
+    section: resolveMenuSection(row, sheetKey),
     group: resolveMenuGroup(row),
   }));
 }
@@ -125,7 +149,7 @@ function normalizeMenuSheetData(data) {
   if (!data) return data;
   ["comidas", "bebidas", "grupos", "cachoBurgers"].forEach((key) => {
     if (Array.isArray(data[key])) {
-      data[key] = normalizeMenuSheetRows(data[key]);
+      data[key] = normalizeMenuSheetRows(data[key], key);
     }
   });
   return data;
@@ -311,6 +335,36 @@ function setMenuSheetReadyState(ready) {
   const root = document.documentElement;
   root.classList.toggle("menu-sheet-pending", !ready);
   root.classList.toggle("menu-sheet-ready", ready);
+  const loader = document.querySelector(".menu-sheet-loading");
+  if (loader) loader.hidden = ready;
+}
+
+function ensureMenuSheetLoader() {
+  const page = document.querySelector(".menu-doc-page .menu-page");
+  if (!page || page.querySelector(".menu-sheet-loading")) return;
+
+  const loader = document.createElement("div");
+  loader.className = "menu-sheet-loading";
+  loader.setAttribute("role", "status");
+  loader.setAttribute("aria-live", "polite");
+
+  const spinner = document.createElement("span");
+  spinner.className = "menu-sheet-loading__spinner";
+  spinner.setAttribute("aria-hidden", "true");
+
+  const text = document.createElement("span");
+  text.className = "menu-sheet-loading__text";
+  text.dataset.i18n = "menuSheetLoading";
+  text.textContent = "Cargando carta…";
+
+  loader.append(spinner, text);
+
+  const nav = page.querySelector(".menu-page__nav");
+  if (nav) {
+    nav.insertAdjacentElement("afterend", loader);
+  } else {
+    page.appendChild(loader);
+  }
 }
 
 function resetMenuPlaceholders() {
@@ -343,6 +397,7 @@ function initMenuSheet() {
     /* caché antigua */
   }
 
+  ensureMenuSheetLoader();
   setMenuSheetReadyState(false);
   resetMenuPlaceholders();
 

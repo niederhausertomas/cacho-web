@@ -35,6 +35,8 @@ Tras importar `Cacho-Burgers.csv`, comprobá una fila sin descripción (ej. `cb_
 
 **Menú Grupos:** la pestaña debe incluir la columna **`group`** (entre `section` y `order`). Sin ella, el menú completo no aparece en la web. Valores: `starter`, `main`, `dessert`, `drink` para filas `gr_starter*`, `gr_main*`, etc.; vacío para `gr_pp*` (pica pica). Si tu hoja es antigua, reimportá `Menu-Grupos.csv` del repo (incluye `group`).
 
+**Burgers vacías en Comidas (solo sale el cartel «BURGERS»):** en la pestaña **Comidas**, columna `section`, las filas `provoloneBurger` … `cheeseBacon` y los `extra*` deben decir **`burgers`**, no `milanese`. Corregilo a mano o **reimportá solo** `docs/google-sheets/Comidas.csv` → pestaña **Comidas** (reemplazar datos en la hoja). El CSV del repo ya trae `burgers` bien; no hace falta tocar `comidas.html` para los platos.
+
 4. Avisame con la **URL de la hoja** para el Apps Script y conectar la web.
 
 ---
@@ -47,7 +49,7 @@ Las páginas de carta (`comidas`, `bebidas`, `menu-grupos`, `cacho-burgers`) tie
 - Platos y precios → pestaña correspondiente (**Comidas**, **Bebidas**, etc.)
 - Horarios → pestaña **Horarios**
 
-Hasta que Sheets responde, los bloques de carta permanecen ocultos (`menu-sheet-pending`).
+Hasta que Sheets responde, los bloques de carta permanecen ocultos y se muestra un indicador de carga (`menu-sheet-pending` + `.menu-sheet-loading`).
 
 ---
 
@@ -59,7 +61,7 @@ id | section | group | order | name_es | name_ca | name_en | desc_es | desc_ca |
 
 | Columna | Uso |
 |---------|-----|
-| `section` | Bloque de la carta (`salads`, `wine`, `burgers`, `full`, `fries`, …) |
+| `section` | Bloque de la carta (`salads`, `wine`, `burgers`, `full`, `fries`, …). En **Comidas**, las burgers del menú dinner deben ser `burgers`, no `milanese` (ver `docs/google-sheets/Comidas.csv`). |
 | `group` | Sublista dentro del bloque (ver abajo). Vacío si no aplica. |
 | `name_es` / `name_ca` / `name_en` | Nombre del plato en cada idioma |
 | `desc_es` / `desc_ca` / `desc_en` | Descripción (vacío si no hay) |

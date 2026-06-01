@@ -1721,13 +1721,53 @@ body.cookie-banner-open .cookie-settings-fab {
   background: var(--paper-warm);
 }
 
-/* Carta desde Google Sheets: no mostrar precios/textos del HTML hasta cargar */
+/* Carta desde Google Sheets: loader hasta cargar; bloques ocultos */
 html.menu-sheet-pending .menu-doc-page .menu-block {
-  visibility: hidden;
+  display: none;
 }
 
 html.menu-sheet-ready .menu-doc-page .menu-block {
-  visibility: visible;
+  display: block;
+}
+
+.menu-sheet-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: min(40vh, 280px);
+  margin: 8px 0 40px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.menu-sheet-loading[hidden] {
+  display: none !important;
+}
+
+.menu-sheet-loading__spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(29, 29, 27, 0.12);
+  border-top-color: var(--tomato);
+  border-radius: 50%;
+  animation: menu-sheet-spin 0.75s linear infinite;
+}
+
+@keyframes menu-sheet-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-sheet-loading__spinner {
+    animation: none;
+    border-top-color: rgba(29, 29, 27, 0.35);
+  }
 }
 
 .menu-page {
