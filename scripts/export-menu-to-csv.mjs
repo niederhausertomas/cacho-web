@@ -99,18 +99,26 @@ function parseHtmlMenu(htmlPath) {
     ];
 
     let m;
-    const reClass = itemPatterns[0];
+    const reClass = /<li class="menu-item[\s"][^>]*>([\s\S]*?)<\/li>/g;
     while ((m = reClass.exec(block)) !== null) {
       const chunk = m[1];
       const idMatch = chunk.match(/data-menu-item="([^"]+)"/);
       if (!idMatch) continue;
       order += 1;
-      const priceMatch = chunk.match(
-        /<span class="menu-item__price[^"]*">([^<]*)<\/span>/g
+      let prices = [];
+      const dualMatch = chunk.match(
+        /<div class="menu-item__prices">\s*<span>([^<]*)<\/span>\s*<span>([^<]*)<\/span>/
       );
-      const prices = priceMatch
-        ? priceMatch.map((p) => p.replace(/<[^>]+>/g, "").trim())
-        : [];
+      if (dualMatch) {
+        prices = [dualMatch[1].trim(), dualMatch[2].trim()];
+      } else {
+        const priceMatch = chunk.match(
+          /<span class="menu-item__price[^"]*">([^<]*)<\/span>/g
+        );
+        prices = priceMatch
+          ? priceMatch.map((p) => p.replace(/<[^>]+>/g, "").trim())
+          : [];
+      }
       rows.push({
         id: idMatch[1],
         section,
@@ -164,7 +172,7 @@ function enrichItemRows(rows, items) {
 }
 
 function exportSections(content) {
-  const pages = ["dinner", "drinks", "groups"];
+  const pages = ["dinner", "drinks", "groups", "cachoBurgers"];
   const rows = [];
 
   for (const page of pages) {

@@ -14,7 +14,7 @@ const MENU_PAGE_TRANSLATIONS = {
     dinnerPageTitle: "Comidas | CACHO",
     dinnerPageDesc: "Menú de comidas CACHO Barcelona — ensaladas, parrilla, milanesas, burgers, sándwiches y postres.",
     dinnerTape: "Comidas",
-    dinnerLead: "Menú dinner · Español · 2025",
+    dinnerLead: "Menú dinner · Español · 2026",
     dinnerNavSalads: "Ensaladas",
     dinnerNavShare: "Para compartir",
     dinnerNavGrill: "Grill",
@@ -25,7 +25,7 @@ const MENU_PAGE_TRANSLATIONS = {
     drinksPageTitle: "Bebidas | CACHO",
     drinksPageDesc: "Carta de bebidas CACHO Barcelona — cócteles, cervezas, vinos, combinados, café y refrescos.",
     drinksTape: "Bebidas",
-    drinksLead: "Carta de bebidas · Español · 2025",
+    drinksLead: "Carta de bebidas · Español · 2026",
     drinksNavCocktails: "Cócteles",
     drinksNavBeer: "Cervezas",
     drinksNavZero: "Sin alcohol",
@@ -76,7 +76,7 @@ const MENU_PAGE_TRANSLATIONS = {
     dinnerPageTitle: "Menjars | CACHO",
     dinnerPageDesc: "Menú de menjars CACHO Barcelona — amanides, graella, milaneses, burgers, sandwiches i postres.",
     dinnerTape: "Menjars",
-    dinnerLead: "Menú dinner · Espanyol · 2025",
+    dinnerLead: "Menú dinner · Espanyol · 2026",
     dinnerNavSalads: "Amanides",
     dinnerNavShare: "Per compartir",
     dinnerNavGrill: "Graella",
@@ -87,7 +87,7 @@ const MENU_PAGE_TRANSLATIONS = {
     drinksPageTitle: "Begudes | CACHO",
     drinksPageDesc: "Carta de begudes CACHO Barcelona — còctels, cerveses, vins, combinats, cafè i refrescos.",
     drinksTape: "Begudes",
-    drinksLead: "Carta de begudes · Espanyol · 2025",
+    drinksLead: "Carta de begudes · Espanyol · 2026",
     drinksNavCocktails: "Còctels",
     drinksNavBeer: "Cerveses",
     drinksNavZero: "Sense alcohol",
@@ -138,7 +138,7 @@ const MENU_PAGE_TRANSLATIONS = {
     dinnerPageTitle: "Food | CACHO",
     dinnerPageDesc: "CACHO Barcelona food menu — salads, grill, milanesas, burgers, sandwiches and desserts.",
     dinnerTape: "Food",
-    dinnerLead: "Dinner menu · Spanish · 2025",
+    dinnerLead: "Dinner menu · Spanish · 2026",
     dinnerNavSalads: "Salads",
     dinnerNavShare: "To share",
     dinnerNavGrill: "Grill",
@@ -149,7 +149,7 @@ const MENU_PAGE_TRANSLATIONS = {
     drinksPageTitle: "Drinks | CACHO",
     drinksPageDesc: "CACHO Barcelona drinks menu — cocktails, beers, wines, spirits, coffee and soft drinks.",
     drinksTape: "Drinks",
-    drinksLead: "Drinks menu · Spanish · 2025",
+    drinksLead: "Drinks menu · Spanish · 2026",
     drinksNavCocktails: "Cocktails",
     drinksNavBeer: "Beers",
     drinksNavZero: "Non-alcoholic",
@@ -196,11 +196,11 @@ const MENU_CONTENT = {
       grill: { title: "Grill", note: "*Todas nuestras carnes vienen acompañadas con patatas asadas, tomates cherry confitados y chimichurri." },
       milanese: { title: "Milanesas", note: "*Todas las milanesas son de ternera y vienen con patatas asadas, pico de gallo y crème fraîche." },
       burgers: { title: "Burgers", extrasTitle: "Tunea tu burger o sandwich", extrasLead: "Añade lo que más se te antoje… ¡Sin miedo!" },
-      sandwiches: { title: "Sándwiches", note: "*Todos nuestros sándwiches vienen con pan focaccia." },
+      sandwiches: { title: "Sándwiches", note: "*Todos nuestros sándwiches vienen con pan artesanal." },
       desserts: { title: "Dulces", note: "*Agrégale una bola de helado de vainilla por 2,5€" }
     },
     drinks: {
-      cocktails: { title: "Cocktails & Co", note: "Si te apetece otro clásico, pídenos tu preferido." },
+      cocktails: { title: "Cocktails & Co", note: "Si te apetece otro clásico, un gin tonic o un combinado, te contamos las opciones." },
       beer: { title: "Cervezas & Co" },
       zero: { title: "Sin alcohol" },
       wine: { title: "Vinos" },
@@ -250,11 +250,11 @@ const MENU_CONTENT = {
       grill: { title: "Graella", note: "*Totes les nostres carns vénen amb patates rostides, tomàquets cherry confitats i chimichurri." },
       milanese: { title: "Milaneses", note: "*Totes les milaneses són de vedella i venen amb patates rostides, pico de gallo i crème fraîche." },
       burgers: { title: "Burgers", extrasTitle: "Personalitza la teva burger o sandwich", extrasLead: "Afegeix el que més et vagi de gust… Sense por!" },
-      sandwiches: { title: "Sandwiches", note: "*Tots els nostres sandwiches venen amb pa focaccia." },
+      sandwiches: { title: "Sandwiches", note: "*Tots els nostres sandwiches venen amb pa artesanal." },
       desserts: { title: "Dolços", note: "*Afegeix-hi una bola de gelat de vainilla per 2,5€" }
     },
     drinks: {
-      cocktails: { title: "Cocktails & Co", note: "Si et ve de gust un altre clàssic, demana'ns el teu preferit." },
+      cocktails: { title: "Cocktails & Co", note: "Si et ve de gust un altre clàssic, un gin tonic o un combinat, t'expliquem les opcions." },
       beer: { title: "Cerveses & Co" },
       zero: { title: "Sense alcohol" },
       wine: { title: "Vins" },
@@ -304,11 +304,11 @@ const MENU_CONTENT = {
       grill: { title: "Grill", note: "*All our meats come with roasted potatoes, confit cherry tomatoes and chimichurri." },
       milanese: { title: "Milanesas", note: "*All milanesas are beef and come with roasted potatoes, pico de gallo and crème fraîche." },
       burgers: { title: "Burgers", extrasTitle: "Customise your burger or sandwich", extrasLead: "Add whatever you're craving… No fear!" },
-      sandwiches: { title: "Sandwiches", note: "*All our sandwiches come on focaccia bread." },
+      sandwiches: { title: "Sandwiches", note: "*All our sandwiches come on artisan bread." },
       desserts: { title: "Desserts", note: "*Add a scoop of vanilla ice cream for €2.5" }
     },
     drinks: {
-      cocktails: { title: "Cocktails & Co", note: "If you're in the mood for another classic, just ask for your favourite." },
+      cocktails: { title: "Cocktails & Co", note: "If you're in the mood for another classic, a gin and tonic or a spirit serve, we'll walk you through the options." },
       beer: { title: "Beers & Co" },
       zero: { title: "Non-alcoholic" },
       wine: { title: "Wines" },
@@ -357,10 +357,10 @@ const MENU_CONTENT = {
 const MENU_ITEMS = {
   es: {
     pumpkin: { name: "Pumpkin Salad", desc: "Calabaza asada, espinacas, rúcula, feta, nueces, vinagreta de agave, jengibre, cilantro y lima." },
-    mediterranean: { name: "Mediterranean Bowl", desc: "Quinoa, garbanzos, aguacate, zanahorias asadas, rúcula y láminas de coco, aliñada con salsa de yogur." },
+    mediterranean: { name: "Mediterranean Bowl", desc: "Garbanzos con champiñones y cebolla, coliflor asada con especias, quinoa, zanahorias asadas, semillas y aguacate con vinagreta de yogur." },
     nachos: { name: "Nachos", desc: "Con crème fraîche, queso fundido, jalapeños, pico de gallo, salsa verde y frijoles." },
-    hummus: { name: "Hummus", desc: "De remolacha, con feta, olivas kalamatas, zanahorias asadas, semillas y focaccia tostada." },
-    provoleta: { name: "Provoleta", desc: "Con chimichurri, tomate cherry confitados y focaccia tostada." },
+    hummus: { name: "Hummus", desc: "Clásico, con tomates, aceitunas Kalamata, queso feta, semillas, crudités y pan tostado." },
+    provoleta: { name: "Provoleta", desc: "Con chimichurri, tomate cherry confitados y pan tostado." },
     carrots: { name: "Zanahorias asadas", desc: "Con mayo de cúrcuma y kikos." },
     bravas: { name: "Nuestras bravas", desc: "Bravas horneadas, con salsa chipotle." },
     olives: { name: "Olivas Gordal", desc: "Olivas al chimichurri." },
@@ -369,13 +369,13 @@ const MENU_ITEMS = {
     eggplant: { name: "Berenjena rebozada", desc: "Con crema de burrata, salsa napolitana, pesto de pistachos y criolla con jalapeños." },
     colita: { name: "Colita de cuadril", desc: "300 gr de culatín de ternera Black Angus de Nebraska. Corte típico argentino a la parrilla." },
     entraña: { name: "Entraña", desc: "Corte típico argentino a la parrilla." },
-    lomo: { name: "Lomo bajo", desc: "420 gr de lomo bajo gallego." },
-    ribeye: { name: "Rib eye", desc: "350 gr de ojo de bife argentino." },
+    lomo: { name: "Lomo bajo", desc: "350 gr de lomo bajo gallego." },
+    ribeye: { name: "Rib eye", desc: "300 gr de ojo de bife argentino." },
     napolitana: { name: "La napolitana", desc: "Con provolone, mozzarella, jamón dulce, tomate y orégano." },
     especial: { name: "La especial", desc: "Con prosciutto, rúcula, parmesano y tomate seco." },
     caballo: { name: "A caballo", desc: "Con dos huevos fritos." },
     provoloneBurger: { name: "Provolone crujiente", desc: "Doble smash con provolone crujiente a la plancha, cebolla caramelizada y nuestra Cacho salsa picante." },
-    picante: { name: "La picante", desc: "Doble smash con cebolla y queso cheddar, salsa de jalapeño y huevo a la plancha." },
+    picante: { name: "Hot Latina", desc: "Doble smash con cebolla y queso cheddar, salsa de jalapeño y huevo a la plancha." },
     portobello: { name: "Veggie portobello", desc: "Portobello confitado, queso cheddar, aguacate, rúcula, cebolla encurtida y salsa de mango chili." },
     clasica: { name: "La clásica", desc: "Doble smash con queso, tomate, lechuga, pepinillo, mostaza y mayonesa." },
     cheeseBacon: { name: "Cheese & bacon", desc: "Bacon y queso cheddar, y nuestra Cacho salsa picante." },
@@ -413,7 +413,7 @@ const MENU_ITEMS = {
     shirley: { name: "Spicy Shirley", desc: "Sirope de granada, limón y ginger beer." },
     crodino: { name: "Crodino Spritz", desc: "Crodino con un splash de soda." },
     garageSantako: { name: "Garage Santako", desc: "West Coast IPA (sin gluten)." },
-    oghamCorn: { name: "Ogham Corn Flower", desc: "Trigo." },
+    oghamCorn: { name: "Cerveza artesana de temporada", desc: "" },
     garageOcata: { name: "Garage Ocata IPA" },
     garageRiba: { name: "Garage Riba Pilsner" },
     oghamHazy: { name: "Ogham Artesana Hazy IPA" },
@@ -429,19 +429,19 @@ const MENU_ITEMS = {
     daura: { name: "Daura" },
     cachoBeer: { name: "Cacho Beer APA artesana" },
     itant: { name: "Itant — Garnacha", desc: "DO Montsant." },
-    comalats: { name: "Comalats Alosa Negre" },
+    comalats: { name: "Comalats Alosa", desc: "Tinto." },
+    methodic: { name: "Methòdic L'Apical", desc: "Xarel·lo · Penedès." },
+    surrealista: { name: "Surrealista", desc: "Lledoner blanc · DO Alt Empordà · Naranja." },
+    serra: { name: "Serra da Estrela", desc: "Albariño · DO Rias Baixas." },
     karma: { name: "Karma de Drac Montsant Negre" },
     trus: { name: "Trus Crianza 2020", desc: "100% Tempranillo · Ribera del Duero." },
-    cargol: { name: "Cargol treu Banya", desc: "Coupage Merlot y Tempranillo · DO Costers del Segre." },
-    sabatera: { name: "Mas de la Sabatera", desc: "Mà Esquerra Chardonnay." },
+    cargol: { name: "Cargol Treu Banya", desc: "Coupage · Merlot y Tempranillo · DO Costers del Segre." },
     perlat: { name: "Perlat — Syrah", desc: "DO Montsant." },
-    peona: { name: "La Peona Brisat Orange Blanc" },
-    uvala: { name: "Uvala Brisat Malvasia Blanc" },
     saltimbanqui: { name: "Saltimbanqui — Verdejo", desc: "DO Rueda." },
-    descarada: { name: "La Descarada", desc: "Sauvignon Blanc y Muscat ECO · DO Penedès." },
+    descarada: { name: "La Descarada", desc: "Sauvignon Blanc · DO Penedès." },
     freye: { name: "Freyé — Syrah y Sumoll", desc: "DO Penedès." },
     musugorri: { name: "Musugorri — Vermut Solidario", desc: "Tarragona." },
-    brutNature: { name: "Brut Nature — ECO", desc: "DO Penedès · Mistinguett." },
+    brutNature: { name: "Mistinguett Brut Nature — ECO", desc: "DO Penedès." },
     icedTea: { name: "Iced tea casero" },
     lemonade: { name: "Limonada casera" },
     juice: { name: "Zumo", desc: "De manzana o naranja, sin más." },
@@ -479,10 +479,10 @@ const MENU_ITEMS = {
   },
   ca: {
     pumpkin: { name: "Pumpkin Salad", desc: "Carbassa rostida, espinacs, rúcula, feta, nous, vinagreta d'agave, gingebre, coriandre i llima." },
-    mediterranean: { name: "Mediterranean Bowl", desc: "Quinoa, cigrons, alvocat, pastanagues rostides, rúcula i làmines de coco, amb salsa de iogurt." },
+    mediterranean: { name: "Mediterranean Bowl", desc: "Cigrons amb xampinyons i ceba, coliflor rostida amb espècies, quinoa, pastanagues rostides, llavors i alvocat amb vinagreta de iogurt." },
     nachos: { name: "Nachos", desc: "Amb crème fraîche, formatge fos, jalapeños, pico de gallo, salsa verda i mongetes." },
-    hummus: { name: "Hummus", desc: "De remolatxa, amb feta, olives kalamata, pastanagues rostides, llavors i focaccia torrada." },
-    provoleta: { name: "Provoleta", desc: "Amb chimichurri, tomàquet cherry confitat i focaccia torrada." },
+    hummus: { name: "Hummus", desc: "Clàssic, amb tomàquets, olives Kalamata, feta, llavors, crudités i pa torrat." },
+    provoleta: { name: "Provoleta", desc: "Amb chimichurri, tomàquet cherry confitat i pa torrat." },
     carrots: { name: "Pastanagues rostides", desc: "Amb maionesa de cúrcuma i kikos." },
     bravas: { name: "Les nostres braves", desc: "Braves al forn, amb salsa chipotle." },
     olives: { name: "Olives Gordal", desc: "Olives al chimichurri." },
@@ -491,13 +491,13 @@ const MENU_ITEMS = {
     eggplant: { name: "Albergínia arrebossada", desc: "Amb crema de burrata, salsa napolitana, pesto de festucs i criolla amb jalapeños." },
     colita: { name: "Colita de quadril", desc: "300 gr de culató de vedella Black Angus de Nebraska. Tall típic argentí a la graella." },
     entraña: { name: "Entraña", desc: "Tall típic argentí a la graella." },
-    lomo: { name: "Llom baix", desc: "420 gr de llom baix gallec." },
-    ribeye: { name: "Rib eye", desc: "350 gr d'ull de bif argentí." },
+    lomo: { name: "Llom baix", desc: "350 gr de llom baix gallec." },
+    ribeye: { name: "Rib eye", desc: "300 gr d'ull de bif argentí." },
     napolitana: { name: "La napolitana", desc: "Amb provolone, mozzarella, pernil dolç, tomàquet i orenga." },
     especial: { name: "L'especial", desc: "Amb prosciutto, rúcula, parmesà i tomàquet sec." },
     caballo: { name: "A cavall", desc: "Amb dos ous fregits." },
     provoloneBurger: { name: "Provolone cruixent", desc: "Doble smash amb provolone cruixent a la planxa, ceba caramel·litzada i la nostra salsa picant Cacho." },
-    picante: { name: "La picant", desc: "Doble smash amb ceba i cheddar, salsa de jalapeño i ou a la planxa." },
+    picante: { name: "Hot Latina", desc: "Doble smash amb ceba i cheddar, salsa de jalapeño i ou a la planxa." },
     portobello: { name: "Veggie portobello", desc: "Portobello confitat, cheddar, alvocat, rúcula, ceba encurtida i salsa de mango chili." },
     clasica: { name: "La clàssica", desc: "Doble smash amb formatge, tomàquet, enciam, cogombre, mostassa i maionesa." },
     cheeseBacon: { name: "Cheese & bacon", desc: "Bacon i cheddar, i la nostra salsa picant Cacho." },
@@ -535,7 +535,7 @@ const MENU_ITEMS = {
     shirley: { name: "Spicy Shirley", desc: "Xarop de magrana, llimona i ginger beer." },
     crodino: { name: "Crodino Spritz", desc: "Crodino amb un toc de soda." },
     garageSantako: { name: "Garage Santako", desc: "West Coast IPA (sense gluten)." },
-    oghamCorn: { name: "Ogham Corn Flower", desc: "Blat." },
+    oghamCorn: { name: "Cervesa artesana de temporada", desc: "" },
     garageOcata: { name: "Garage Ocata IPA" },
     garageRiba: { name: "Garage Riba Pilsner" },
     oghamHazy: { name: "Ogham Artesana Hazy IPA" },
@@ -551,19 +551,19 @@ const MENU_ITEMS = {
     daura: { name: "Daura" },
     cachoBeer: { name: "Cacho Beer APA artesana" },
     itant: { name: "Itant — Garnatxa", desc: "DO Montsant." },
-    comalats: { name: "Comalats Alosa Negre" },
+    comalats: { name: "Comalats Alosa", desc: "Negre." },
+    methodic: { name: "Methòdic L'Apical", desc: "Xarel·lo · Penedès." },
+    surrealista: { name: "Surrealista", desc: "Lledoner blanc · DO Alt Empordà · Taronja." },
+    serra: { name: "Serra da Estrela", desc: "Albariño · DO Rias Baixas." },
     karma: { name: "Karma de Drac Montsant Negre" },
     trus: { name: "Trus Criança 2020", desc: "100% Tempranillo · Ribera del Duero." },
-    cargol: { name: "Cargol treu Banya", desc: "Cupatge Merlot i Tempranillo · DO Costers del Segre." },
-    sabatera: { name: "Mas de la Sabatera", desc: "Mà Esquerra Chardonnay." },
+    cargol: { name: "Cargol Treu Banya", desc: "Cupatge · Merlot i Tempranillo · DO Costers del Segre." },
     perlat: { name: "Perlat — Syrah", desc: "DO Montsant." },
-    peona: { name: "La Peona Brisat Orange Blanc" },
-    uvala: { name: "Uvala Brisat Malvasia Blanc" },
     saltimbanqui: { name: "Saltimbanqui — Verdejo", desc: "DO Rueda." },
-    descarada: { name: "La Descarada", desc: "Sauvignon Blanc i Muscat ECO · DO Penedès." },
+    descarada: { name: "La Descarada", desc: "Sauvignon Blanc · DO Penedès." },
     freye: { name: "Freyé — Syrah i Sumoll", desc: "DO Penedès." },
     musugorri: { name: "Musugorri — Vermut Solidari", desc: "Tarragona." },
-    brutNature: { name: "Brut Nature — ECO", desc: "DO Penedès · Mistinguett." },
+    brutNature: { name: "Mistinguett Brut Nature — ECO", desc: "DO Penedès." },
     icedTea: { name: "Iced tea casolà" },
     lemonade: { name: "Llimonada casolana" },
     juice: { name: "Suc", desc: "De poma o taronja, sense més." },
@@ -601,10 +601,10 @@ const MENU_ITEMS = {
   },
   en: {
     pumpkin: { name: "Pumpkin Salad", desc: "Roasted pumpkin, spinach, rocket, feta, walnuts, agave vinaigrette, ginger, coriander and lime." },
-    mediterranean: { name: "Mediterranean Bowl", desc: "Quinoa, chickpeas, avocado, roasted carrots, rocket and coconut flakes, with yogurt sauce." },
+    mediterranean: { name: "Mediterranean Bowl", desc: "Chickpeas with mushrooms and onion, spiced roasted cauliflower, quinoa, roasted carrots, seeds and avocado with yogurt vinaigrette." },
     nachos: { name: "Nachos", desc: "With crème fraîche, melted cheese, jalapeños, pico de gallo, green salsa and beans." },
-    hummus: { name: "Hummus", desc: "Beetroot hummus with feta, kalamata olives, roasted carrots, seeds and toasted focaccia." },
-    provoleta: { name: "Provoleta", desc: "With chimichurri, confit cherry tomatoes and toasted focaccia." },
+    hummus: { name: "Hummus", desc: "Classic hummus with tomatoes, Kalamata olives, feta, seeds, crudités and toasted bread." },
+    provoleta: { name: "Provoleta", desc: "With chimichurri, confit cherry tomatoes and toasted bread." },
     carrots: { name: "Roasted carrots", desc: "With turmeric mayo and kikos." },
     bravas: { name: "Our bravas", desc: "Oven-baked bravas with chipotle sauce." },
     olives: { name: "Gordal olives", desc: "Olives with chimichurri." },
@@ -613,13 +613,13 @@ const MENU_ITEMS = {
     eggplant: { name: "Breaded aubergine", desc: "With burrata cream, napolitana sauce, pistachio pesto and jalapeño criolla." },
     colita: { name: "Rump tail", desc: "300 g Nebraska Black Angus culotte. Classic Argentine grill cut." },
     entraña: { name: "Skirt steak", desc: "Classic Argentine grill cut." },
-    lomo: { name: "Sirloin", desc: "420 g Galician sirloin." },
-    ribeye: { name: "Rib eye", desc: "350 g Argentine rib eye." },
+    lomo: { name: "Sirloin", desc: "350 g Galician sirloin." },
+    ribeye: { name: "Rib eye", desc: "300 g Argentine rib eye." },
     napolitana: { name: "La napolitana", desc: "With provolone, mozzarella, sweet ham, tomato and oregano." },
     especial: { name: "La especial", desc: "With prosciutto, rocket, parmesan and sun-dried tomato." },
     caballo: { name: "A caballo", desc: "With two fried eggs." },
     provoloneBurger: { name: "Crispy provolone", desc: "Double smash with crispy grilled provolone, caramelised onion and our spicy Cacho sauce." },
-    picante: { name: "La picante", desc: "Double smash with onion and cheddar, jalapeño sauce and fried egg." },
+    picante: { name: "Hot Latina", desc: "Double smash with onion and cheddar, jalapeño sauce and fried egg." },
     portobello: { name: "Veggie portobello", desc: "Confit portobello, cheddar, avocado, rocket, pickled onion and mango chili sauce." },
     clasica: { name: "La clásica", desc: "Double smash with cheese, tomato, lettuce, pickle, mustard and mayo." },
     cheeseBacon: { name: "Cheese & bacon", desc: "Bacon and cheddar with our spicy Cacho sauce." },
@@ -657,7 +657,7 @@ const MENU_ITEMS = {
     shirley: { name: "Spicy Shirley", desc: "Pomegranate syrup, lemon and ginger beer." },
     crodino: { name: "Crodino Spritz", desc: "Crodino with a splash of soda." },
     garageSantako: { name: "Garage Santako", desc: "West Coast IPA (gluten-free)." },
-    oghamCorn: { name: "Ogham Corn Flower", desc: "Wheat." },
+    oghamCorn: { name: "Seasonal craft beer", desc: "" },
     garageOcata: { name: "Garage Ocata IPA" },
     garageRiba: { name: "Garage Riba Pilsner" },
     oghamHazy: { name: "Ogham Artesana Hazy IPA" },
@@ -673,19 +673,19 @@ const MENU_ITEMS = {
     daura: { name: "Daura" },
     cachoBeer: { name: "Cacho Beer craft APA" },
     itant: { name: "Itant — Garnacha", desc: "DO Montsant." },
-    comalats: { name: "Comalats Alosa Negre" },
+    comalats: { name: "Comalats Alosa", desc: "Red." },
+    methodic: { name: "Methòdic L'Apical", desc: "Xarel·lo · Penedès." },
+    surrealista: { name: "Surrealista", desc: "Lledoner blanc · DO Alt Empordà · Orange." },
+    serra: { name: "Serra da Estrela", desc: "Albariño · DO Rias Baixas." },
     karma: { name: "Karma de Drac Montsant Negre" },
     trus: { name: "Trus Crianza 2020", desc: "100% Tempranillo · Ribera del Duero." },
-    cargol: { name: "Cargol treu Banya", desc: "Merlot and Tempranillo blend · DO Costers del Segre." },
-    sabatera: { name: "Mas de la Sabatera", desc: "Mà Esquerra Chardonnay." },
+    cargol: { name: "Cargol Treu Banya", desc: "Blend · Merlot and Tempranillo · DO Costers del Segre." },
     perlat: { name: "Perlat — Syrah", desc: "DO Montsant." },
-    peona: { name: "La Peona Brisat Orange Blanc" },
-    uvala: { name: "Uvala Brisat Malvasia Blanc" },
     saltimbanqui: { name: "Saltimbanqui — Verdejo", desc: "DO Rueda." },
-    descarada: { name: "La Descarada", desc: "Sauvignon Blanc and Muscat ECO · DO Penedès." },
+    descarada: { name: "La Descarada", desc: "Sauvignon Blanc · DO Penedès." },
     freye: { name: "Freyé — Syrah and Sumoll", desc: "DO Penedès." },
     musugorri: { name: "Musugorri — Solidario Vermouth", desc: "Tarragona." },
-    brutNature: { name: "Brut Nature — ECO", desc: "DO Penedès · Mistinguett." },
+    brutNature: { name: "Mistinguett Brut Nature — ECO", desc: "DO Penedès." },
     icedTea: { name: "Homemade iced tea" },
     lemonade: { name: "Homemade lemonade" },
     juice: { name: "Juice", desc: "Apple or orange, nothing else." },
@@ -727,13 +727,39 @@ function getMenuPath(obj, path) {
   return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
 }
 
-function applyMenuContent(lang) {
+function menuSheetUrlConfigured() {
+  return Boolean((window.CACHO_MENU_SHEET_URL || "").trim());
+}
+
+function applyMenuContent(lang, options) {
   const page = document.body.dataset.menuPage;
   if (!page) return;
 
   const content = MENU_CONTENT[lang] || MENU_CONTENT.es;
   const items = MENU_ITEMS[lang] || MENU_ITEMS.es;
   const pageContent = content[page];
+  const fromSheet = menuSheetUrlConfigured() && !options?.forceI18n;
+
+  const meta = document.querySelector('meta[name="description"]');
+  if (page === "dinner") {
+    document.title = MENU_PAGE_TRANSLATIONS[lang].dinnerPageTitle;
+    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].dinnerPageDesc;
+  } else if (page === "drinks") {
+    document.title = MENU_PAGE_TRANSLATIONS[lang].drinksPageTitle;
+    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].drinksPageDesc;
+  } else if (page === "groups") {
+    document.title = MENU_PAGE_TRANSLATIONS[lang].groupsPageTitle;
+    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].groupsPageDesc;
+  } else if (page === "cachoBurgers") {
+    document.title = MENU_PAGE_TRANSLATIONS[lang].cbPageTitle;
+    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].cbPageDesc;
+  }
+
+  if (fromSheet) {
+    if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);
+    return;
+  }
+
   if (!pageContent) return;
 
   document.querySelectorAll("[data-menu-section]").forEach((node) => {
@@ -755,21 +781,6 @@ function applyMenuContent(lang) {
     const value = typeof item === "string" ? item : item[part];
     if (value) node.textContent = value;
   });
-
-  const meta = document.querySelector('meta[name="description"]');
-  if (page === "dinner") {
-    document.title = MENU_PAGE_TRANSLATIONS[lang].dinnerPageTitle;
-    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].dinnerPageDesc;
-  } else if (page === "drinks") {
-    document.title = MENU_PAGE_TRANSLATIONS[lang].drinksPageTitle;
-    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].drinksPageDesc;
-  } else if (page === "groups") {
-    document.title = MENU_PAGE_TRANSLATIONS[lang].groupsPageTitle;
-    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].groupsPageDesc;
-  } else if (page === "cachoBurgers") {
-    document.title = MENU_PAGE_TRANSLATIONS[lang].cbPageTitle;
-    if (meta) meta.content = MENU_PAGE_TRANSLATIONS[lang].cbPageDesc;
-  }
 
   if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);
 }

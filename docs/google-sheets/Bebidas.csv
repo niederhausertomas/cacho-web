@@ -8,19 +8,56 @@ mimosa,cocktails,6,Mimosa Pomegranate,Mimosa Pomegranate,Mimosa Pomegranate,"Cav
 mule,cocktails,7,Moscow Mule,Moscow Mule,Moscow Mule,"Vodka, ginger beer, lima y pepino.","Vodka, ginger beer, llima i cogombre.","Vodka, ginger beer, lime and cucumber.","8,5",,,TRUE
 mojito,cocktails,8,Mojito clásico,Mojito clàssic,Classic mojito,"Ron añejo, menta, lima, azúcar y soda.","Ron envellit, menta, llima, sucre i soda.","Aged rum, mint, lime, sugar and soda.","8,5",,,TRUE
 paloma,cocktails,9,Med Paloma,Med Paloma,Med Paloma,"Tequila infusionada con romero, Schweppes al pomelo rosa y lima.","Tequila infusionada amb romaní, Schweppes de pomelo rosa i llima.","Rosemary-infused tequila, pink grapefruit Schweppes and lime.","9,5",,,TRUE
-virginMojito,zero,10,Virgin Mojito,Virgin Mojito,Virgin Mojito,"Manzana, menta, lima y soda.","Poma, menta, llima i soda.","Apple, mint, lime and soda.","7,5",,,TRUE
-virginMary,zero,11,Virgin Mary,Virgin Mary,Virgin Mary,"Bloody Mary mix, zumo de tomate.","Mix Bloody Mary, suc de tomàquet.","Bloody Mary mix, tomato juice.","7,5",,,TRUE
-shirley,zero,12,Spicy Shirley,Spicy Shirley,Spicy Shirley,"Sirope de granada, limón y ginger beer.","Xarop de magrana, llimona i ginger beer.","Pomegranate syrup, lemon and ginger beer.",6,,,TRUE
-crodino,zero,13,Crodino Spritz,Crodino Spritz,Crodino Spritz,Crodino con un splash de soda.,Crodino amb un toc de soda.,Crodino with a splash of soda.,"5,5",,,TRUE
-karma,wine,14,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,,,,28,,,TRUE
-trus,wine,15,Trus Crianza 2020,Trus Criança 2020,Trus Crianza 2020,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,32,,,TRUE
-peona,wine,16,La Peona Brisat Orange Blanc,La Peona Brisat Orange Blanc,La Peona Brisat Orange Blanc,,,,33,,,TRUE
-uvala,wine,17,Uvala Brisat Malvasia Blanc,Uvala Brisat Malvasia Blanc,Uvala Brisat Malvasia Blanc,,,,36,,,TRUE
-flatWhite,coffee,18,Flat White*,Flat White*,Flat White*,,,,3,,,TRUE
-latte,coffee,19,Latte*,Latte*,Latte*,,,,"2,5",,,TRUE
-gingerBeer,coffee,20,Ginger beer,Ginger beer,Ginger beer,,,,"3,2",,,TRUE
-kombucha,coffee,21,Lov Kombucha,Lov Kombucha,Lov Kombucha,,,,"4,6",,,TRUE
-sunny,coffee,22,Sunny,Sunny,Sunny,"Té negro y verde, pera, membrillo y flor de azahar.","Te negre i verd, pera, codony i flor de taronger.","Black and green tea, pear, quince and orange blossom.",,,,TRUE
-tropical,coffee,23,Tropical,Tropical,Tropical,"Té negro y verde, rooibos, mango, maracuyá, granada e hibisco.","Te negre i verd, rooibos, mango, maracuyá, magrana i flor d'hibisc.","Black and green tea, rooibos, mango, passion fruit, pomegranate and hibiscus.",,,,TRUE
-clara,coffee,24,Clara,Clara,Shandy,,,,,,,TRUE
-baya,coffee,25,Baya,Baya,Baya,"Té negro y verde, maracuyá, remolacha, pasionaria, jengibre y açai.","Te negre i verd, maracuyá, remolatxa, passiflora, gingebre i açai.","Black and green tea, passion fruit, beetroot, passionaria, ginger and açai.",,,,TRUE
+garageSantako,beer,10,Garage Santako,Garage Santako,Garage Santako,West Coast IPA (sin gluten).,West Coast IPA (sense gluten).,West Coast IPA (gluten-free).,"5,9",,,TRUE
+oghamCorn,beer,11,Cerveza artesana de temporada,Cervesa artesana de temporada,Seasonal craft beer,,,,"4,2","6,3",,TRUE
+garageOcata,beer,12,Garage Ocata IPA,Garage Ocata IPA,Garage Ocata IPA,,,,"5,9",,,TRUE
+garageRiba,beer,13,Garage Riba Pilsner,Garage Riba Pilsner,Garage Riba Pilsner,,,,"4,9",,,TRUE
+oghamHazy,beer,14,Ogham Artesana Hazy IPA,Ogham Artesana Hazy IPA,Ogham Artesana Hazy IPA,,,,"4,9","7,4",,TRUE
+estrella,beer,15,Estrella Damm,Estrella Damm,Estrella Damm,,,,"2,7",4,,TRUE
+clara,beer,16,Clara,Clara,Shandy,,,,"2,8","4,1",,TRUE
+turia,beer,17,Turia (Valencia),Turia (València),Turia (Valencia),,,,"3,5","5,2",,TRUE
+vollDamm,beer,18,Voll Damm Doble Malta,Voll Damm Doble Malta,Voll Damm Doble Malta,,,,"3,8","5,7",,TRUE
+complot,beer,19,IPA Complot,IPA Complot,IPA Complot,,,,"4,7","6,9",,TRUE
+galipette,beer,20,Galipette Sidra Brut,Galipette Sidra Brut,Galipette Sidra Brut,,,,"4,9",,,TRUE
+michelada,beer,21,Michelada,Michelada,Michelada,,,,"5,7",,,TRUE
+freeDamm,beer,22,Free Damm,Free Damm,Free Damm,,,,"3,5",,,TRUE
+freeDammTost,beer,23,Free Damm Tostada,Free Damm Tostada,Free Damm Tostada,,,,"3,5",,,TRUE
+daura,beer,24,Daura,Daura,Daura,,,,"3,5",,,TRUE
+cachoBeer,beer,25,Cacho Beer APA artesana,Cacho Beer APA artesana,Cacho Beer craft APA,,,,"4,4","6,6",,TRUE
+virginMojito,zero,26,Virgin Mojito,Virgin Mojito,Virgin Mojito,"Manzana, menta, lima y soda.","Poma, menta, llima i soda.","Apple, mint, lime and soda.","7,5",,,TRUE
+virginMary,zero,27,Virgin Mary,Virgin Mary,Virgin Mary,"Bloody Mary mix, zumo de tomate.","Mix Bloody Mary, suc de tomàquet.","Bloody Mary mix, tomato juice.","7,5",,,TRUE
+shirley,zero,28,Spicy Shirley,Spicy Shirley,Spicy Shirley,"Sirope de granada, limón y ginger beer.","Xarop de magrana, llimona i ginger beer.","Pomegranate syrup, lemon and ginger beer.",6,,,TRUE
+crodino,zero,29,Crodino Spritz,Crodino Spritz,Crodino Spritz,Crodino con un splash de soda.,Crodino amb un toc de soda.,Crodino with a splash of soda.,"5,5",,,TRUE
+itant,wine,30,Itant — Garnacha,Itant — Garnatxa,Itant — Garnacha,DO Montsant.,DO Montsant.,DO Montsant.,"3,7",18,,TRUE
+comalats,wine,31,Comalats Alosa,Comalats Alosa,Comalats Alosa,Tinto.,Negre.,Red.,"5,6",27,,TRUE
+karma,wine,32,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,Karma de Drac Montsant Negre,,,,28,,,TRUE
+trus,wine,33,Trus Crianza 2020,Trus Criança 2020,Trus Crianza 2020,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,100% Tempranillo · Ribera del Duero.,32,,,TRUE
+cargol,wine,34,Cargol Treu Banya,Cargol Treu Banya,Cargol Treu Banya,Coupage · Merlot y Tempranillo · DO Costers del Segre.,Cupatge · Merlot i Tempranillo · DO Costers del Segre.,Blend · Merlot and Tempranillo · DO Costers del Segre.,"4,5",22,,TRUE
+methodic,wine,35,Methòdic L'Apical,Methòdic L'Apical,Methòdic L'Apical,Xarel·lo · Penedès.,Xarel·lo · Penedès.,Xarel·lo · Penedès.,"5,9",29,,TRUE
+surrealista,wine,36,Surrealista,Surrealista,Surrealista,Lledoner blanc · DO Alt Empordà · Naranja.,Lledoner blanc · DO Alt Empordà · Taronja.,Lledoner blanc · DO Alt Empordà · Orange.,"5,9",29,,TRUE
+perlat,wine,37,Perlat — Syrah,Perlat — Syrah,Perlat — Syrah,DO Montsant.,DO Montsant.,DO Montsant.,"5,5",27,,TRUE
+saltimbanqui,wine,38,Saltimbanqui — Verdejo,Saltimbanqui — Verdejo,Saltimbanqui — Verdejo,DO Rueda.,DO Rueda.,DO Rueda.,"3,7",18,,TRUE
+descarada,wine,39,La Descarada,La Descarada,La Descarada,Sauvignon Blanc · DO Penedès.,Sauvignon Blanc · DO Penedès.,Sauvignon Blanc · DO Penedès.,5,25,,TRUE
+serra,wine,40,Serra da Estrela,Serra da Estrela,Serra da Estrela,Albariño · DO Rias Baixas.,Albariño · DO Rias Baixas.,Albariño · DO Rias Baixas.,"5,9",29,,TRUE
+freye,wine,41,Freyé — Syrah y Sumoll,Freyé — Syrah i Sumoll,Freyé — Syrah and Sumoll,DO Penedès.,DO Penedès.,DO Penedès.,"3,7",18,,TRUE
+musugorri,wine,42,Musugorri — Vermut Solidario,Musugorri — Vermut Solidari,Musugorri — Solidario Vermouth,Tarragona.,Tarragona.,Tarragona.,"3,5",23,,TRUE
+brutNature,wine,43,Mistinguett Brut Nature — ECO,Mistinguett Brut Nature — ECO,Mistinguett Brut Nature — ECO,DO Penedès.,DO Penedès.,DO Penedès.,"4,5",22,,TRUE
+caramel,coffee,44,Caramel Iced Latte*,Caramel Iced Latte*,Caramel Iced Latte*,,,,"4,5","5,5",,TRUE
+classicLatte,coffee,45,Classic Iced Latte*,Classic Iced Latte*,Classic Iced Latte*,,,,"3,7",5,,TRUE
+flatWhite,coffee,46,Flat White*,Flat White*,Flat White*,,,,3,,,TRUE
+latte,coffee,47,Latte*,Latte*,Latte*,,,,"2,5",,,TRUE
+matcha,coffee,48,Matcha Latte*,Matcha Latte*,Matcha Latte*,,,,"3,7",5,,TRUE
+chai,coffee,49,Chai Latte*,Chai Latte*,Chai Latte*,,,,"3,7",5,,TRUE
+espresso,coffee,50,Espresso,Espresso,Espresso,,,,"1,5","2,5",,TRUE
+icedTea,coffee,51,Iced tea casero,Iced tea casolà,Homemade iced tea,,,,"2,9","3,9",,TRUE
+lemonade,coffee,52,Limonada casera,Llimonada casolana,Homemade lemonade,,,,"2,9","3,9",,TRUE
+juice,coffee,53,Zumo,Suc,Juice,"De manzana o naranja, sin más.","De poma o taronja, sense més.","Apple or orange, nothing else.","2,9","3,9",,TRUE
+greenQueen,coffee,54,Green Queen,Green Queen,Green Queen,"Espinacas, apio, manzana y jengibre.","Espinacs, api, poma i gingebre.","Spinach, celery, apple and ginger.","3,9","5,2",,TRUE
+orangePower,coffee,55,Orange Power,Orange Power,Orange Power,"Zanahoria, jengibre y naranja.","Pastanaga, gingebre i taronja.","Carrot, ginger and orange.","3,9","5,2",,TRUE
+redHunter,coffee,56,Red Hunter,Red Hunter,Red Hunter,"Remolacha, manzana, limón y jengibre.","Remolatxa, poma, llimona i gingebre.","Beetroot, apple, lemon and ginger.","3,9","5,2",,TRUE
+gingerBeer,coffee,57,Ginger beer,Ginger beer,Ginger beer,,,,"3,2",,,TRUE
+kombucha,coffee,58,Lov Kombucha,Lov Kombucha,Lov Kombucha,,,,"4,6",,,TRUE
+sunny,coffee,59,Sunny,Sunny,Sunny,"Té negro y verde, pera, membrillo y flor de azahar.","Te negre i verd, pera, codony i flor de taronger.","Black and green tea, pear, quince and orange blossom.",,,,TRUE
+tropical,coffee,60,Tropical,Tropical,Tropical,"Té negro y verde, rooibos, mango, maracuyá, granada e hibisco.","Te negre i verd, rooibos, mango, maracuyá, magrana i flor d'hibisc.","Black and green tea, rooibos, mango, passion fruit, pomegranate and hibiscus.",,,,TRUE
+clara,coffee,61,Clara,Clara,Shandy,,,,,,,TRUE
+baya,coffee,62,Baya,Baya,Baya,"Té negro y verde, maracuyá, remolacha, pasionaria, jengibre y açai.","Te negre i verd, maracuyá, remolatxa, passiflora, gingebre i açai.","Black and green tea, passion fruit, beetroot, passionaria, ginger and açai.",,,,TRUE

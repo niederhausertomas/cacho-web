@@ -259,18 +259,36 @@ function hoursByKey(rows) {
   return map;
 }
 
+function resetHoursPlaceholders() {
+  document.querySelectorAll("[data-sheet-hours]").forEach((node) => {
+    node.textContent = "";
+    node.hidden = true;
+  });
+}
+
 function applyHoursFromSheet(lang) {
-  if (!menuSheetData?.horarios?.length) return;
+  const nodes = document.querySelectorAll("[data-sheet-hours]");
+  if (!nodes.length) return;
+
+  if (!menuSheetData?.horarios?.length) {
+    resetHoursPlaceholders();
+    return;
+  }
 
   const map = hoursByKey(menuSheetData.horarios);
-  document.querySelectorAll("[data-sheet-hours]").forEach((node) => {
+  nodes.forEach((node) => {
     const scope = (node.dataset.sheetHoursScope || "home").toLowerCase();
     const key = node.dataset.sheetHours;
     if (!key) return;
     const row = map[`${scope}::${key}`];
-    if (!row) return;
-    const text = pickLocalized(row, lang, "text");
-    if (text) node.textContent = text;
+    const text = row ? pickLocalized(row, lang, "text") : "";
+    if (text) {
+      node.textContent = text;
+      node.hidden = false;
+    } else {
+      node.textContent = "";
+      node.hidden = true;
+    }
   });
 }
 
@@ -288,8 +306,39 @@ function refreshMenuFromSheet(lang) {
   });
 }
 
+function menuSheetUrlConfigured() {
+  return Boolean((window.CACHO_MENU_SHEET_URL || "").trim());
+}
+
+function setMenuSheetReadyState(ready) {
+  const root = document.documentElement;
+  root.classList.toggle("menu-sheet-pending", !ready);
+  root.classList.toggle("menu-sheet-ready", ready);
+}
+
+function resetMenuPlaceholders() {
+  document
+    .querySelectorAll(".menu-item__price, .menu-item__prices span, .menu-package-price__amount")
+    .forEach((node) => {
+      node.textContent = "";
+    });
+
+  document.querySelectorAll("[data-menu-item]").forEach((node) => {
+    node.textContent = "";
+  });
+
+  document.querySelectorAll("[data-menu-section][data-menu-field]").forEach((node) => {
+    if (node.childElementCount === 0) node.textContent = "";
+  });
+
+  document.querySelectorAll("[data-menu-sub]").forEach((node) => {
+    node.textContent = "";
+  });
+}
+
 function initMenuSheet() {
   if (!document.body.dataset.menuPage) return;
+  if (!menuSheetUrlConfigured()) return;
 
   try {
     sessionStorage.removeItem("cacho-menu-sheet-v2");
@@ -297,15 +346,25 @@ function initMenuSheet() {
     /* caché antigua */
   }
 
-  refreshMenuFromSheet(currentMenuLang());
+  setMenuSheetReadyState(false);
+  resetMenuPlaceholders();
+
+  refreshMenuFromSheet(currentMenuLang()).then(() => {
+    if (!menuSheetData && typeof applyMenuContent === "function") {
+      applyMenuContent(currentMenuLang(), { forceI18n: true });
+    }
+    setMenuSheetReadyState(true);
+  });
 }
 
 function initHoursSheet() {
   if (!document.querySelector("[data-sheet-hours]")) return;
+  resetHoursPlaceholders();
   refreshHoursFromSheet(currentMenuLang());
 }
 
 window.refreshHoursFromSheet = refreshHoursFromSheet;
+window.refreshMenuFromSheet = refreshMenuFromSheet;
 
 initMenuSheet();
 initHoursSheet();

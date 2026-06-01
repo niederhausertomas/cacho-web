@@ -43,9 +43,6 @@ const translations = {
     reservasPageDesc: "Reserva mesa en CACHO Barcelona — Poblenou.",
     reservasIframeTitle: "Reservar mesa en CACHO",
     bookingArea: "PobleNou",
-    hoursMonWed: "Lun-mié: 12:30h - 23h",
-    hoursThuFri: "Jue-vie: 12:30h - 24h",
-    hoursWeekend: "Fin de semana: 12h - 23:30h",
     productsAria: "Qué vendemos",
     tapeProducts: "¿Qué hacemos?",
     productsTitle: "Platos, burgers, carnes y afterwork.",
@@ -245,9 +242,6 @@ const translations = {
     reservasPageDesc: "Reserva taula a CACHO Barcelona — Poblenou.",
     reservasIframeTitle: "Reservar taula a CACHO",
     bookingArea: "PobleNou",
-    hoursMonWed: "Dill-dij: 12:30h - 23h",
-    hoursThuFri: "Div-diss: 12:30h - 24h",
-    hoursWeekend: "Cap de setmana: 12h - 23:30h",
     productsAria: "Què venem",
     tapeProducts: "Què fem?",
     productsTitle: "Plats, burgers, carns i afterwork.",
@@ -447,9 +441,6 @@ const translations = {
     reservasPageDesc: "Book a table at CACHO Barcelona — Poblenou.",
     reservasIframeTitle: "Book a table at CACHO",
     bookingArea: "Poblenou",
-    hoursMonWed: "Mon-Wed: 12:30pm - 11pm",
-    hoursThuFri: "Thu-Fri: 12:30pm - 12am",
-    hoursWeekend: "Weekend: 12pm - 11:30pm",
     productsAria: "What we serve",
     tapeProducts: "What do we do?",
     productsTitle: "Dishes, burgers, meats and afterwork.",
@@ -621,6 +612,7 @@ const translations = {
 
 function applyTranslations(dictionary) {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
+    if (node.hasAttribute("data-sheet-hours")) return;
     const key = node.dataset.i18n;
     if (!dictionary[key]) return;
     node.textContent = dictionary[key];
@@ -940,7 +932,16 @@ function setLanguage(lang) {
   localStorage.setItem(LANG_STORAGE_KEY, lang);
 
   applyTranslations(dictionary);
-  if (typeof applyMenuContent === "function") applyMenuContent(lang);
+  const sheetMenu =
+    document.body.dataset.menuPage && (window.CACHO_MENU_SHEET_URL || "").trim();
+  if (sheetMenu) {
+    if (typeof applyMenuContent === "function") applyMenuContent(lang);
+    if (typeof window.refreshMenuFromSheet === "function") {
+      window.refreshMenuFromSheet(lang);
+    }
+  } else if (typeof applyMenuContent === "function") {
+    applyMenuContent(lang);
+  }
   if (typeof window.refreshHoursFromSheet === "function") {
     window.refreshHoursFromSheet(lang);
   }
