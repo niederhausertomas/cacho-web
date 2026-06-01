@@ -7,6 +7,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { ITEM_GROUPS } from "./generate-menu-shells.mjs";
+import { MENU_CATALOG, COFFEE_MAIN_IDS } from "./menu-catalog.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -14,6 +16,7 @@ const root = path.join(__dirname, "..");
 const ITEM_HEADERS = [
   "id",
   "section",
+  "group",
   "order",
   "name_es",
   "name_ca",
@@ -68,77 +71,153 @@ function itemText(item, part) {
   return item[part] || "";
 }
 
+function readExistingCsv(filename) {
+  const p = path.join(root, "docs", "google-sheets", filename);
+  if (!fs.existsSync(p)) return [];
+  const lines = fs.readFileSync(p, "utf8").trim().split("\n");
+  const headers = lines[0].split(",");
+  return lines.slice(1).map((line) => {
+    const cols = [];
+    let cur = "";
+    let inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') {
+        inQ = !inQ;
+        continue;
+      }
+      if (c === "," && !inQ) {
+        cols.push(cur);
+        cur = "";
+        continue;
+      }
+      cur += c;
+    }
+    cols.push(cur);
+    const row = {};
+    headers.forEach((h, i) => {
+      row[h] = cols[i] ?? "";
+    });
+    return row;
+  });
+}
+
+function parseListContainer(html, ulMatch, orderStart) {
+  const rows = [];
+  let order = orderStart;
+  const ul = ulMatch[0];
+  const section = ulMatch[1];
+  const group = ulMatch[2] || "";
+
+  const reClass = /<li class="menu-item[\s"][^>]*>([\s\S]*?)<\/li>/g;
+  let m;
+  while ((m = reClass.exec(ul)) !== null) {
+    const chunk = m[1];
+    const idMatch = chunk.match(/data-menu-item="([^"]+)"/);
+    if (!idMatch) continue;
+    order += 1;
+    let prices = [];
+    const dualMatch = chunk.match(
+      /<div class="menu-item__prices">\s*<span>([^<]*)<\/span>\s*<span>([^<]*)<\/span>/
+    );
+    if (dualMatch) {
+      prices = [dualMatch[1].trim(), dualMatch[2].trim()];
+    } else {
+      const priceMatch = chunk.match(
+        /<span class="menu-item__price[^"]*">([^<]*)<\/span>/g
+      );
+      prices = priceMatch
+        ? priceMatch.map((p) => p.replace(/<[^>]+>/g, "").trim())
+        : [];
+    }
+    rows.push({
+      id: idMatch[1],
+      section,
+      group,
+      order,
+      price: prices[0] || "",
+      price2: prices[1] || "",
+      mark: chunk.includes('menu-item__mark">*</') ? "*" : "",
+    });
+  }
+
+  const rePlain = /<li data-menu-item="([^"]+)"[^>]*>([^<]*)<\/li>/g;
+  while ((m = rePlain.exec(ul)) !== null) {
+    const id = m[1];
+    if (rows.some((r) => r.id === id)) continue;
+    order += 1;
+    rows.push({
+      id,
+      section,
+      group,
+      order,
+      price: "",
+      price2: "",
+      mark: "",
+    });
+  }
+
+  const reExtras = /<li>([\s\S]*?)<\/li>/g;
+  while ((m = reExtras.exec(ul)) !== null) {
+    const chunk = m[1];
+    const idMatch = chunk.match(/data-menu-item="([^"]+)"/);
+    if (!idMatch) continue;
+    if (rows.some((r) => r.id === idMatch[1])) continue;
+    order += 1;
+    const priceMatch = chunk.match(/menu-item__price[^"]*">([^<]*)</);
+    rows.push({
+      id: idMatch[1],
+      section,
+      group,
+      order,
+      price: priceMatch ? priceMatch[1].trim() : "",
+      price2: "",
+      mark: "",
+    });
+  }
+
+  return { rows, order };
+}
+
 function parseHtmlMenu(htmlPath) {
   const html = fs.readFileSync(path.join(root, htmlPath), "utf8");
-  const blocks = html.split(/<section class="menu-block"/);
   const rows = [];
   let order = 0;
 
+  const listRe =
+    /<ul class="[^"]*"[^>]*data-menu-list="([^"]+)"(?:[^>]*data-menu-group="([^"]*)")?[^>]*>([\s\S]*?)<\/ul>/g;
+  let m;
+  while ((m = listRe.exec(html)) !== null) {
+    const result = parseListContainer(html, m, order);
+    rows.push(...result.rows);
+    order = result.order;
+  }
+
+  const extrasRe =
+    /<ul class="[^"]*"[^>]*data-menu-extras-list="([^"]+)"(?:[^>]*data-menu-group="([^"]*)")?[^>]*>([\s\S]*?)<\/ul>/g;
+  while ((m = extrasRe.exec(html)) !== null) {
+    const result = parseListContainer(html, [m[0], m[1], m[2] || "extras"], order);
+    rows.push(...result.rows);
+    order = result.order;
+  }
+
+  const blocks = html.split(/<section class="menu-block"/);
   for (const block of blocks.slice(1)) {
     const sectionMatch = block.match(/data-menu-section="([^"]+)"/);
     const section = sectionMatch ? sectionMatch[1] : "unknown";
-
     const packageMatch = block.match(
-      /menu-package-price__amount">([^<]+)</
+      /data-package-id="([^"]+)"|menu-package-price__amount">([^<]+)</
     );
     if (packageMatch) {
       order += 1;
-      rows.push({
-        id: `package_${section}`,
-        section,
-        order,
-        price: packageMatch[1].trim(),
-        price2: "",
-        mark: "",
-      });
-    }
-
-    const itemPatterns = [
-      /<li class="menu-item"[^>]*>([\s\S]*?)<\/li>/g,
-      /<li data-menu-item="([^"]+)"[^>]*>([^<]*)<\/li>/g,
-    ];
-
-    let m;
-    const reClass = /<li class="menu-item[\s"][^>]*>([\s\S]*?)<\/li>/g;
-    while ((m = reClass.exec(block)) !== null) {
-      const chunk = m[1];
-      const idMatch = chunk.match(/data-menu-item="([^"]+)"/);
-      if (!idMatch) continue;
-      order += 1;
-      let prices = [];
-      const dualMatch = chunk.match(
-        /<div class="menu-item__prices">\s*<span>([^<]*)<\/span>\s*<span>([^<]*)<\/span>/
-      );
-      if (dualMatch) {
-        prices = [dualMatch[1].trim(), dualMatch[2].trim()];
-      } else {
-        const priceMatch = chunk.match(
-          /<span class="menu-item__price[^"]*">([^<]*)<\/span>/g
-        );
-        prices = priceMatch
-          ? priceMatch.map((p) => p.replace(/<[^>]+>/g, "").trim())
-          : [];
-      }
-      rows.push({
-        id: idMatch[1],
-        section,
-        order,
-        price: prices[0] || "",
-        price2: prices[1] || "",
-        mark: chunk.includes('menu-item__mark">*</') ? "*" : "",
-      });
-    }
-
-    const rePlain = itemPatterns[1];
-    while ((m = rePlain.exec(block)) !== null) {
-      const id = m[1];
-      if (rows.some((r) => r.id === id)) continue;
-      order += 1;
+      const id = packageMatch[1] || `package_${section}`;
+      const price = packageMatch[2] || "";
       rows.push({
         id,
         section,
+        group: "",
         order,
-        price: "",
+        price: price.trim(),
         price2: "",
         mark: "",
       });
@@ -153,9 +232,17 @@ function enrichItemRows(rows, items) {
     const es = items.es[r.id];
     const ca = items.ca[r.id];
     const en = items.en[r.id];
+    const mapped = ITEM_GROUPS[r.id];
+    let section = mapped?.section || r.section;
+    let group = mapped?.group ?? r.group ?? "";
+    if (COFFEE_MAIN_IDS.includes(r.id)) {
+      section = "coffee";
+      group = "coffee";
+    }
     return {
       id: r.id,
-      section: r.section,
+      section,
+      group,
       order: r.order,
       name_es: itemText(es, "name"),
       name_ca: itemText(ca, "name"),
@@ -233,21 +320,61 @@ function writeCsv(filename, headers, rows) {
   console.log(`✓ ${outPath} (${rows.length} filas)`);
 }
 
+function catalogToRows(csvName, existingById) {
+  const catalog = MENU_CATALOG[csvName];
+  if (!catalog) return null;
+
+  return catalog.map((entry, i) => {
+    const prev = existingById[entry.id] || {};
+    return {
+      id: entry.id,
+      section: entry.section,
+      group: entry.group ?? "",
+      order: i + 1,
+      price: prev.price || entry.price || "",
+      price2: prev.price2 || entry.price2 || "",
+      mark: prev.mark || entry.mark || "",
+    };
+  });
+}
+
+function mergeCatalogWithExisting(csvName, parsed, existing) {
+  const existingById = Object.fromEntries(existing.map((r) => [r.id, r]));
+  const catalogRows = catalogToRows(csvName, existingById);
+  if (catalogRows) return catalogRows;
+
+  return parsed.length
+    ? parsed
+    : existing.map((r, i) => ({ ...r, order: r.order || i + 1 }));
+}
+
+function exportMenuFile(csvName, htmlName, items) {
+  const parsed = parseHtmlMenu(htmlName);
+  const existing = readExistingCsv(csvName);
+  const existingById = Object.fromEntries(existing.map((r) => [r.id, r]));
+  const fromCatalog = catalogToRows(csvName, existingById);
+
+  let base;
+  if (fromCatalog) {
+    base = fromCatalog;
+  } else {
+    const hasHtmlItems = parsed.some(
+      (r) => r.id && !String(r.id).startsWith("package_")
+    );
+    base = hasHtmlItems
+      ? parsed
+      : mergeCatalogWithExisting(csvName, parsed, existing);
+  }
+  writeCsv(csvName, ITEM_HEADERS, enrichItemRows(base, items));
+}
+
 const items = loadConst("MENU_ITEMS");
 const content = loadConst("MENU_CONTENT");
 
-writeCsv("Comidas.csv", ITEM_HEADERS, enrichItemRows(parseHtmlMenu("comidas.html"), items));
-writeCsv("Bebidas.csv", ITEM_HEADERS, enrichItemRows(parseHtmlMenu("bebidas.html"), items));
-writeCsv(
-  "Menu-Grupos.csv",
-  ITEM_HEADERS,
-  enrichItemRows(parseHtmlMenu("menu-grupos.html"), items)
-);
-writeCsv(
-  "Cacho-Burgers.csv",
-  ITEM_HEADERS,
-  enrichItemRows(parseHtmlMenu("cacho-burgers.html"), items)
-);
+exportMenuFile("Comidas.csv", "comidas.html", items);
+exportMenuFile("Bebidas.csv", "bebidas.html", items);
+exportMenuFile("Menu-Grupos.csv", "menu-grupos.html", items);
+exportMenuFile("Cacho-Burgers.csv", "cacho-burgers.html", items);
 writeCsv("Secciones.csv", SECTION_HEADERS, exportSections(content));
 
 console.log(

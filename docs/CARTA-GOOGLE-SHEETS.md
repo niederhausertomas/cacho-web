@@ -33,24 +33,55 @@ Al importar: **Reemplazar datos en la hoja seleccionada** + separador **Coma**. 
 
 Tras importar `Cacho-Burgers.csv`, comprobá una fila sin descripción (ej. `cb_fries`): columna **J** = `price`, columna **M** = `TRUE` en `active`, columna **L** `mark` vacía.
 
+**Menú Grupos:** la pestaña debe incluir la columna **`group`** (entre `section` y `order`). Sin ella, el menú completo no aparece en la web. Valores: `starter`, `main`, `dessert`, `drink` para filas `gr_starter*`, `gr_main*`, etc.; vacío para `gr_pp*` (pica pica). Si tu hoja es antigua, reimportá `Menu-Grupos.csv` del repo (incluye `group`).
+
 4. Avisame con la **URL de la hoja** para el Apps Script y conectar la web.
 
 ---
 
-## Columnas de platos (Comidas / Bebidas / Menú Grupos)
+## Cómo carga la web (100 % dinámico)
+
+Las páginas de carta (`comidas`, `bebidas`, `menu-grupos`, `cacho-burgers`) tienen **listas vacías** en el HTML (`<ul data-menu-list="…">`). Al cargar, `menu-sheet.js` + `menu-render.js` leen Google Sheets y **generan cada plato** (nombre, descripción, precio). No hay textos de platos en el código.
+
+- Títulos, notas y subtítulos → pestaña **Secciones**
+- Platos y precios → pestaña correspondiente (**Comidas**, **Bebidas**, etc.)
+- Horarios → pestaña **Horarios**
+
+Hasta que Sheets responde, los bloques de carta permanecen ocultos (`menu-sheet-pending`).
+
+---
+
+## Columnas de platos (Comidas / Bebidas / Menú Grupos / Cacho Burgers)
 
 ```
-id | section | order | name_es | name_ca | name_en | desc_es | desc_ca | desc_en | price | price2 | mark | active
+id | section | group | order | name_es | name_ca | name_en | desc_es | desc_ca | desc_en | price | price2 | mark | active
 ```
 
 | Columna | Uso |
 |---------|-----|
+| `section` | Bloque de la carta (`salads`, `wine`, `burgers`, `full`, `fries`, …) |
+| `group` | Sublista dentro del bloque (ver abajo). Vacío si no aplica. |
 | `name_es` / `name_ca` / `name_en` | Nombre del plato en cada idioma |
 | `desc_es` / `desc_ca` / `desc_en` | Descripción (vacío si no hay) |
-| `price` / `price2` | Precio(s) — **mismos en todos los idiomas** |
+| `price` / `price2` | Precio(s) — **mismos en todos los idiomas** (simple / doble en burgers) |
 | `mark` | Ej. `*` vegetariano |
+| `active` | `TRUE` / `FALSE` — oculta la fila si es `FALSE` |
 
-**Al editar:** si cambias un plato en español, revisa también catalán e inglés en la misma fila. Los CSV exportados ya traen los tres idiomas desde `menu-i18n.js`.
+### Ejemplos de `group`
+
+| section | group | Ejemplo |
+|---------|-------|---------|
+| `wine` | `red`, `white`, `cava`, … | Vinos por color / tipo |
+| `spirits` | `gin`, `vodka`, … | Combinados por categoría |
+| `coffee` | `coffee` | Cafés de especialidad |
+| `coffee` | `refresh` | Refrescos caseros |
+| `burgers` | `extras` | Extras “Tunea tu burger” (comidas) |
+| `full` | `starter`, `main`, `dessert`, `drink` | Menú de grupos |
+| `fries` / `addons` | `extras` | Extras Cacho Burgers |
+
+**Cacho Burgers — combo:** fila `combo_addon` en sección `combo`, columna `price` = suplemento del combo (la web muestra `+4`).
+
+**Al editar:** si cambias un plato en español, revisa también catalán e inglés en la misma fila. Para regenerar CSV desde el repo: `node scripts/export-menu-to-csv.mjs`.
 
 ---
 

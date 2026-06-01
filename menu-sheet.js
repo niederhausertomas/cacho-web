@@ -93,6 +93,44 @@ async function fetchMenuSheet(url) {
   }
 }
 
+/** Si falta la columna `group` en Sheets, se infiere por id (menú grupos). */
+function resolveMenuGroup(row) {
+  const existing = row.group;
+  if (existing != null && String(existing).trim() !== "") {
+    return String(existing).trim();
+  }
+  const id = String(row.id || "");
+  if (/^gr_starter/i.test(id)) return "starter";
+  if (/^gr_main/i.test(id)) return "main";
+  if (/^gr_dessert/i.test(id)) return "dessert";
+  if (/^gr_drink/i.test(id)) return "drink";
+  if (/^gr_pp/i.test(id)) return "";
+  const orderKey = String(row.order ?? "")
+    .trim()
+    .toLowerCase();
+  if (["starter", "main", "dessert", "drink"].includes(orderKey)) {
+    return orderKey;
+  }
+  return "";
+}
+
+function normalizeMenuSheetRows(rows) {
+  return (rows || []).map((row) => ({
+    ...row,
+    group: resolveMenuGroup(row),
+  }));
+}
+
+function normalizeMenuSheetData(data) {
+  if (!data) return data;
+  ["comidas", "bebidas", "grupos", "cachoBurgers"].forEach((key) => {
+    if (Array.isArray(data[key])) {
+      data[key] = normalizeMenuSheetRows(data[key]);
+    }
+  });
+  return data;
+}
+
 function loadMenuSheetData() {
   const url = (window.CACHO_MENU_SHEET_URL || "").trim();
   if (!url) {
@@ -105,7 +143,7 @@ function loadMenuSheetData() {
   menuSheetLoadPromise = fetchMenuSheet(url)
     .then((data) => {
       if (!data || !data.updatedAt) throw new Error("Respuesta inválida del script");
-      menuSheetData = data;
+      menuSheetData = normalizeMenuSheetData(data);
       console.info("[menu-sheet] Carta cargada", data.updatedAt);
       return data;
     })
@@ -149,68 +187,27 @@ function applyMenuFromSheet(lang) {
   const items = itemsById(menuSheetData[dataKey]);
   const secciones = menuSheetData.secciones || [];
 
-  document.querySelectorAll("[data-menu-item]").forEach((node) => {
-    const row = items[node.dataset.menuItem];
-    if (!row) return;
+  if (document.querySelector("[data-menu-list]")) {
+    renderMenuListsFromSheet(lang, dataKey);
+    applyKidsPromoFromSheet(lang, items);
+  }
 
-    const part = node.dataset.menuPart;
-    if (part === "name" || part === "desc") {
-      const text = pickLocalized(row, lang, part);
-      if (text) node.textContent = text;
+  document.querySelectorAll("[data-package-id]").forEach((amount) => {
+    const pkgId = amount.dataset.packageId;
+    const row = items[pkgId];
+    if (row?.price === "" || row?.price == null) return;
+    const formatted = formatPrice(row.price);
+    if (pkgId === "combo_addon") {
+      amount.textContent = `+${formatted}`;
       return;
     }
-
-    if (!part) {
-      const name = pickLocalized(row, lang, "name");
-      if (name) node.textContent = name;
-    }
-  });
-
-  document.querySelectorAll(".menu-item").forEach((li) => {
-    const idNode = li.querySelector("[data-menu-item]");
-    if (!idNode) return;
-    const row = items[idNode.dataset.menuItem];
-    if (!row) return;
-
-    const priceGroup = li.querySelector(".menu-item__prices");
-    if (priceGroup) {
-      const spans = priceGroup.querySelectorAll("span");
-      if (spans[0] && row.price !== "" && row.price != null) {
-        spans[0].textContent = formatPrice(row.price);
-      }
-      if (spans[1] && row.price2 !== "" && row.price2 != null) {
-        spans[1].textContent = formatPrice(row.price2);
-      }
-    } else {
-      const prices = li.querySelectorAll(".menu-item__price");
-      if (prices[0] && row.price !== "" && row.price != null) {
-        prices[0].textContent = formatPrice(row.price);
-      }
-      if (prices[1] && row.price2) prices[1].textContent = formatPrice(row.price2);
-    }
-
-    const mark = li.querySelector(".menu-item__mark");
-    if (mark) mark.hidden = row.mark !== "*";
-  });
-
-  document.querySelectorAll(".menu-extras__grid li").forEach((li) => {
-    const idNode = li.querySelector("[data-menu-item]");
-    if (!idNode) return;
-    const row = items[idNode.dataset.menuItem];
-    if (!row) return;
-    const priceEl = li.querySelector(".menu-item__price");
-    if (priceEl && row.price !== "" && row.price != null) {
-      priceEl.textContent = formatPrice(row.price);
-    }
+    amount.textContent = formatted;
   });
 
   Object.keys(items).forEach((id) => {
     if (!id.startsWith("package_")) return;
     const row = items[id];
-    const block = document.querySelector(
-      `[data-menu-section="${row.section}"]`
-    )?.closest(".menu-block");
-    const amount = block?.querySelector(".menu-package-price__amount");
+    const amount = document.querySelector(`[data-package-id="${id}"]`);
     if (amount && row.price) amount.textContent = formatPrice(row.price);
   });
 
@@ -318,20 +315,20 @@ function setMenuSheetReadyState(ready) {
 
 function resetMenuPlaceholders() {
   document
-    .querySelectorAll(".menu-item__price, .menu-item__prices span, .menu-package-price__amount")
-    .forEach((node) => {
-      node.textContent = "";
+    .querySelectorAll("[data-menu-list], [data-menu-extras-list]")
+    .forEach((ul) => {
+      ul.innerHTML = "";
     });
-
-  document.querySelectorAll("[data-menu-item]").forEach((node) => {
-    node.textContent = "";
-  });
 
   document.querySelectorAll("[data-menu-section][data-menu-field]").forEach((node) => {
     if (node.childElementCount === 0) node.textContent = "";
   });
 
   document.querySelectorAll("[data-menu-sub]").forEach((node) => {
+    node.textContent = "";
+  });
+
+  document.querySelectorAll("[data-package-id], .menu-burgers-promo--kids .menu-item__price").forEach((node) => {
     node.textContent = "";
   });
 }
