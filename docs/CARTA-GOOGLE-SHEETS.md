@@ -33,9 +33,13 @@ Al importar: **Reemplazar datos en la hoja seleccionada** + separador **Coma**. 
 
 Tras importar `Cacho-Burgers.csv`, comprobá una fila sin descripción (ej. `cb_fries`): columna **J** = `price`, columna **M** = `TRUE` en `active`, columna **L** `mark` vacía.
 
-**Menú Grupos:** la pestaña debe incluir la columna **`group`** (entre `section` y `order`). Sin ella, el menú completo no aparece en la web. Valores: `starter`, `main`, `dessert`, `drink` para filas `gr_starter*`, `gr_main*`, etc.; vacío para `gr_pp*` (pica pica). Si tu hoja es antigua, reimportá `Menu-Grupos.csv` del repo (incluye `group`).
+**Menú Grupos:** la pestaña debe incluir la columna **`group`** (entre `section` y `order`). Sin ella, el menú completo no aparece en la web. Valores: `starter`, `main`, `dessert`, `drink` para filas `gr_starter*`, `gr_main*`, etc.; `food`, `dessert` y `drink` para filas `gr_pp*` (pica pica). Si tu hoja es antigua, reimportá `Menu-Grupos.csv` del repo (incluye `group`).
 
 **Burgers vacías en Comidas (solo sale el cartel «BURGERS»):** en la pestaña **Comidas**, columna `section`, las filas `provoloneBurger` … `cheeseBacon` y los `extra*` deben decir **`burgers`**, no `milanese`. Corregilo a mano o **reimportá solo** `docs/google-sheets/Comidas.csv` → pestaña **Comidas** (reemplazar datos en la hoja). El CSV del repo ya trae `burgers` bien; no hace falta tocar `comidas.html` para los platos.
+
+**Vinos, café o refrescos vacíos en Bebidas:** la pestaña **Bebidas** debe tener la columna **`group`** (entre `section` y `order`). Sin ella, vinos y cafetería no aparecen en la web. Reimportá `docs/google-sheets/Bebidas.csv` o añadí la columna a mano (`red`, `white`, `coffee`, `refresh`, `gin`, …). La web infiere `group` por `id` si falta la columna, pero conviene tenerla en Sheets.
+
+**Combinados vacíos:** deben existir filas con `section` = **`spirits`** y `group` = `gin`, `vodka`, `rum`, etc. (filas `hendricks` … `cointreau` en `Bebidas.csv`). Si no están en la hoja, esa sección queda vacía aunque el resto de bebidas funcione.
 
 4. Avisame con la **URL de la hoja** para el Apps Script y conectar la web.
 

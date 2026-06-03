@@ -246,12 +246,13 @@ function convertGroups(html) {
       <p class="menu-block__note" data-menu-section="full" data-menu-field="note"></p>
       <p class="menu-package-price"><span class="menu-package-price__amount" data-package-id="package_full"></span><span class="menu-package-price__unit" data-i18n="pricePerPerson">/ persona</span></p>
       ${emptyList('data-menu-list="full" data-menu-group="starter"', "menu-list menu-list--plain")}
+      <p class="menu-block__note" data-menu-section="full" data-menu-field="mainNote"></p>
       <h3 class="menu-subtitle" data-menu-section="full" data-menu-field="mainTitle"></h3>
       ${emptyList('data-menu-list="full" data-menu-group="main"', "menu-list menu-list--plain")}
-      <p class="menu-block__note" data-menu-section="full" data-menu-field="mainNote"></p>
       <h3 class="menu-subtitle" data-menu-section="full" data-menu-field="dessertTitle"></h3>
       ${emptyList('data-menu-list="full" data-menu-group="dessert"', "menu-list menu-list--plain")}
       <h3 class="menu-subtitle" data-menu-section="full" data-menu-field="drinkTitle"></h3>
+      <p class="menu-block__note" data-menu-section="full" data-menu-field="drinkNote"></p>
       ${emptyList('data-menu-list="full" data-menu-group="drink"', "menu-list menu-list--plain")}
     </section>`
   );
@@ -262,7 +263,14 @@ function convertGroups(html) {
       <h2 class="menu-block__title" data-menu-section="pica" data-menu-field="title"></h2>
       <p class="menu-block__note" data-menu-section="pica" data-menu-field="note"></p>
       <p class="menu-package-price"><span class="menu-package-price__amount" data-package-id="package_pica"></span><span class="menu-package-price__unit" data-i18n="pricePerPerson">/ persona</span></p>
-      ${emptyList('data-menu-list="pica"', "menu-list menu-list--plain")}
+      <h3 class="menu-subtitle" data-menu-section="pica" data-menu-field="foodTitle"></h3>
+      ${emptyList('data-menu-list="pica" data-menu-group="food"', "menu-list menu-list--plain")}
+      <h3 class="menu-subtitle" data-menu-section="pica" data-menu-field="dessertTitle"></h3>
+      <p class="menu-block__note" data-menu-section="pica" data-menu-field="dessertNote"></p>
+      ${emptyList('data-menu-list="pica" data-menu-group="dessert"', "menu-list menu-list--plain")}
+      <h3 class="menu-subtitle" data-menu-section="pica" data-menu-field="drinkTitle"></h3>
+      <p class="menu-block__note" data-menu-section="pica" data-menu-field="drinkNote"></p>
+      ${emptyList('data-menu-list="pica" data-menu-group="drink"', "menu-list menu-list--plain")}
     </section>`
   );
 

@@ -116,18 +116,85 @@ function resolveMenuSection(row, sheetKey) {
   return inferred || section;
 }
 
-/** Si falta la columna `group` en Sheets, se infiere por id (menú grupos). */
+/** Si falta la columna `group` en Bebidas, se infiere por id (vinos, combinados, café). */
+const BEBIDAS_GROUP_BY_ID = Object.freeze({
+  itant: "red",
+  comalats: "redNat",
+  karma: "redNat",
+  trus: "redNat",
+  cargol: "whiteNat",
+  methodic: "whiteNat",
+  surrealista: "whiteNat",
+  perlat: "whiteNat",
+  saltimbanqui: "white",
+  descarada: "white",
+  serra: "white",
+  freye: "rose",
+  musugorri: "vermouth",
+  brutNature: "cava",
+  hendricks: "gin",
+  ginMare: "gin",
+  seagrams: "gin",
+  tanqueray: "gin",
+  bulldog: "gin",
+  ginMg: "gin",
+  greyGoose: "vodka",
+  absolut: "vodka",
+  skyy: "vodka",
+  zacapa: "rum",
+  brugal: "rum",
+  abueloAnejo: "rum",
+  glenmorangie: "whiskey",
+  johnnieWalker: "whiskey",
+  jackDaniels: "whiskey",
+  herradura: "tequila",
+  joseCuervo: "tequila",
+  mezcalUnion: "tequila",
+  fernet: "liqueurs",
+  ratafia: "liqueurs",
+  limoncello: "liqueurs",
+  baileys: "liqueurs",
+  campariShot: "liqueurs",
+  disaronno: "liqueurs",
+  aperolShot: "liqueurs",
+  cointreau: "liqueurs",
+  caramel: "coffee",
+  classicLatte: "coffee",
+  flatWhite: "coffee",
+  latte: "coffee",
+  matcha: "coffee",
+  chai: "coffee",
+  espresso: "coffee",
+  icedTea: "refresh",
+  lemonade: "refresh",
+  juice: "refresh",
+  greenQueen: "refresh",
+  orangePower: "refresh",
+  redHunter: "refresh",
+  gingerBeer: "refresh",
+  kombucha: "refresh",
+  sunny: "refresh",
+  tropical: "refresh",
+  claraTea: "refresh",
+  baya: "refresh",
+});
+
+/** Si falta la columna `group` en Sheets, se infiere por id (menú grupos / bebidas). */
 function resolveMenuGroup(row) {
   const existing = row.group;
   if (existing != null && String(existing).trim() !== "") {
     return String(existing).trim();
   }
   const id = String(row.id || "");
+  const bebidasGroup = BEBIDAS_GROUP_BY_ID[id];
+  if (bebidasGroup) return bebidasGroup;
   if (/^gr_starter/i.test(id)) return "starter";
   if (/^gr_main/i.test(id)) return "main";
   if (/^gr_dessert/i.test(id)) return "dessert";
   if (/^gr_drink/i.test(id)) return "drink";
-  if (/^gr_pp/i.test(id)) return "";
+  if (/^gr_pp(8|9|10)$/i.test(id)) return "drink";
+  if (/^gr_pp(6|7)$/i.test(id)) return "dessert";
+  if (/^gr_pp/i.test(id)) return "food";
   const orderKey = String(row.order ?? "")
     .trim()
     .toLowerCase();

@@ -7,18 +7,18 @@ gr_main2,full,main,5,Veggie portobello burger + papas horneadas,Veggie portobell
 gr_main3,full,main,6,Entraña + patatas con tomates cherry confitados,Entraña + patates amb tomàquets cherry confitats,Skirt steak + potatoes with confit cherry tomatoes,,,,,,,TRUE
 gr_main4,full,main,7,Milanesa napolitana + papa asada,Milanesa napolitana + patata rostida,Milanesa napolitana + baked potato,,,,,,,TRUE
 gr_dessert1,full,dessert,8,Tarta tatin,Tarta tatin,Tatin tart,,,,,,,TRUE
-gr_dessert2,full,dessert,9,Brownie (2 por persona),Brownie (2 per persona),Brownie (2 per person),,,,,,,TRUE
+gr_dessert2,full,dessert,9,Brownie,Brownie,Brownie,,,,,,,TRUE
 gr_drink1,full,drink,10,Copa Estrella Damm o clara,Copa Estrella Damm o clara,Estrella Damm or shandy,,,,,,,TRUE
 gr_drink2,full,drink,11,Refresco,Refresc,Soft drink,,,,,,,TRUE
 gr_drink3,full,drink,12,Vino Itant o Saltimbanqui,Vi Itant o Saltimbanqui,Itant or Saltimbanqui wine,,,,,,,TRUE
 package_pica,pica,,13,,,,,,,29,,,TRUE
-gr_pp1,pica,,14,Nachos,Nachos,Nachos,,,,,,,TRUE
-gr_pp2,pica,,15,Hummus con focaccia,Hummus amb focaccia,Hummus with focaccia,,,,,,,TRUE
-gr_pp3,pica,,16,Patatas bravas,Patates braves,Bravas potatoes,,,,,,,TRUE
-gr_pp4,pica,,17,Zanahorias asadas,Pastanagues rostides,Roasted carrots,,,,,,,TRUE
-gr_pp5,pica,,18,Entraña (½ ración por persona),Entraña (½ ració per persona),Skirt steak (½ portion per person),,,,,,,TRUE
-gr_pp6,pica,,19,Brownie,Brownie,Brownie,,,,,,,TRUE
-gr_pp7,pica,,20,Tarta tatin (3 por persona),Tarta tatin (3 per persona),Tatin tart (3 per person),,,,,,,TRUE
-gr_pp8,pica,,21,Copa Estrella Damm o clara,Copa Estrella Damm o clara,Estrella Damm or shandy,,,,,,,TRUE
-gr_pp9,pica,,22,Refresco,Refresc,Soft drink,,,,,,,TRUE
-gr_pp10,pica,,23,Vino Itant o Saltimbanqui,Vi Itant o Saltimbanqui,Itant or Saltimbanqui wine,,,,,,,TRUE
+gr_pp1,pica,food,14,Nachos,Nachos,Nachos,,,,,,,TRUE
+gr_pp2,pica,food,15,Hummus con focaccia,Hummus amb focaccia,Hummus with focaccia,,,,,,,TRUE
+gr_pp3,pica,food,16,Patatas bravas,Patates braves,Bravas potatoes,,,,,,,TRUE
+gr_pp4,pica,food,17,Zanahorias asadas,Pastanagues rostides,Roasted carrots,,,,,,,TRUE
+gr_pp5,pica,food,18,Entraña (½ ración por persona),Entraña (½ ració per persona),Skirt steak (½ portion per person),,,,,,,TRUE
+gr_pp6,pica,dessert,19,Brownie,Brownie,Brownie,,,,,,,TRUE
+gr_pp7,pica,dessert,20,Tarta tatin,Tarta tatin,Tatin tart,,,,,,,TRUE
+gr_pp8,pica,drink,21,Copa Estrella Damm o clara,Copa Estrella Damm o clara,Estrella Damm or shandy,,,,,,,TRUE
+gr_pp9,pica,drink,22,Refresco,Refresc,Soft drink,,,,,,,TRUE
+gr_pp10,pica,drink,23,Vino Itant o Saltimbanqui,Vi Itant o Saltimbanqui,Itant or Saltimbanqui wine,,,,,,,TRUE

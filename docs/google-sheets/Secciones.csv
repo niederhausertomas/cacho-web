@@ -43,11 +43,17 @@ groups,full,mainTitle,Plato fuerte con acompañamiento a escoger,Plat fort amb a
 groups,full,mainNote,Serviremos ½ ración por persona del plato fuerte elegido.,Servirem ½ ració per persona del plat fort triat.,We'll serve a half portion per person of the selected main course.
 groups,full,dessertTitle,Postre,Postre,Dessert
 groups,full,drinkTitle,Bebida,Beguda,Drink
+groups,full,drinkNote,(2 por persona),(2 per persona),(2 per person)
 groups,full,contactTitle,Reservas y consultas,Reserves i consultes,Bookings & enquiries
 groups,full,contactText,Para cualquier consulta escríbenos a,Per a qualsevol consulta escriu-nos a,"For any enquiries, email us at"
 groups,full,contactTextEnd,o llámanos al 931 398 813.,o truca'ns al 931 398 813.,or call 931 398 813.
 groups,pica,title,Menú pica pica,Menú pica pica,Pica-pica menu
 groups,pica,note,*Disponible para grupos de 24 personas o más (1 menú cada 3 personas).,*Disponible per a grups de 24 persones o més (1 menú cada 3 persones).,*Available for groups of 24 or more (1 menu per 3 people).
+groups,pica,foodTitle,Comida,Menjar,Food
+groups,pica,dessertTitle,Postres,Postres,Desserts
+groups,pica,dessertNote,(Serviremos ½ ración por persona.),(Servirem ½ ració per persona.),(We'll serve a half portion per person.)
+groups,pica,drinkTitle,Bebida,Beguda,Drink
+groups,pica,drinkNote,(3 por persona),(3 per persona),(3 per person)
 cachoBurgers,fries,title,Fritas & Co,Fritas & Co,Fries & Co
 cachoBurgers,fries,extrasTitle,+ Extras,+ Extras,+ Extras
 cachoBurgers,cookies,title,New York Cookie,New York Cookie,New York Cookie

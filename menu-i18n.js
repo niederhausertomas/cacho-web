@@ -219,13 +219,19 @@ const MENU_CONTENT = {
         mainNote: "Serviremos ½ ración por persona del plato fuerte elegido.",
         dessertTitle: "Postre",
         drinkTitle: "Bebida",
+        drinkNote: "(2 por persona)",
         contactTitle: "Reservas y consultas",
         contactText: "Para cualquier consulta escríbenos a",
         contactTextEnd: "o llámanos al 931 398 813."
       },
       pica: {
         title: "Menú pica pica",
-        note: "*Disponible para grupos de 24 personas o más (1 menú cada 3 personas)."
+        note: "*Disponible para grupos de 24 personas o más (1 menú cada 3 personas).",
+        foodTitle: "Comida",
+        dessertTitle: "Postres",
+        dessertNote: "(Serviremos ½ ración por persona.)",
+        drinkTitle: "Bebida",
+        drinkNote: "(3 por persona)"
       }
     },
     cachoBurgers: {
@@ -273,13 +279,19 @@ const MENU_CONTENT = {
         mainNote: "Servirem ½ ració per persona del plat fort triat.",
         dessertTitle: "Postre",
         drinkTitle: "Beguda",
+        drinkNote: "(2 per persona)",
         contactTitle: "Reserves i consultes",
         contactText: "Per a qualsevol consulta escriu-nos a",
         contactTextEnd: "o truca'ns al 931 398 813."
       },
       pica: {
         title: "Menú pica pica",
-        note: "*Disponible per a grups de 24 persones o més (1 menú cada 3 persones)."
+        note: "*Disponible per a grups de 24 persones o més (1 menú cada 3 persones).",
+        foodTitle: "Menjar",
+        dessertTitle: "Postres",
+        dessertNote: "(Servirem ½ ració per persona.)",
+        drinkTitle: "Beguda",
+        drinkNote: "(3 per persona)"
       }
     },
     cachoBurgers: {
@@ -327,13 +339,19 @@ const MENU_CONTENT = {
         mainNote: "We'll serve a half portion per person of the selected main course.",
         dessertTitle: "Dessert",
         drinkTitle: "Drink",
+        drinkNote: "(2 per person)",
         contactTitle: "Bookings & enquiries",
         contactText: "For any enquiries, email us at",
         contactTextEnd: "or call 931 398 813."
       },
       pica: {
         title: "Pica-pica menu",
-        note: "*Available for groups of 24 or more (1 menu per 3 people)."
+        note: "*Available for groups of 24 or more (1 menu per 3 people).",
+        foodTitle: "Food",
+        dessertTitle: "Desserts",
+        dessertNote: "(We'll serve a half portion per person.)",
+        drinkTitle: "Drink",
+        drinkNote: "(3 per person)"
       }
     },
     cachoBurgers: {
@@ -397,10 +415,10 @@ const MENU_ITEMS = {
     gr_main2: "Veggie portobello burger + papas horneadas",
     gr_main3: "Entraña + patatas con tomates cherry confitados",
     gr_main4: "Milanesa napolitana + papa asada",
-    gr_dessert1: "Tarta tatin", gr_dessert2: "Brownie (2 por persona)",
+    gr_dessert1: "Tarta tatin", gr_dessert2: "Brownie",
     gr_drink1: "Copa Estrella Damm o clara", gr_drink2: "Refresco", gr_drink3: "Vino Itant o Saltimbanqui",
     gr_pp1: "Nachos", gr_pp2: "Hummus con focaccia", gr_pp3: "Patatas bravas", gr_pp4: "Zanahorias asadas",
-    gr_pp5: "Entraña (½ ración por persona)", gr_pp6: "Brownie", gr_pp7: "Tarta tatin (3 por persona)",
+    gr_pp5: "Entraña (½ ración por persona)", gr_pp6: "Brownie", gr_pp7: "Tarta tatin",
     gr_pp8: "Copa Estrella Damm o clara", gr_pp9: "Refresco", gr_pp10: "Vino Itant o Saltimbanqui",
     tommy: { name: "Tommy's Margarita", desc: "Tequila, lima y sirope de agave." },
     pornstar: { name: "Porn Star Martini", desc: "Vodka infusionado con vainilla, fruta de la pasión, sirope de vainilla y shot de cava." },
@@ -545,10 +563,10 @@ const MENU_ITEMS = {
     gr_main2: "Veggie portobello burger + patates al forn",
     gr_main3: "Entraña + patates amb tomàquets cherry confitats",
     gr_main4: "Milanesa napolitana + patata rostida",
-    gr_dessert1: "Tarta tatin", gr_dessert2: "Brownie (2 per persona)",
+    gr_dessert1: "Tarta tatin", gr_dessert2: "Brownie",
     gr_drink1: "Copa Estrella Damm o clara", gr_drink2: "Refresc", gr_drink3: "Vi Itant o Saltimbanqui",
     gr_pp1: "Nachos", gr_pp2: "Hummus amb focaccia", gr_pp3: "Patates braves", gr_pp4: "Pastanagues rostides",
-    gr_pp5: "Entraña (½ ració per persona)", gr_pp6: "Brownie", gr_pp7: "Tarta tatin (3 per persona)",
+    gr_pp5: "Entraña (½ ració per persona)", gr_pp6: "Brownie", gr_pp7: "Tarta tatin",
     gr_pp8: "Copa Estrella Damm o clara", gr_pp9: "Refresc", gr_pp10: "Vi Itant o Saltimbanqui",
     tommy: { name: "Tommy's Margarita", desc: "Tequila, llima i xarop d'agave." },
     pornstar: { name: "Porn Star Martini", desc: "Vodka infusionat amb vainilla, fruita de la passió, xarop de vainilla i xampany." },
@@ -693,10 +711,10 @@ const MENU_ITEMS = {
     gr_main2: "Veggie portobello burger + roasted potatoes",
     gr_main3: "Skirt steak + potatoes with confit cherry tomatoes",
     gr_main4: "Milanesa napolitana + baked potato",
-    gr_dessert1: "Tatin tart", gr_dessert2: "Brownie (2 per person)",
+    gr_dessert1: "Tatin tart", gr_dessert2: "Brownie",
     gr_drink1: "Estrella Damm or shandy", gr_drink2: "Soft drink", gr_drink3: "Itant or Saltimbanqui wine",
     gr_pp1: "Nachos", gr_pp2: "Hummus with focaccia", gr_pp3: "Bravas potatoes", gr_pp4: "Roasted carrots",
-    gr_pp5: "Skirt steak (½ portion per person)", gr_pp6: "Brownie", gr_pp7: "Tatin tart (3 per person)",
+    gr_pp5: "Skirt steak (½ portion per person)", gr_pp6: "Brownie", gr_pp7: "Tatin tart",
     gr_pp8: "Estrella Damm or shandy", gr_pp9: "Soft drink", gr_pp10: "Itant or Saltimbanqui wine",
     tommy: { name: "Tommy's Margarita", desc: "Tequila, lime and agave syrup." },
     pornstar: { name: "Porn Star Martini", desc: "Vanilla-infused vodka, passion fruit, vanilla syrup and cava shot." },
