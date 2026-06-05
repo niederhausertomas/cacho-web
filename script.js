@@ -192,6 +192,10 @@ const translations = {
     burgersMeet: "Nos vemos en Pujades, 195 · Poblenou",
     burgersViewMenu: "Ver carta",
     altBurgersBrand: "Cacho Burgers",
+    altBurgersSlide1: "Terraza de Cacho Burgers en Poblenou",
+    altBurgersSlide2: "Burger, patatas y bebida en Cacho Burgers",
+    altBurgersSlide3: "Smash burger en Cacho Burgers",
+    altBurgersSlide4: "Fingers de pollo en Cacho Burgers",
     miniMenuTitle: "Carta",
     miniMenuText: "Smash burgers, sides y bebidas. Enlace a PDF o página propia.",
     miniLocationTitle: "Ubicación",
@@ -466,6 +470,10 @@ const translations = {
     burgersMeet: "Ens veiem a Pujades, 195 · Poblenou",
     burgersViewMenu: "Veure carta",
     altBurgersBrand: "Cacho Burgers",
+    altBurgersSlide1: "Terrassa de Cacho Burgers a Poblenou",
+    altBurgersSlide2: "Burger, patates i beguda a Cacho Burgers",
+    altBurgersSlide3: "Smash burger a Cacho Burgers",
+    altBurgersSlide4: "Dits de pollastre a Cacho Burgers",
     miniMenuTitle: "Carta",
     miniMenuText: "Smash burgers, sides i begudes. Enllaç a PDF o pàgina pròpia.",
     miniLocationTitle: "Ubicació",
@@ -740,6 +748,10 @@ const translations = {
     burgersMeet: "See you at Pujades, 195 · Poblenou",
     burgersViewMenu: "View menu",
     altBurgersBrand: "Cacho Burgers",
+    altBurgersSlide1: "Cacho Burgers terrace in Poblenou",
+    altBurgersSlide2: "Burger, fries and drink at Cacho Burgers",
+    altBurgersSlide3: "Smash burger at Cacho Burgers",
+    altBurgersSlide4: "Chicken fingers at Cacho Burgers",
     miniMenuTitle: "Menu",
     miniMenuText: "Smash burgers, sides and drinks. Link to PDF or dedicated page.",
     miniLocationTitle: "Location",
@@ -987,7 +999,8 @@ function scrollToNavSection(selector, { behavior = "smooth", updateHash = true }
     const target = mobile ? section : getNavScrollTarget(section);
     const offset =
       getNavScrollOffset() + (mobile ? getMobileScrollExtra() : getNavScrollExtra());
-    const top = Math.max(0, getElementPageTop(target) - offset);
+    const sectionScrollNudge = selector === "#cacho-burgers" ? 52 : 0;
+    const top = Math.max(0, getElementPageTop(target) - offset + sectionScrollNudge);
 
     if (updateHash && window.location.hash !== selector) {
       history.pushState(null, "", selector);
