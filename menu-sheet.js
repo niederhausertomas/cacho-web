@@ -10,6 +10,11 @@ const MENU_PAGE_KEYS = {
   cachoBurgers: "cachoBurgers",
 };
 
+/** Precios de paquetes cuando falta la fila en Sheets. */
+const MENU_PACKAGE_DEFAULTS = Object.freeze({
+  combo_addon: "4",
+});
+
 let menuSheetData = null;
 let menuSheetLoadPromise = null;
 
@@ -268,6 +273,30 @@ function sectionText(secciones, page, section, field, lang) {
   return pickLocalized(row, lang, "text");
 }
 
+function resolvePackagePrice(items, pkgId) {
+  const row = items?.[pkgId];
+  const raw = row?.price;
+  if (raw !== "" && raw != null) return raw;
+  return MENU_PACKAGE_DEFAULTS[pkgId] ?? null;
+}
+
+function setPackagePriceEl(amount, pkgId, rawPrice) {
+  if (rawPrice === "" || rawPrice == null) return;
+  const formatted = formatPrice(rawPrice);
+  amount.textContent = pkgId === "combo_addon" ? `+${formatted}` : formatted;
+}
+
+function applyMenuPackagePrices(items) {
+  document.querySelectorAll("[data-package-id]").forEach((amount) => {
+    const pkgId = amount.dataset.packageId;
+    setPackagePriceEl(amount, pkgId, resolvePackagePrice(items, pkgId));
+  });
+}
+
+function applyMenuPackageDefaults() {
+  applyMenuPackagePrices(null);
+}
+
 function applyMenuFromSheet(lang) {
   if (!menuSheetData || !document.body.dataset.menuPage) return;
 
@@ -283,24 +312,7 @@ function applyMenuFromSheet(lang) {
     applyKidsPromoFromSheet(lang, items);
   }
 
-  document.querySelectorAll("[data-package-id]").forEach((amount) => {
-    const pkgId = amount.dataset.packageId;
-    const row = items[pkgId];
-    if (row?.price === "" || row?.price == null) return;
-    const formatted = formatPrice(row.price);
-    if (pkgId === "combo_addon") {
-      amount.textContent = `+${formatted}`;
-      return;
-    }
-    amount.textContent = formatted;
-  });
-
-  Object.keys(items).forEach((id) => {
-    if (!id.startsWith("package_")) return;
-    const row = items[id];
-    const amount = document.querySelector(`[data-package-id="${id}"]`);
-    if (amount && row.price) amount.textContent = formatPrice(row.price);
-  });
+  applyMenuPackagePrices(items);
 
   document.querySelectorAll("[data-menu-section][data-menu-field]").forEach((node) => {
     const text = sectionText(

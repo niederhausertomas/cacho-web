@@ -954,9 +954,8 @@ iframe {
   color: var(--ink);
   background: var(--paper);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--sage);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
+  box-shadow: -10px 10px 0 #eaae18;
 }
 
 .burgers-copy .menu-section__title {
@@ -983,9 +982,15 @@ iframe {
   line-height: 1.4;
 }
 
-.burgers-cta {
+.burgers-cta.btn.primary {
   margin-top: 20px;
   display: inline-flex;
+  background: #eaae18;
+  border-color: #c99214;
+}
+
+.burgers-cta.btn.primary:hover {
+  background: #c99214;
 }
 
 .burgers-meet {
@@ -2292,7 +2297,7 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
 }
 
 .tape--burgers {
-  background: var(--beer);
+  background: #eaae18;
   color: var(--black);
 }
 
@@ -2303,7 +2308,7 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
 .menu-burgers-panel {
   margin-top: 16px;
   padding: 18px 20px;
-  background: var(--beer);
+  background: #eaae18;
   border-radius: var(--radius);
   color: var(--black);
 }
@@ -2331,7 +2336,7 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
 .menu-burgers-promo {
   padding: 24px 22px;
   text-align: center;
-  background: var(--beer);
+  background: #eaae18;
   border-radius: var(--radius);
   color: var(--black);
 }

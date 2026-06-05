@@ -882,6 +882,7 @@ function applyMenuContent(lang, options) {
   });
 
   if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);
+  if (typeof applyMenuPackageDefaults === "function") applyMenuPackageDefaults();
 }
 
 function mergeMenuTranslations() {
