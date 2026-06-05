@@ -2388,6 +2388,12 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
   line-height: 1;
 }
 
+.menu-burgers-promo__price .menu-item__price {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1;
+}
+
 .menu-burgers-promo__price--solo {
   display: flex;
   align-items: baseline;

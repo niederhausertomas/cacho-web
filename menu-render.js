@@ -186,3 +186,30 @@ function applyKidsPromoFromSheet(lang, items) {
     priceEl.textContent = formatPrice(row.price);
   }
 }
+
+function comboPromoField(row, lang, part) {
+  const fromSheet = pickLocalized(row, lang, part);
+  if (fromSheet) return fromSheet;
+  return row[part] != null ? String(row[part]).trim() : "";
+}
+
+function applyComboPromoFromSheet(lang, items) {
+  const row = items?.combo_addon;
+  if (!row) return;
+
+  ["name", "lead", "desc", "priceLabel"].forEach((part) => {
+    const text = comboPromoField(row, lang, part);
+    if (!text) return;
+    document
+      .querySelectorAll(`[data-menu-item='combo_addon'][data-menu-part='${part}']`)
+      .forEach((el) => {
+        el.textContent = text;
+      });
+  });
+
+  const priceEl = document.querySelector("#combo .menu-item__price");
+  if (!priceEl) return;
+  const raw =
+    row.price !== "" && row.price != null ? row.price : "4";
+  priceEl.textContent = `+${formatPrice(raw)}`;
+}

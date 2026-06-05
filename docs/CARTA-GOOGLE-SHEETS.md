@@ -60,7 +60,7 @@ Hasta que Sheets responde, los bloques de carta permanecen ocultos y se muestra 
 ## Columnas de platos (Comidas / Bebidas / Menú Grupos / Cacho Burgers)
 
 ```
-id | section | group | order | name_es | name_ca | name_en | desc_es | desc_ca | desc_en | price | price2 | mark | active
+id | section | group | order | name_es | name_ca | name_en | lead_es | lead_ca | lead_en | desc_es | desc_ca | desc_en | price | price2 | mark | priceLabel_es | priceLabel_ca | priceLabel_en | active
 ```
 
 | Columna | Uso |
@@ -68,9 +68,11 @@ id | section | group | order | name_es | name_ca | name_en | desc_es | desc_ca |
 | `section` | Bloque de la carta (`salads`, `wine`, `burgers`, `full`, `fries`, …). En **Comidas**, las burgers del menú dinner deben ser `burgers`, no `milanese` (ver `docs/google-sheets/Comidas.csv`). |
 | `group` | Sublista dentro del bloque (ver abajo). Vacío si no aplica. |
 | `name_es` / `name_ca` / `name_en` | Nombre del plato en cada idioma |
+| `lead_es` / `lead_ca` / `lead_en` | Solo el bloque **Combo** (`combo_addon`) |
 | `desc_es` / `desc_ca` / `desc_en` | Descripción (vacío si no hay) |
 | `price` / `price2` | Precio(s) — **mismos en todos los idiomas** (simple / doble en burgers) |
 | `mark` | Ej. `*` vegetariano |
+| `priceLabel_es` / `priceLabel_ca` / `priceLabel_en` | Solo el bloque **Combo** («Añádelo por solo») |
 | `active` | `TRUE` / `FALSE` — oculta la fila si es `FALSE` |
 
 ### Ejemplos de `group`
@@ -85,7 +87,7 @@ id | section | group | order | name_es | name_ca | name_en | desc_es | desc_ca |
 | `full` | `starter`, `main`, `dessert`, `drink` | Menú de grupos |
 | `fries` / `addons` | `extras` | Extras Cacho Burgers |
 
-**Cacho Burgers — combo:** fila `combo_addon` en sección `combo`, columna `price` = suplemento del combo (la web muestra `+4`).
+**Cacho Burgers — combo:** fila `combo_addon` con textos en `name_*`, `lead_*`, `desc_*`, `priceLabel_*` y precio en `price` (la web muestra **+4 €**). Todo en la misma fila de la pestaña **Cacho Burgers**.
 
 **Al editar:** si cambias un plato en español, revisa también catalán e inglés en la misma fila. Para regenerar CSV desde el repo: `node scripts/export-menu-to-csv.mjs`.
 
@@ -183,6 +185,7 @@ Los textos de navegación (Reservar, Contacto, etc.) siguen en `menu-i18n.js` / 
 | No borrar filas | `active` = `FALSE` |
 | No cambiar `id` | Clave estable |
 | Precios una sola vez | No hay `price_en` |
+| Combo: fila `combo_addon` en **Cacho Burgers** | Textos y precio en la misma fila |
 
 ### Claves `section`
 

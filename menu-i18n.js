@@ -238,12 +238,6 @@ const MENU_CONTENT = {
       fries: { title: "Fritas & Co", extrasTitle: "+ Extras" },
       cookies: { title: "New York Cookie" },
       burgers: { title: "Burgers" },
-      combo: {
-        title: "Combo",
-        lead: "Elige tu burger",
-        note: "Incluye patatas naturales + refresco o Estrella Damm",
-        priceLabel: "Añádelo por solo"
-      },
       addons: { title: "Añade a tu burger" },
       kids: {
         title: "Kids menu",
@@ -298,12 +292,6 @@ const MENU_CONTENT = {
       fries: { title: "Fritas & Co", extrasTitle: "+ Extras" },
       cookies: { title: "New York Cookie" },
       burgers: { title: "Burgers" },
-      combo: {
-        title: "Combo",
-        lead: "Tria la teva burger",
-        note: "Inclou patates naturals + refresc o Estrella Damm",
-        priceLabel: "Afegeix-lo per només"
-      },
       addons: { title: "Afegeix a la teva burger" },
       kids: {
         title: "Kids menu",
@@ -358,12 +346,6 @@ const MENU_CONTENT = {
       fries: { title: "Fries & Co", extrasTitle: "+ Extras" },
       cookies: { title: "New York Cookie" },
       burgers: { title: "Burgers" },
-      combo: {
-        title: "Combo",
-        lead: "Pick your burger",
-        note: "Includes natural fries + soft drink or Estrella Damm",
-        priceLabel: "Add it for just"
-      },
       addons: { title: "Add to your burger" },
       kids: {
         title: "Kids menu",
@@ -522,7 +504,14 @@ const MENU_ITEMS = {
     cb_vegetariana: { name: "La vegetariana", desc: "Burger de alubias negras con queso, cebolla adobada, lechuga, tomate y salsa rebelde." },
     cb_addon_meat: { name: "Carne extra" },
     cb_addon_cheese: { name: "Queso / Bacon / Pepinillo" },
-    cb_kids: { name: "Kids menu" }
+    cb_kids: { name: "Kids menu" },
+    combo_addon: {
+      name: "Combo",
+      lead: "Elige tu burger",
+      desc: "Incluye patatas naturales + refresco o Estrella Damm",
+      priceLabel: "Añádelo por solo",
+      price: "4",
+    }
   },
   ca: {
     pumpkin: { name: "Pumpkin Salad", desc: "Carbassa rostida, espinacs, rúcula, feta, nous, vinagreta d'agave, gingebre, coriandre i llima." },
@@ -670,7 +659,14 @@ const MENU_ITEMS = {
     cb_vegetariana: { name: "La vegetariana", desc: "Burger de mongetes negres amb formatge, ceba adobada, enciam, tomàquet i salsa rebel." },
     cb_addon_meat: { name: "Carn extra" },
     cb_addon_cheese: { name: "Formatge / Bacon / Cogombre" },
-    cb_kids: { name: "Kids menu" }
+    cb_kids: { name: "Kids menu" },
+    combo_addon: {
+      name: "Combo",
+      lead: "Tria la teva burger",
+      desc: "Inclou patates naturals + refresc o Estrella Damm",
+      priceLabel: "Afegeix-lo per només",
+      price: "4",
+    }
   },
   en: {
     pumpkin: { name: "Pumpkin Salad", desc: "Roasted pumpkin, spinach, rocket, feta, walnuts, agave vinaigrette, ginger, coriander and lime." },
@@ -818,7 +814,14 @@ const MENU_ITEMS = {
     cb_vegetariana: { name: "Veggie burger", desc: "Black bean burger with cheese, pickled onion, lettuce, tomato and rebel sauce." },
     cb_addon_meat: { name: "Extra meat" },
     cb_addon_cheese: { name: "Cheese / Bacon / Pickle" },
-    cb_kids: { name: "Kids menu" }
+    cb_kids: { name: "Kids menu" },
+    combo_addon: {
+      name: "Combo",
+      lead: "Pick your burger",
+      desc: "Includes natural fries + soft drink or Estrella Damm",
+      priceLabel: "Add it for just",
+      price: "4",
+    }
   }
 };
 
@@ -883,6 +886,11 @@ function applyMenuContent(lang, options) {
 
   if (typeof applyMenuFromSheet === "function") applyMenuFromSheet(lang);
   if (typeof applyMenuPackageDefaults === "function") applyMenuPackageDefaults();
+  if (page === "cachoBurgers" && typeof applyComboPromoFromSheet === "function") {
+    applyComboPromoFromSheet(lang, {
+      combo_addon: items.combo_addon || MENU_ITEMS.es.combo_addon,
+    });
+  }
 }
 
 function mergeMenuTranslations() {

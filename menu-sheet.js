@@ -310,6 +310,7 @@ function applyMenuFromSheet(lang) {
   if (document.querySelector("[data-menu-list]")) {
     renderMenuListsFromSheet(lang, dataKey);
     applyKidsPromoFromSheet(lang, items);
+    applyComboPromoFromSheet(lang, items);
   }
 
   applyMenuPackagePrices(items);
@@ -325,11 +326,6 @@ function applyMenuFromSheet(lang) {
     if (!text) return;
     if (node.childElementCount === 0) {
       node.textContent = text;
-      return;
-    }
-    if (node.matches(".menu-burgers-promo__price") && node.querySelector("strong")) {
-      const label = node.querySelector("span, [data-menu-section]");
-      if (label && label.childElementCount === 0) label.textContent = text;
     }
   });
 
@@ -461,7 +457,9 @@ function resetMenuPlaceholders() {
     node.textContent = "";
   });
 
-  document.querySelectorAll("[data-package-id], .menu-burgers-promo--kids .menu-item__price").forEach((node) => {
+  document.querySelectorAll(
+    "[data-package-id], #combo .menu-item__price, .menu-burgers-promo--kids .menu-item__price, [data-menu-item='combo_addon']"
+  ).forEach((node) => {
     node.textContent = "";
   });
 }

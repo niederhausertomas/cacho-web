@@ -21,12 +21,18 @@ const ITEM_HEADERS = [
   "name_es",
   "name_ca",
   "name_en",
+  "lead_es",
+  "lead_ca",
+  "lead_en",
   "desc_es",
   "desc_ca",
   "desc_en",
   "price",
   "price2",
   "mark",
+  "priceLabel_es",
+  "priceLabel_ca",
+  "priceLabel_en",
   "active",
 ];
 
@@ -69,6 +75,31 @@ function itemText(item, part) {
   if (!item) return "";
   if (typeof item === "string") return part === "name" ? item : "";
   return item[part] || "";
+}
+
+function comboFieldText(items, id, part) {
+  const es = items.es[id];
+  const ca = items.ca[id];
+  const en = items.en[id];
+  if (part === "name") {
+    return {
+      es: itemText(es, "name"),
+      ca: itemText(ca, "name"),
+      en: itemText(en, "name"),
+    };
+  }
+  if (part === "lead" || part === "priceLabel") {
+    return {
+      es: itemText(es, part),
+      ca: itemText(ca, part),
+      en: itemText(en, part),
+    };
+  }
+  return {
+    es: itemText(es, "desc"),
+    ca: itemText(ca, "desc"),
+    en: itemText(en, "desc"),
+  };
 }
 
 function readExistingCsv(filename) {
@@ -239,6 +270,18 @@ function enrichItemRows(rows, items) {
       section = "coffee";
       group = "coffee";
     }
+    const lead =
+      r.id === "combo_addon"
+        ? comboFieldText(items, r.id, "lead")
+        : { es: r.lead_es || "", ca: r.lead_ca || "", en: r.lead_en || "" };
+    const priceLabel =
+      r.id === "combo_addon"
+        ? comboFieldText(items, r.id, "priceLabel")
+        : {
+            es: r.priceLabel_es || "",
+            ca: r.priceLabel_ca || "",
+            en: r.priceLabel_en || "",
+          };
     return {
       id: r.id,
       section,
@@ -247,12 +290,18 @@ function enrichItemRows(rows, items) {
       name_es: itemText(es, "name"),
       name_ca: itemText(ca, "name"),
       name_en: itemText(en, "name"),
+      lead_es: lead.es,
+      lead_ca: lead.ca,
+      lead_en: lead.en,
       desc_es: itemText(es, "desc"),
       desc_ca: itemText(ca, "desc"),
       desc_en: itemText(en, "desc"),
       price: r.price,
       price2: r.price2,
       mark: r.mark,
+      priceLabel_es: priceLabel.es,
+      priceLabel_ca: priceLabel.ca,
+      priceLabel_en: priceLabel.en,
       active: "TRUE",
     };
   });
