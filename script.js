@@ -603,6 +603,8 @@ const translations = {
   }
 };
 
+if (typeof mergeMenuTranslations === "function") mergeMenuTranslations();
+
 function applyTranslations(dictionary) {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     if (node.hasAttribute("data-sheet-hours")) return;
