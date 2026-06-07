@@ -67,6 +67,7 @@
         longitude: opts.geo.longitude,
       };
     }
+    if (opts.openingHours) schema.openingHours = opts.openingHours;
     if (opts.hasMenu) schema.hasMenu = opts.hasMenu;
     if (opts.potentialAction) schema.potentialAction = opts.potentialAction;
     return schema;
@@ -75,15 +76,16 @@
   const mainLd = document.querySelector('script[data-seo-jsonld="restaurant"]');
   if (mainLd) {
     const menus = (site.menuPages || []).map((p) => abs(p));
+    const metaDesc = document.querySelector('meta[name="description"]');
     mainLd.textContent = JSON.stringify(
       restaurantSchema({
         name: site.name,
-        description:
-          "Restaurante casero en Poblenou, Barcelona. Comida sin postureo, terraza, carta, reservas y Cacho Burgers.",
+        description: metaDesc?.content || site.tagline,
         url: abs("index"),
         image: abs(site.ogImage.replace(/^\//, "")),
         address: site.address,
         geo: site.geo,
+        openingHours: site.openingHours,
         hasMenu: menus,
         potentialAction: {
           "@type": "ReserveAction",
@@ -113,6 +115,7 @@
           country: b.country,
         },
         geo: b.geo,
+        openingHours: b.openingHours,
         potentialAction: {
           "@type": "ReserveAction",
           target: {

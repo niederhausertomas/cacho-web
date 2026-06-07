@@ -3,17 +3,18 @@
  * Cambiar al pasar a dominio propio, ej. https://www.wearecacho.com
  */
 window.CACHO_SITE = {
-  url: "https://niederhausertomas.github.io/cacho-web",
+  url: "https://www.wearecacho.com",
   name: "CACHO",
   tagline: "Casero y sin miedo",
   email: "hello@wearecacho.com",
   phone: "+34931398813",
   priceRange: "€€",
   servesCuisine: ["Comida casera", "Argentina", "Hamburguesas", "Cócteles"],
+  openingHours: ["Mo-Fr 12:30-00:00", "Sa-Su 12:00-00:00"],
   address: {
     street: "Carrer de Llull, 27",
     locality: "Barcelona",
-    region: "Catalunya",
+    region: "CT",
     postalCode: "08005",
     country: "ES",
   },
@@ -27,9 +28,10 @@ window.CACHO_SITE = {
       "Smash burgers, fritas y cookies en Poblenou. Local CACHO en Carrer de Pujades, 195.",
     street: "Carrer de Pujades, 195",
     locality: "Barcelona",
-    region: "Catalunya",
+    region: "CT",
     postalCode: "08005",
     country: "ES",
+    openingHours: ["Mo-We 12:30-23:00", "Th-Fr 12:30-00:00", "Sa-Su 12:00-23:30"],
     geo: {
       latitude: 41.4015,
       longitude: 2.2048,
