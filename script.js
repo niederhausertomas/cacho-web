@@ -7,8 +7,6 @@ const languageButtons = [...document.querySelectorAll(".language-switcher button
 const mobileCta = document.querySelector(".mobile-cta");
 const LANG_STORAGE_KEY = "cacho-lang";
 
-/** Fallback si no existe contact-form-config.js (preferir window.CACHO_FORMSPREE_FORM_ID). */
-const FORMSPREE_FORM_ID = "";
 
 const translations = {
   es: {
@@ -757,7 +755,8 @@ function scrollToNavSection(selector, { behavior = "smooth", updateHash = true }
     const target = mobile ? section : getNavScrollTarget(section);
     const offset =
       getNavScrollOffset() + (mobile ? getMobileScrollExtra() : getNavScrollExtra());
-    const sectionScrollNudge = selector === "#cacho-burgers" ? 52 : 0;
+    const nudgeAttr = section.dataset.scrollNudge;
+    const sectionScrollNudge = nudgeAttr ? parseInt(nudgeAttr, 10) || 0 : 0;
     const top = Math.max(0, getElementPageTop(target) - offset + sectionScrollNudge);
 
     if (updateHash && window.location.hash !== selector) {
@@ -1409,7 +1408,6 @@ function getFormspreeFormId() {
   if (fromWindow && fromWindow !== "YOUR_FORM_ID") return fromWindow;
   const fromData = contactForm?.dataset.formspreeId?.trim();
   if (fromData && fromData !== "YOUR_FORM_ID") return fromData;
-  if (FORMSPREE_FORM_ID && FORMSPREE_FORM_ID !== "YOUR_FORM_ID") return FORMSPREE_FORM_ID;
   return "";
 }
 
