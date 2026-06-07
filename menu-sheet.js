@@ -98,101 +98,12 @@ async function fetchMenuSheet(url) {
   }
 }
 
-/** IDs de Comidas que deben ir en section `burgers` aunque en Sheets figure otro valor. */
-const COMIDAS_BURGER_SECTION_BY_ID = Object.freeze({
-  provoloneBurger: "burgers",
-  picante: "burgers",
-  portobello: "burgers",
-  clasica: "burgers",
-  cheeseBacon: "burgers",
-  extraEgg: "burgers",
-  extraBacon: "burgers",
-  extraAvocado: "burgers",
-  extraPickles: "burgers",
-  extraCheese: "burgers",
-  extraTomato: "burgers",
-});
-
-/** Corrige section en Comidas (p. ej. burgers etiquetadas como milanese en Sheets). */
-function resolveMenuSection(row, sheetKey) {
-  const section = String(row.section || "").trim();
-  if (sheetKey !== "comidas") return section;
-  const inferred = COMIDAS_BURGER_SECTION_BY_ID[String(row.id || "")];
-  return inferred || section;
-}
-
-/** Si falta la columna `group` en Bebidas, se infiere por id (vinos, combinados, café). */
-const BEBIDAS_GROUP_BY_ID = Object.freeze({
-  itant: "red",
-  comalats: "redNat",
-  karma: "redNat",
-  trus: "redNat",
-  cargol: "whiteNat",
-  methodic: "whiteNat",
-  surrealista: "whiteNat",
-  perlat: "whiteNat",
-  saltimbanqui: "white",
-  descarada: "white",
-  serra: "white",
-  freye: "rose",
-  musugorri: "vermouth",
-  brutNature: "cava",
-  hendricks: "gin",
-  ginMare: "gin",
-  seagrams: "gin",
-  tanqueray: "gin",
-  bulldog: "gin",
-  ginMg: "gin",
-  greyGoose: "vodka",
-  absolut: "vodka",
-  skyy: "vodka",
-  zacapa: "rum",
-  brugal: "rum",
-  abueloAnejo: "rum",
-  glenmorangie: "whiskey",
-  johnnieWalker: "whiskey",
-  jackDaniels: "whiskey",
-  herradura: "tequila",
-  joseCuervo: "tequila",
-  mezcalUnion: "tequila",
-  fernet: "liqueurs",
-  ratafia: "liqueurs",
-  limoncello: "liqueurs",
-  baileys: "liqueurs",
-  campariShot: "liqueurs",
-  disaronno: "liqueurs",
-  aperolShot: "liqueurs",
-  cointreau: "liqueurs",
-  caramel: "coffee",
-  classicLatte: "coffee",
-  flatWhite: "coffee",
-  latte: "coffee",
-  matcha: "coffee",
-  chai: "coffee",
-  espresso: "coffee",
-  icedTea: "refresh",
-  lemonade: "refresh",
-  juice: "refresh",
-  greenQueen: "refresh",
-  orangePower: "refresh",
-  redHunter: "refresh",
-  gingerBeer: "refresh",
-  kombucha: "refresh",
-  sunny: "refresh",
-  tropical: "refresh",
-  claraTea: "refresh",
-  baya: "refresh",
-});
-
-/** Si falta la columna `group` en Sheets, se infiere por id (menú grupos / bebidas). */
 function resolveMenuGroup(row) {
   const existing = row.group;
   if (existing != null && String(existing).trim() !== "") {
     return String(existing).trim();
   }
   const id = String(row.id || "");
-  const bebidasGroup = BEBIDAS_GROUP_BY_ID[id];
-  if (bebidasGroup) return bebidasGroup;
   if (/^gr_starter/i.test(id)) return "starter";
   if (/^gr_main/i.test(id)) return "main";
   if (/^gr_dessert/i.test(id)) return "dessert";
@@ -200,19 +111,15 @@ function resolveMenuGroup(row) {
   if (/^gr_pp(8|9|10)$/i.test(id)) return "drink";
   if (/^gr_pp(6|7)$/i.test(id)) return "dessert";
   if (/^gr_pp/i.test(id)) return "food";
-  const orderKey = String(row.order ?? "")
-    .trim()
-    .toLowerCase();
-  if (["starter", "main", "dessert", "drink"].includes(orderKey)) {
-    return orderKey;
-  }
+  const orderKey = String(row.order ?? "").trim().toLowerCase();
+  if (["starter", "main", "dessert", "drink"].includes(orderKey)) return orderKey;
   return "";
 }
 
-function normalizeMenuSheetRows(rows, sheetKey) {
+function normalizeMenuSheetRows(rows) {
   return (rows || []).map((row) => ({
     ...row,
-    section: resolveMenuSection(row, sheetKey),
+    section: String(row.section || "").trim(),
     group: resolveMenuGroup(row),
   }));
 }
@@ -221,7 +128,7 @@ function normalizeMenuSheetData(data) {
   if (!data) return data;
   ["comidas", "bebidas", "grupos", "cachoBurgers"].forEach((key) => {
     if (Array.isArray(data[key])) {
-      data[key] = normalizeMenuSheetRows(data[key], key);
+      data[key] = normalizeMenuSheetRows(data[key]);
     }
   });
   return data;
