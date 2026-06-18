@@ -996,8 +996,17 @@ iframe {
   line-height: 1.4;
 }
 
-.burgers-cta.btn.primary {
+.burgers-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
   margin-top: 20px;
+}
+
+.burgers-cta.btn.primary {
+  margin-top: 0;
+  flex-shrink: 0;
   display: inline-flex;
   background: #eaae18;
   border-color: #c99214;
@@ -1005,6 +1014,68 @@ iframe {
 
 .burgers-cta.btn.primary:hover {
   background: #c99214;
+}
+
+.delivery-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 8px;
+  width: 140px;
+  font-weight: 600;
+  border-radius: var(--radius-pill, 999px);
+}
+
+.delivery-cta svg {
+  flex-shrink: 0;
+}
+
+.delivery-cta--ubereats {
+  gap: 5px;
+  background: #000;
+  border-color: #000;
+}
+
+.delivery-cta--ubereats:hover {
+  background: #1a1a1a;
+}
+
+.ubereats-word {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.025em;
+}
+
+.ubereats-word--uber {
+  font-weight: 800;
+  color: #fff;
+}
+
+.ubereats-word--eats {
+  font-weight: 800;
+  color: #06c167;
+}
+
+.delivery-cta--glovo {
+  background: #f8d04a;
+  border-color: #e6ad2e;
+}
+
+.delivery-cta--glovo:hover {
+  background: #f8d04a;
+  filter: brightness(0.93);
+}
+
+.delivery-cta--glovo {
+  padding: 6px 18px;
+}
+
+.delivery-cta--glovo img {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .burgers-meet {

@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://www.covermanager.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css?v=burgers-gold">
 </head>
 <body>
@@ -173,7 +173,15 @@
         <div class="burgers-body">
           <p class="burgers-lead" data-i18n="burgersLead">¿Aún no habéis venido a probar nuestras burgers sin postureo?</p>
           <p class="burgers-meet" data-i18n="burgersMeet">Nos vemos en Pujades, 195 · Poblenou</p>
-          <a class="btn primary burgers-cta" href="./cacho-burgers.html" data-i18n="burgersViewMenu">Ver carta</a>
+          <div class="burgers-actions">
+            <a class="btn primary burgers-cta" href="./cacho-burgers.html" data-i18n="burgersViewMenu">Ver carta</a>
+            <a class="btn delivery-cta delivery-cta--ubereats" href="https://www.ubereats.com/store-browse-uuid/78b6e2e8-098c-5527-8963-9767c01d6133?diningMode=DELIVERY" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats">
+              <span class="ubereats-word ubereats-word--uber">Uber</span><span class="ubereats-word ubereats-word--eats">Eats</span>
+            </a>
+            <a class="btn delivery-cta delivery-cta--glovo" href="https://glovoapp.com/es/es/barcelona/stores/cacho-barcelona" target="_blank" rel="noopener noreferrer" aria-label="Glovo">
+              <img src="images/glovo.png" alt="Glovo" loading="lazy" decoding="async">
+            </a>
+          </div>
         </div>
       </div>
       <div class="burgers-slider" aria-hidden="true">
