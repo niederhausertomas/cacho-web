@@ -1923,6 +1923,14 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
   display: inline-flex;
 }
 
+.menu-page__delivery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
 .menu-page__nav {
   display: flex;
   flex-wrap: wrap;
