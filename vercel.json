@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/bhs", "destination": "https://cacho-menus.vercel.app/bhs" },
+    { "source": "/bhs/:path*", "destination": "https://cacho-menus.vercel.app/bhs/:path*" },
+    { "source": "/admin", "destination": "https://cacho-menus.vercel.app/admin" },
+    { "source": "/admin/:path*", "destination": "https://cacho-menus.vercel.app/admin/:path*" },
+    { "source": "/privacidad", "destination": "https://cacho-menus.vercel.app/privacidad" },
+    { "source": "/api/:path*", "destination": "https://cacho-menus.vercel.app/api/:path*" },
+    { "source": "/_next/:path*", "destination": "https://cacho-menus.vercel.app/_next/:path*" },
+    { "source": "/icon.svg", "destination": "https://cacho-menus.vercel.app/icon.svg" },
+    { "source": "/logo-cacho.png", "destination": "https://cacho-menus.vercel.app/logo-cacho.png" },
+    { "source": "/images/hero.jpg", "destination": "https://cacho-menus.vercel.app/images/hero.jpg" },
+    { "source": "/images/quienes-somos.jpg", "destination": "https://cacho-menus.vercel.app/images/quienes-somos.jpg" },
+    { "source": "/images/valores-bg.jpg", "destination": "https://cacho-menus.vercel.app/images/valores-bg.jpg" }
+  ]
+}
