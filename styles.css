@@ -760,6 +760,10 @@ main section.parallax-band {
   text-transform: uppercase;
 }
 
+.cards article .card-section-link + .card-section-link {
+  margin-top: 10px;
+}
+
 .menu-section {
   display: flex;
   flex-direction: column;
