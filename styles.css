@@ -898,6 +898,31 @@ main section.parallax-band {
   width: 100%;
 }
 
+.booking-panel--burgers {
+  gap: 8px;
+  padding: 20px 24px;
+  color: var(--black);
+  background: #eaae18;
+}
+
+.booking-panel--burgers strong {
+  font-size: 26px;
+}
+
+.booking-panel__tag {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.booking-panel__link {
+  justify-self: start;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .location-book-btn {
   align-self: center;
   min-height: 48px;
@@ -1088,6 +1113,11 @@ iframe {
   font-family: var(--font-cartel);
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1.15;
+}
+
+.burgers-no-booking {
+  margin: 8px 0 0;
+  font-weight: 600;
 }
 
 .burgers-slider {
@@ -2403,6 +2433,49 @@ html.menu-sheet-ready .menu-doc-page .menu-block {
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+.reservas-intro {
+  display: grid;
+  gap: 6px;
+  padding: 12px 0 18px;
+  text-align: center;
+}
+
+.reservas-intro__title {
+  margin: 0;
+  font-family: var(--font-cartel);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.reservas-intro__address {
+  margin: 0;
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+}
+
+.reservas-intro__note {
+  justify-self: center;
+  margin: 6px 0 0;
+  padding: 8px 14px;
+  font-size: 15px;
+  line-height: 1.35;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.reservas-intro__note a {
+  margin-left: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .covermanager-frame {
