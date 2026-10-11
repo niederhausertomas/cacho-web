@@ -988,6 +988,11 @@ iframe {
   align-items: stretch;
 }
 
+.burgers--page {
+  padding-top: clamp(28px, 5vw, 56px);
+  padding-bottom: 0;
+}
+
 .burgers-copy {
   display: flex;
   flex-direction: column;
@@ -1497,6 +1502,16 @@ textarea {
   font-size: 28px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+.footer strong.footer-burgers {
+  display: block;
+  margin-top: 16px;
+  color: #eaae18;
+}
+
+.footer p.footer-contact {
+  margin-top: 16px;
 }
 
 .footer p {
@@ -2903,6 +2918,10 @@ body:has(.mobile-cta).cookie-banner-open .cookie-settings-fab {
 
   .burgers-body {
     text-align: center;
+  }
+
+  .burgers-actions {
+    justify-content: center;
   }
 
   .location-section > h2 {
