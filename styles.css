@@ -1505,9 +1505,27 @@ textarea {
 }
 
 .footer strong.footer-burgers {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 16px;
   color: #eaae18;
+}
+
+.footer-logo {
+  display: block;
+  width: 140px;
+  height: auto;
+  filter: invert(1);
+}
+
+.footer-burgers__icon {
+  flex-shrink: 0;
+  width: 1.4em;
+  height: 1.4em;
+  background: currentColor;
+  -webkit-mask: url("images/BURGUERS-Y-SANDWICH.svg") center / contain no-repeat;
+  mask: url("images/BURGUERS-Y-SANDWICH.svg") center / contain no-repeat;
 }
 
 .footer p.footer-contact {
@@ -3446,6 +3464,10 @@ body:has(.mobile-cta).cookie-banner-open .cookie-settings-fab {
 
   .footer strong {
     font-size: 18px;
+  }
+
+  .footer-logo {
+    width: 110px;
   }
 
   .mobile-bottom-bar {
