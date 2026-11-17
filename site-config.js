@@ -31,7 +31,7 @@ window.CACHO_SITE = {
     region: "CT",
     postalCode: "08005",
     country: "ES",
-    openingHours: ["Mo-We 12:30-23:00", "Th-Fr 12:30-00:00", "Sa-Su 12:00-23:30"],
+    openingHours: ["We,Su 13:00-15:30", "We,Su 19:00-22:00", "Th-Sa 13:00-15:30", "Th-Sa 19:00-22:30"],
     geo: {
       latitude: 41.4015,
       longitude: 2.2048,
