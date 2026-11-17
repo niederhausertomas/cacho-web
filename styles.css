@@ -1275,7 +1275,17 @@ iframe {
   .contact-form label:has(textarea),
   .contact-form button,
   .contact-form > a,
-  .contact-form__status {
+  .contact-form__legal {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.contact-form__legal a {
+  color: inherit;
+  text-decoration: underline;
+}
+.contact-form__status {
     grid-column: 1 / -1;
   }
 }

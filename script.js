@@ -174,6 +174,8 @@ const translations = {
     footerLegalCopyright: "CACHO © 2020–2026 TODOS LOS DERECHOS RESERVADOS",
     footerLegalNotice: "Aviso legal",
     footerLegalCookies: "Políticas de cookies",
+    footerLegalPrivacy: "Política de privacidad",
+    formPrivacyNote: "Usaremos tus datos solo para responder a tu consulta. Más información en nuestra",
     cookieSettingsFab: "Ajustes cookies",
     cookieBannerTitle: "Cookies y privacidad",
     cookieBannerText:
@@ -363,6 +365,8 @@ const translations = {
     footerLegalCopyright: "CACHO © 2020–2026 TOTS ELS DRETS RESERVATS",
     footerLegalNotice: "Avís legal",
     footerLegalCookies: "Polítiques de galetes",
+    footerLegalPrivacy: "Política de privacitat",
+    formPrivacyNote: "Farem servir les teves dades només per respondre la teva consulta. Més informació a la nostra",
     cookieSettingsFab: "Ajustos galetes",
     cookieBannerTitle: "Galetes i privacitat",
     cookieBannerText:
@@ -553,6 +557,8 @@ const translations = {
     footerLegalCopyright: "CACHO © 2020–2026 ALL RIGHTS RESERVED",
     footerLegalNotice: "Legal notice",
     footerLegalCookies: "Cookie policy",
+    footerLegalPrivacy: "Privacy policy",
+    formPrivacyNote: "We will only use your details to reply to your enquiry. More information in our",
     cookieSettingsFab: "Cookie settings",
     cookieBannerTitle: "Cookies and privacy",
     cookieBannerText:
