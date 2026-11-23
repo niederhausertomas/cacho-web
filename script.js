@@ -179,7 +179,7 @@ const translations = {
     cookieSettingsFab: "Ajustes cookies",
     cookieBannerTitle: "Cookies y privacidad",
     cookieBannerText:
-      "Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps. Puedes aceptar todas, usar solo las necesarias o configurarlas.",
+      "Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Google Ads y Google Maps. Puedes aceptar todas, usar solo las necesarias o configurarlas.",
     cookieAcceptAll: "Aceptar todas",
     cookieReject: "Solo necesarias",
     cookieCustomize: "Configurar",
@@ -189,8 +189,8 @@ const translations = {
     cookiePrefEssentialDesc: "Idioma y funcionamiento básico del sitio.",
     cookiePrefAnalytics: "Analítica (Google Analytics)",
     cookiePrefAnalyticsDesc: "Nos ayuda a entender cómo se usa la web.",
-    cookiePrefMarketing: "Marketing (Meta Pixel)",
-    cookiePrefMarketingDesc: "Mide campañas y conversiones en redes sociales.",
+    cookiePrefMarketing: "Marketing (Google Ads)",
+    cookiePrefMarketingDesc: "Mide campañas y conversiones de anuncios.",
     cookiePrefMaps: "Mapa (Google Maps)",
     cookiePrefMapsDesc: "Muestra el mapa de ubicación embebido.",
     cookieSave: "Guardar preferencias",
@@ -370,7 +370,7 @@ const translations = {
     cookieSettingsFab: "Ajustos galetes",
     cookieBannerTitle: "Galetes i privacitat",
     cookieBannerText:
-      "Fem servir galetes necessàries per a l'idioma i, si ho permets, Google Analytics, Meta Pixel i Google Maps. Pots acceptar-les totes, usar només les necessàries o configurar-les.",
+      "Fem servir galetes necessàries per a l'idioma i, si ho permets, Google Analytics, Google Ads i Google Maps. Pots acceptar-les totes, usar només les necessàries o configurar-les.",
     cookieAcceptAll: "Acceptar totes",
     cookieReject: "Només necessàries",
     cookieCustomize: "Configurar",
@@ -380,8 +380,8 @@ const translations = {
     cookiePrefEssentialDesc: "Idioma i funcionament bàsic del lloc.",
     cookiePrefAnalytics: "Analítica (Google Analytics)",
     cookiePrefAnalyticsDesc: "Ens ajuda a entendre com s'utilitza la web.",
-    cookiePrefMarketing: "Màrqueting (Meta Pixel)",
-    cookiePrefMarketingDesc: "Mesura campanyes i conversions a xarxes socials.",
+    cookiePrefMarketing: "Màrqueting (Google Ads)",
+    cookiePrefMarketingDesc: "Mesura campanyes i conversions d’anuncis.",
     cookiePrefMaps: "Mapa (Google Maps)",
     cookiePrefMapsDesc: "Mostra el mapa d'ubicació incrustat.",
     cookieSave: "Desar preferències",
@@ -562,7 +562,7 @@ const translations = {
     cookieSettingsFab: "Cookie settings",
     cookieBannerTitle: "Cookies and privacy",
     cookieBannerText:
-      "We use necessary cookies for language and, if you allow, Google Analytics, Meta Pixel and Google Maps. You can accept all, use only necessary ones, or configure them.",
+      "We use necessary cookies for language and, if you allow, Google Analytics, Google Ads and Google Maps. You can accept all, use only necessary ones, or configure them.",
     cookieAcceptAll: "Accept all",
     cookieReject: "Necessary only",
     cookieCustomize: "Configure",
@@ -572,8 +572,8 @@ const translations = {
     cookiePrefEssentialDesc: "Language and basic site operation.",
     cookiePrefAnalytics: "Analytics (Google Analytics)",
     cookiePrefAnalyticsDesc: "Helps us understand how the site is used.",
-    cookiePrefMarketing: "Marketing (Meta Pixel)",
-    cookiePrefMarketingDesc: "Measures campaigns and social conversions.",
+    cookiePrefMarketing: "Marketing (Google Ads)",
+    cookiePrefMarketingDesc: "Measures ad campaigns and conversions.",
     cookiePrefMaps: "Map (Google Maps)",
     cookiePrefMapsDesc: "Shows the embedded location map.",
     cookieSave: "Save preferences",
@@ -1134,15 +1134,19 @@ function initMenuPageLinks() {
 
 initMenuPageLinks();
 
-/* --- Cookies y tracking (GA4, Meta Pixel, Maps) --- */
+/* --- Cookies: Consent Mode v2 (GTM, ver consent-mode.js) y mapa embebido --- */
+// La elección se guarda en la cookie `cacho_consent` de `.wearecacho.com`,
+// compartida con menus.wearecacho.com (cacho-bhs, src/lib/consent.ts): mismo
+// nombre y mismo objeto en los dos proyectos. La clave vieja de localStorage
+// se sigue leyendo y escribiendo para no perder elecciones anteriores.
+const CONSENT_COOKIE = "cacho_consent";
 const COOKIE_CONSENT_KEY = "cacho-cookie-consent";
 const COOKIE_CONSENT_VERSION = 1;
+const CONSENT_MAX_AGE_SECONDS = 60 * 60 * 24 * 365;
 
 const TRACKING_CONFIG = {
   mapsEmbedUrl:
     "https://www.google.com/maps?q=Carrer%20de%20Llull%2027%20Barcelona&output=embed",
-  gaMeasurementId: "",
-  metaPixelId: "",
   ...(window.CACHO_TRACKING || {}),
 };
 
@@ -1152,19 +1156,6 @@ const mapIframe = document.querySelector("[data-map-iframe]");
 const cookiePrefInputs = [...document.querySelectorAll("[data-cookie-pref]")];
 const cookieManageButtons = [...document.querySelectorAll("[data-cookie-manage]")];
 const mapEnableButton = document.querySelector("[data-map-enable]");
-
-let trackingLoaded = { analytics: false, marketing: false };
-
-function isValidGaId(id) {
-  const value = String(id || "").trim();
-  if (!/^G-[A-Z0-9]+$/i.test(value)) return false;
-  return !/X{4,}/i.test(value);
-}
-
-function isValidMetaPixelId(id) {
-  const value = String(id || "").trim();
-  return /^\d{10,}$/.test(value) && !/^0+$/.test(value);
-}
 
 function defaultConsent() {
   return {
@@ -1188,20 +1179,68 @@ function allOptionalConsent() {
   };
 }
 
-function readConsent() {
+function parseConsent(raw) {
   try {
-    const raw = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!raw) return null;
     const parsed = JSON.parse(raw);
-    if (!parsed || parsed.v !== COOKIE_CONSENT_VERSION) return null;
-    return parsed;
+    return parsed && parsed.v === COOKIE_CONSENT_VERSION ? parsed : null;
   } catch {
     return null;
   }
 }
 
+function readConsentCookie() {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${CONSENT_COOKIE}=([^;]*)`));
+  if (!match) return null;
+  try {
+    return parseConsent(decodeURIComponent(match[1]));
+  } catch {
+    return null;
+  }
+}
+
+function writeConsentCookie(consent) {
+  const host = window.location.hostname;
+  const domain =
+    host === "wearecacho.com" || host.endsWith(".wearecacho.com") ? "; domain=.wearecacho.com" : "";
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie =
+    `${CONSENT_COOKIE}=${encodeURIComponent(JSON.stringify(consent))}; path=/; max-age=${CONSENT_MAX_AGE_SECONDS}; SameSite=Lax` +
+    domain +
+    secure;
+}
+
+function readConsent() {
+  const fromCookie = readConsentCookie();
+  if (fromCookie) return fromCookie;
+  let legacy = null;
+  try {
+    legacy = parseConsent(localStorage.getItem(COOKIE_CONSENT_KEY));
+  } catch {
+    legacy = null;
+  }
+  if (legacy) writeConsentCookie(legacy);
+  return legacy;
+}
+
 function writeConsent(consent) {
-  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+  writeConsentCookie(consent);
+  try {
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+  } catch {
+    /* sin localStorage: la cookie alcanza */
+  }
+}
+
+/** Categorías del banner → señales de Consent Mode v2 (igual que cacho-bhs). */
+function updateGoogleConsent(consent) {
+  if (typeof window.gtag !== "function") return;
+  const ads = consent.marketing ? "granted" : "denied";
+  window.gtag("consent", "update", {
+    analytics_storage: consent.analytics ? "granted" : "denied",
+    ad_storage: ads,
+    ad_user_data: ads,
+    ad_personalization: ads,
+  });
 }
 
 function syncPrefCheckboxes(consent) {
@@ -1244,50 +1283,6 @@ function closeCookieBanner() {
   document.body.classList.remove("cookie-banner-open");
 }
 
-function loadGoogleAnalytics() {
-  const id = TRACKING_CONFIG.gaMeasurementId;
-  if (!isValidGaId(id) || trackingLoaded.analytics) return;
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", id, { anonymize_ip: true });
-
-  trackingLoaded.analytics = true;
-}
-
-function loadMetaPixel() {
-  const id = TRACKING_CONFIG.metaPixelId;
-  if (!isValidMetaPixelId(id) || trackingLoaded.marketing) return;
-
-  if (!window.fbq) {
-    const n = (window.fbq = function () {
-      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-    });
-    if (!window._fbq) window._fbq = n;
-    n.push = n;
-    n.loaded = true;
-    n.version = "2.0";
-    n.queue = [];
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://connect.facebook.net/en_US/fbevents.js";
-    document.head.appendChild(script);
-  }
-
-  window.fbq("init", id);
-  window.fbq("track", "PageView");
-  trackingLoaded.marketing = true;
-}
-
 function enableEmbeddedMap() {
   if (!mapIframe || !mapPlaceholder) return;
   const wrap = mapIframe.closest(".map-wrap");
@@ -1308,14 +1303,13 @@ function disableEmbeddedMap() {
 }
 
 function applyConsent(consent) {
-  if (consent.analytics) loadGoogleAnalytics();
-  if (consent.marketing) loadMetaPixel();
   if (consent.maps) enableEmbeddedMap();
   else disableEmbeddedMap();
 }
 
 function saveAndApplyConsent(consent, closeBanner = true) {
   writeConsent(consent);
+  updateGoogleConsent(consent);
   applyConsent(consent);
   if (closeBanner) closeCookieBanner();
 }

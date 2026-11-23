@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./consent-mode.js?v=1"></script>
   <link rel="icon" href="./images/BURGUERS-Y-SANDWICH.svg" type="image/svg+xml">
   <link rel="canonical" href="" data-seo-canonical="politica-cookies.html">
   <title>Política de cookies | CACHO</title>
@@ -60,8 +61,8 @@
   <main class="legal-page">
     <header class="legal-page__head">
       <h1>Política de cookies</h1>
-      <p class="legal-page__url">wearecacho.com · Barcelona</p>
-      <p class="legal-page__updated">Última actualización: 25 de mayo de 2026</p>
+      <p class="legal-page__url">wearecacho.com y menus.wearecacho.com · Barcelona</p>
+      <p class="legal-page__updated">Última actualización: 23 de noviembre de 2026</p>
     </header>
 
     <nav class="legal-index" aria-label="Índice de contenidos">
@@ -141,19 +142,20 @@
 
     <section class="legal-section" id="detalles">
       <h2>4. Detalles de cookies y almacenamiento utilizados</h2>
-      <p>Esta es la relación de tecnologías utilizadas en la versión actual del sitio web de CACHO (Barcelona). Las cookies o almacenamientos de terceros solo se cargan si usted las acepta, salvo las estrictamente necesarias.</p>
+      <p>Esta es la relación de tecnologías utilizadas en la versión actual de los sitios web de CACHO: <a href="https://www.wearecacho.com">wearecacho.com</a> y <a href="https://menus.wearecacho.com">menus.wearecacho.com</a>, que enlaza a esta misma política. Las cookies o almacenamientos de terceros solo se activan si usted las acepta, salvo las estrictamente necesarias.</p>
+      <p>Las herramientas de medición de Google se gestionan a través de <strong>Google Tag Manager</strong>, que funciona con el <strong>modo de consentimiento</strong> de Google (Consent Mode v2): mientras usted no acepte una categoría, Google no puede guardar ni leer cookies de esa categoría y solo recibe señales sin identificadores.</p>
 
       <h3>4.1. Necesarias (siempre activas)</h3>
 
       <article class="legal-cookie-card">
-        <h4>cacho-cookie-consent (localStorage)</h4>
+        <h4>cacho_consent (cookie)</h4>
         <dl>
           <dt>Finalidad</dt>
-          <dd>Guardar su decisión sobre cookies (aceptar, rechazar o configurar analítica, marketing y mapa).</dd>
+          <dd>Guardar su decisión sobre cookies (aceptar, rechazar o configurar analítica, marketing y mapa). Es común a wearecacho.com y menus.wearecacho.com, así que solo tiene que elegir una vez.</dd>
           <dt>Información</dt>
-          <dd>Preferencias de consentimiento por categoría.</dd>
+          <dd>Preferencias de consentimiento por categoría y fecha de la elección.</dd>
           <dt>Temporalidad</dt>
-          <dd>Persistente hasta que usted borre los datos del navegador.</dd>
+          <dd>12 meses.</dd>
           <dt>Titularidad</dt>
           <dd>Propia (Marandemi S.L. / CACHO)</dd>
         </dl>
@@ -173,8 +175,22 @@
         </dl>
       </article>
 
+      <article class="legal-cookie-card">
+        <h4>cacho-cookie-consent (localStorage)</h4>
+        <dl>
+          <dt>Finalidad</dt>
+          <dd>Copia de su decisión sobre cookies en este navegador (versión anterior del sistema de consentimiento).</dd>
+          <dt>Información</dt>
+          <dd>Preferencias de consentimiento por categoría.</dd>
+          <dt>Temporalidad</dt>
+          <dd>Persistente hasta que usted borre los datos del navegador.</dd>
+          <dt>Titularidad</dt>
+          <dd>Propia (Marandemi S.L. / CACHO)</dd>
+        </dl>
+      </article>
+
       <h3>4.2. Analítica (requiere consentimiento)</h3>
-      <p>Solo si acepta esta categoría se carga Google Analytics 4 (GA4).</p>
+      <p>Solo si acepta esta categoría, Google Analytics 4 (GA4), cargado a través de Google Tag Manager, puede usar cookies.</p>
 
       <article class="legal-cookie-card">
         <h4>_ga / _ga_* (cookies)</h4>
@@ -193,21 +209,21 @@
       </article>
 
       <h3>4.3. Marketing (requiere consentimiento)</h3>
-      <p>Solo si acepta esta categoría se carga Meta Pixel.</p>
+      <p>Solo si acepta esta categoría, Google Ads, cargado a través de Google Tag Manager, puede usar cookies para medir las conversiones de nuestras campañas (por ejemplo, cuando alguien que llega desde un anuncio envía el formulario de contacto).</p>
 
       <article class="legal-cookie-card">
-        <h4>_fbp y cookies asociadas de Meta</h4>
+        <h4>_gcl_au / _gcl_aw (cookies)</h4>
         <dl>
           <dt>Finalidad</dt>
-          <dd>Medición de campañas, conversiones y publicidad personalizada (Meta Pixel).</dd>
+          <dd>Medición de conversiones de campañas de Google Ads.</dd>
           <dt>Información</dt>
-          <dd>Identificadores y eventos de navegación vinculados al píxel.</dd>
+          <dd>Identificador del clic en el anuncio y eventos de conversión.</dd>
           <dt>Temporalidad</dt>
-          <dd>Hasta 90 días (según Meta).</dd>
+          <dd>Hasta 90 días (según Google).</dd>
           <dt>Titularidad</dt>
-          <dd>Terceros — Meta Platforms Ireland Limited</dd>
+          <dd>Terceros — Google Ireland Limited / Google LLC</dd>
           <dt>Política</dt>
-          <dd><a href="https://www.facebook.com/privacy/policy/" rel="noopener noreferrer">facebook.com/privacy/policy</a></dd>
+          <dd><a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">policies.google.com/technologies/ads</a></dd>
         </dl>
       </article>
 
@@ -248,15 +264,21 @@
         </thead>
         <tbody>
           <tr>
+            <th scope="row">Google Tag Manager</th>
+            <td>Gestor de etiquetas que carga Google Analytics y Google Ads respetando su elección de cookies. No instala cookies propias.</td>
+            <td><a href="https://marketingplatform.google.com/about/tag-manager/" rel="noopener noreferrer">Google Tag Manager</a></td>
+            <td>Funciona con el modo de consentimiento de Google (Consent Mode v2).</td>
+          </tr>
+          <tr>
             <th scope="row">Google Analytics 4</th>
             <td>Estadísticas de visitas y comportamiento en el sitio (solo con su consentimiento).</td>
             <td><a href="https://support.google.com/analytics" rel="noopener noreferrer">support.google.com/analytics</a></td>
-            <td>Tratamiento sujeto a las condiciones de Google. IP anonimizada cuando está configurado en el sitio.</td>
+            <td>Tratamiento sujeto a las condiciones de Google. Requiere consentimiento de cookies de analítica.</td>
           </tr>
           <tr>
-            <th scope="row">Meta Pixel</th>
-            <td>Medición de campañas y conversiones en redes de Meta (solo con su consentimiento).</td>
-            <td><a href="https://www.facebook.com/business/tools/meta-pixel" rel="noopener noreferrer">Meta Pixel</a></td>
+            <th scope="row">Google Ads</th>
+            <td>Medición de conversiones de nuestras campañas publicitarias (solo con su consentimiento).</td>
+            <td><a href="https://ads.google.com" rel="noopener noreferrer">ads.google.com</a></td>
             <td>Requiere consentimiento de cookies de marketing.</td>
           </tr>
           <tr>
@@ -279,11 +301,11 @@
       <h2>6. Consentimiento y gestión de preferencias</h2>
       <p>Al acceder al sitio web desde Barcelona o cualquier otro lugar, CACHO muestra un banner de cookies mediante el cual puede:</p>
       <ul>
-        <li><strong>Aceptar todas:</strong> activa analítica (Google Analytics 4), marketing (Meta Pixel) y mapa (Google Maps), además de las necesarias.</li>
-        <li><strong>Solo necesarias:</strong> únicamente idioma y registro de su decisión de consentimiento; no se cargan scripts de medición ni el mapa embebido.</li>
+        <li><strong>Aceptar todas:</strong> activa analítica (Google Analytics 4), marketing (Google Ads) y mapa (Google Maps), además de las necesarias.</li>
+        <li><strong>Solo necesarias:</strong> únicamente idioma y registro de su decisión de consentimiento; Google Analytics y Google Ads no pueden usar cookies y no se carga el mapa embebido.</li>
         <li><strong>Configurar:</strong> elegir de forma granular cada categoría opcional.</li>
       </ul>
-      <p>Su elección se guarda en el almacenamiento local del navegador (<code>cacho-cookie-consent</code>) hasta que la modifique o borre los datos del sitio. En cualquier momento puede cambiarla mediante el botón <strong>«Ajustes cookies»</strong> (visible en el pie de página y en esta política) o el enlace <strong>«Gestionar cookies»</strong> en la home.</p>
+      <p>Su elección se guarda durante 12 meses en la cookie <code>cacho_consent</code>, común a wearecacho.com y menus.wearecacho.com, hasta que la modifique o borre los datos del navegador. En cualquier momento puede cambiarla mediante el botón <strong>«Ajustes cookies»</strong> (abajo a la derecha de la pantalla, por ejemplo en la home o en esta política).</p>
       <p>Puede consultar el texto íntegro de esta política en <a href="./politica-cookies.html">Políticas de cookies</a> y el aviso legal en <a href="./aviso-legal.html">Aviso legal</a>.</p>
     </section>
 
@@ -308,7 +330,7 @@
     <section class="legal-section" id="cambios">
       <h2>8. Cambios en la política de cookies</h2>
       <p>Es posible que actualicemos la política de cookies de nuestro sitio web. Por ello, se recomienda al usuario del website que revise esta política cada vez que acceda a nuestro sitio web con el objetivo de estar adecuadamente informado sobre cómo y para qué usamos las cookies.</p>
-      <p><strong>Versión actualizada: 25 de mayo de 2026.</strong> Responsable: Marandemi S.L. (CACHO), Carrer de Llull, 27, 08005 Barcelona.</p>
+      <p><strong>Versión actualizada: 23 de noviembre de 2026.</strong> Responsable: Marandemi S.L. (CACHO), Carrer de Llull, 27, 08005 Barcelona.</p>
     </section>
   </main>
 
@@ -370,7 +392,7 @@
     <div class="cookie-banner__inner">
       <div class="cookie-banner__view" data-cookie-view="main">
         <h2 id="cookie-banner-title" class="cookie-banner__title">Cookies y privacidad</h2>
-        <p class="cookie-banner__text">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Meta Pixel y Google Maps.</p>
+        <p class="cookie-banner__text">Usamos cookies necesarias para el idioma y, si lo permites, Google Analytics, Google Ads y Google Maps.</p>
         <div class="cookie-banner__actions">
           <button type="button" class="btn primary" data-cookie-action="accept-all">Aceptar todas</button>
           <button type="button" class="btn secondary" data-cookie-action="reject">Solo necesarias</button>
@@ -388,7 +410,7 @@
             <label><input type="checkbox" data-cookie-pref="analytics"><span><strong>Analítica (Google Analytics)</strong><small>Estadísticas de uso.</small></span></label>
           </li>
           <li class="cookie-prefs__item">
-            <label><input type="checkbox" data-cookie-pref="marketing"><span><strong>Marketing (Meta Pixel)</strong><small>Campañas y conversiones.</small></span></label>
+            <label><input type="checkbox" data-cookie-pref="marketing"><span><strong>Marketing (Google Ads)</strong><small>Campañas y conversiones.</small></span></label>
           </li>
           <li class="cookie-prefs__item">
             <label><input type="checkbox" data-cookie-pref="maps"><span><strong>Mapa (Google Maps)</strong><small>Mapa de ubicación embebido.</small></span></label>
@@ -402,7 +424,7 @@
     </div>
   </aside>
 
-  <script src="./tracking-config.js?v=1"></script>
-  <script src="./script.js?v=politica-privacidad"></script>
+  <script src="./tracking-config.js?v=2"></script>
+  <script src="./script.js?v=gtm-consent"></script>
 </body>
 </html>
